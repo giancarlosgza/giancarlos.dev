@@ -1,76 +1,51 @@
 <script setup lang="ts">
-import { UiAlertToast } from '@colorffy/ui'
-import { vOnClickOutside } from '@vueuse/components'
-import { ref } from 'vue'
-import { useRoute } from 'vue-router'
 import { NuxtLink } from '#components'
 
-/** Composables */
-const route = useRoute()
-const router = useRouter()
+/** Interfaces */
+interface INavLink {
+  id: string
+  label: string
+  href: string
+  ariaLabel: string
+}
 
 /** Data */
-const sidebarCollapse = useState<boolean>('sidebarCollapse')
-const user = {
-  displayName: 'Giancarlos Garza',
-  email: 'gian@orion.com',
-  photoURL: '/avatar.png'
-}
-const toastRef = ref<InstanceType<typeof UiAlertToast> | null>(null)
-
-const isMenuActive = ref<boolean>(false)
-const menuItems = [
-  {
-    id: 'home',
-    to: '/',
-    icon: '&#xe66b;',
-    text: 'Home',
-    ariaLabel: 'Navigate to home page'
-  },
-  {
-    id: 'blocks',
-    to: '/blocks',
-    icon: '&#xe1bd;',
-    text: 'Blocks',
-    ariaLabel: 'Go to blocks page'
-  }
+const { $colorMode } = useNuxtApp()
+const navLinks: INavLink[] = [
+  { id: 'work', label: 'Work', href: '#work', ariaLabel: 'Jump to selected work section' },
+  { id: 'approach', label: 'Approach', href: '#approach', ariaLabel: 'Jump to approach section' },
+  { id: 'writing', label: 'Experiments', href: '#writing', ariaLabel: 'Jump to experiments section' },
+  { id: 'contact', label: 'Contact', href: '#contact', ariaLabel: 'Jump to contact section' }
 ]
 
+/** Computed */
+const colorModeIcon = computed<string>(() => {
+  const icons: Record<string, string> = {
+    system: '&#xe31e;',
+    light: '&#xe518;',
+    dark: '&#xe51c;'
+  }
+  return icons[$colorMode.preference] ?? icons.system as string
+})
+const colorModeLabel = computed<string>(() => `Color mode: ${$colorMode.preference}. Activate to switch.`)
+
 /** Methods */
-function toggleUserMenu(): void {
-  isMenuActive.value = !isMenuActive.value
-}
-function closeMenu(): void {
-  isMenuActive.value = false
-}
-function handleMenuItemClick(to: string | object) {
-  router.push(to)
-}
-function handleSignOut(): void {
-  if (!toastRef.value)
-    return
-
-  toastRef.value.title = 'Signing out...'
-  toastRef.value.message = 'You have been signed out successfully.'
-  toastRef.value.variant = 'warning'
-  toastRef.value.showToast()
-
-  closeMenu()
+function cycleColorMode(): void {
+  const order = ['system', 'light', 'dark']
+  const current = order.indexOf($colorMode.preference)
+  $colorMode.preference = order[(current + 1) % order.length] as string
 }
 </script>
 
 <template>
   <UiNavbar
-    v-on-click-outside="closeMenu"
     sticky
-    fluid
+    custom-class="bg-frosted nav-island"
   >
-    <UiNavbarToggle :collapsed="sidebarCollapse" @toggle="sidebarCollapse = !sidebarCollapse" />
-    <UiNavbarTitle :title="(route.meta.pageTitle as string) || 'Dashboard'">
+    <UiNavbarTitle>
       <template #brand>
         <UiNavbarBrand
-          text="Admin"
-          initials="A"
+          text="Giancarlos Garza"
           :as="NuxtLink"
           :to="{ name: 'index' }"
         />
@@ -78,79 +53,49 @@ function handleSignOut(): void {
     </UiNavbarTitle>
 
     <UiNavbarMobileMenu>
-      <UiNavbarAvatar
-        v-if="user"
-        :src="user.photoURL"
-        :alt="`${user.displayName} photo`"
-        size="sm"
-        @click="isMenuActive = !isMenuActive"
-      />
+      <ClientOnly>
+        <UiButtonTooltip
+          id="color-mode-toggle-mobile"
+          icon
+          :tooltip-text="colorModeLabel"
+          :aria-label="colorModeLabel"
+          @on-click="cycleColorMode"
+        >
+          <template #icon>
+            <UiIconMaterial :icon-code="colorModeIcon" />
+          </template>
+        </UiButtonTooltip>
+      </ClientOnly>
     </UiNavbarMobileMenu>
 
     <UiNavbarCollapse>
       <UiNavbarNav position="start">
-        <UiNavbarItem>
-          <div class="input-group">
-            <div class="input-group-prefix border border-transparent px-0">
-              <UiIconMaterial icon-code="&#xe8b6;" />
-            </div>
-            <UiInputText
-              placeholder="Search for anything..."
-              variant="transparent"
-              rounded custom-class="px-2"
-            />
-          </div>
-        </UiNavbarItem>
-      </UiNavbarNav>
-      <UiNavbarNav position="start">
-        <UiNavbarItem>
-          <UiBadge
-            text="ADMIN" variant="outline" custom-class="my-0" icon-code="&#xef3d;"
-            icon-class="text-gradient gradient-secondary"
+        <UiNavbarItem
+          v-for="link in navLinks"
+          :key="link.id"
+        >
+          <UiNavbarLink
+            :href="link.href"
+            :text="link.label"
+            :aria-label="link.ariaLabel"
           />
         </UiNavbarItem>
         <UiNavbarItem>
-          <UiNavbarAvatar
-            v-if="user"
-            :src="user.photoURL"
-            :alt="`${user.displayName} photo`"
-            size="navbar"
-            @click="toggleUserMenu"
-          />
+          <ClientOnly>
+            <UiButtonTooltip
+              id="color-mode-toggle"
+              icon
+              :tooltip-text="colorModeLabel"
+              :aria-label="colorModeLabel"
+              @on-click="cycleColorMode"
+            >
+              <template #icon>
+                <UiIconMaterial :icon-code="colorModeIcon" />
+              </template>
+            </UiButtonTooltip>
+          </ClientOnly>
         </UiNavbarItem>
       </UiNavbarNav>
     </UiNavbarCollapse>
-
-    <!-- Popover Menu -->
-    <UiPopoverMenu
-      :user="user"
-      :is-opened="isMenuActive"
-      :menu-items="menuItems"
-      :current-route="route"
-      @hide-dropdown="isMenuActive = false"
-      @menu-item-click="handleMenuItemClick"
-    >
-      <template #body-extra>
-        <hr>
-        <ClientOnly>
-          <LazyIncludeColorModePicker />
-        </ClientOnly>
-      </template>
-      <template #footer>
-        <UiButton
-          variant="outline"
-          text="Sign out"
-          class="btn-block"
-          @on-click="handleSignOut"
-        >
-          <template #icon>
-            <UiIconMaterial icon-code="&#xe879;" class="text-danger" />
-          </template>
-        </UiButton>
-      </template>
-    </UiPopoverMenu>
-
-    <!-- Toast -->
-    <UiAlertToast ref="toastRef" />
   </UiNavbar>
 </template>

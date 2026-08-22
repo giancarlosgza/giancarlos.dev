@@ -2,7 +2,7 @@
   <div>
     <NuxtPwaAssets />
     <NuxtLoadingIndicator
-      color="repeating-linear-gradient(to right, #8060f6 0%, #382bf0 50%, #3223ae 100%)"
+      color="repeating-linear-gradient(to right, #002662 0%, #22cbff 50%, #ff5622 100%)"
     />
 
     <NuxtLayout>

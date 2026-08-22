@@ -1,36 +1,61 @@
 <script setup lang="ts">
+/** Computed */
+const appVersion = useAppVersion()
+const currentYear = computed<number>(() => new Date().getFullYear())
 </script>
 
 <template>
-  <footer>
-    <div class="container-fluid">
+  <footer class="portfolio-footer">
+    <div class="container">
       <div class="row">
-        <div class="col-md-3 mb-4">
-          <p class="footer-title">
-            Footer
+        <div class="col-12 col-md-4 mb-4">
+          <p class="footer-title mb-2">
+            Giancarlos Garza
           </p>
           <p class="footer-subtitle mb-3">
-            This is the footer subtitle example for the footer component.
+            Front-End Engineer & UI/UX Designer building high-performance interfaces and design systems.
           </p>
+          <ClientOnly>
+            <LazyIncludeColorModePicker :show-labels="false" class="d-inline-flex" />
+          </ClientOnly>
         </div>
-        <div class="col-6 col-md-3 footer-col">
-          <p>Get started</p>
-          <a href="#">CSS</a>
-          <a href="#">Vue</a>
-          <a href="#">Nuxt</a>
+        <div class="col-6 col-md-4 footer-group footer-col">
+          <p>Explore</p>
+          <a href="#work">Work</a>
+          <a href="#approach">Approach</a>
+          <a href="#writing">Experiments</a>
         </div>
-        <div class="col-6 col-md-3 footer-col">
-          <p>Resources</p>
-          <a href="#">Docs</a>
-          <a href="#">GitHub</a>
-          <a href="#">Status</a>
+        <div class="col-6 col-md-4 footer-group footer-col">
+          <p>Connect</p>
+          <a
+            href="mailto:hello@giancarlos.dev"
+            aria-label="Send an email to Giancarlos Garza"
+          >Email</a>
+          <a
+            href="https://github.com/giancarlosgza"
+            target="_blank"
+            rel="noopener noreferrer"
+          >GitHub</a>
+          <a
+            href="https://www.linkedin.com/in/giancarlos-garza-b37897139"
+            target="_blank"
+            rel="noopener noreferrer"
+          >LinkedIn</a>
         </div>
-        <div class="col-6 col-md-3 footer-col">
-          <p>Contact</p>
-          <a href="#">Discord</a>
-          <a href="#">Email</a>
-          <a href="#">Support on Slack</a>
-        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          © {{ currentYear }} Giancarlos Garza — Nuevo Leon, Mexico
+        </p>
+
+        <UiBadge
+          :text="`v${appVersion}`"
+          title="Site version"
+          variant="outline"
+          icon-code="&#xf720;"
+          icon-class="text-accent-fixed"
+        />
       </div>
     </div>
   </footer>

@@ -27,6 +27,7 @@
     "@colorffy/css": "2.0.1",
     "@colorffy/ui": "2.0.1",
     "@material-symbols/font-700": "0.46.0",
+    "@paper-design/shaders": "0.0.80",
     "@vite-pwa/nuxt": "1.1.1",
     "@vueuse/components": "14.4.0",
     "firebase": "12.18.0",

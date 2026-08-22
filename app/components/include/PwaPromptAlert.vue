@@ -55,14 +55,14 @@ const { $pwa } = useNuxtApp()
           <img
             src="@/assets/images/icon.png"
             class="img-fluid img-avatar avatar-navbar img-fit-contain rounded-sm"
-            alt="Logo Nuxt Template Starter"
+            alt="Giancarlos Garza portfolio icon"
           >
           <div class="pwa-content-text-wrapper">
             <p class="subtitle-1">
-              Install Nuxt Starter
+              Install Giancarlos Garza
             </p>
             <p class="subtitle-2">
-              Get our app for a better experience on your device.
+              Add this portfolio to your device for quick access.
             </p>
           </div>
         </div>

@@ -8,12 +8,16 @@ export default defineNuxtConfig({
   },
   nitro: {
     preset: 'node-server',
-    compressPublicAssets: true
+    compressPublicAssets: true,
+    prerender: {
+      routes: ['/'],
+      crawlLinks: true
+    }
   },
 
   runtimeConfig: {
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://test.com',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://giancarlos.dev',
       appVersion: process.env.npm_package_version
     }
   },
@@ -22,20 +26,20 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
     head: {
-      title: 'Starter',
-      titleTemplate: '%s | Nuxt Template Starter',
+      title: 'Giancarlos Garza',
+      titleTemplate: '%s | Giancarlos Garza',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
         {
           name: 'title',
           key: 'title',
-          content: 'Nuxt Template Starter'
+          content: 'Giancarlos Garza — Front-End Engineer & UI/UX Designer'
         },
         {
           name: 'description',
           key: 'description',
-          content: 'Nuxt 3 app starter template for development.'
+          content: 'Front-end engineer and UI/UX designer building high-performance interfaces, design systems and resilient web products with Vue, Nuxt and TypeScript.'
         },
         {
           name: 'theme-color',
@@ -80,8 +84,8 @@ export default defineNuxtConfig({
   // SEO
   site: {
     url: process.env.BASE_URL,
-    name: 'Nuxt Template Starter',
-    description: 'Nuxt 3 app starter template for development.',
+    name: 'Giancarlos Garza',
+    description: 'Front-end engineer and UI/UX designer building high-performance interfaces and design systems.',
     defaultLocal: 'en'
   },
   robots: {
@@ -151,9 +155,9 @@ export default defineNuxtConfig({
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
-      name: 'Nuxt Template Starter',
-      short_name: 'Nuxt Starter',
-      description: 'Nuxt 3 app starter template for development.',
+      name: 'Giancarlos Garza — Front-End Engineer',
+      short_name: 'Giancarlos',
+      description: 'Front-end engineer and UI/UX designer building high-performance interfaces and design systems.',
       display: 'standalone',
       start_url: '/?standalone=true',
       background_color: '#f5f4fe',
