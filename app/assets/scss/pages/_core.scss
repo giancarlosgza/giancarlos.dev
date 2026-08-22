@@ -1,0 +1,36 @@
+@use "@colorffy/css/scss/abstracts/variables" as v;
+
+@layer overrides {
+  .pwa-alert-container {
+    --_pwa-alert-padding: .75rem;
+    --_pwa-alert-gap: .75rem;
+  }
+}
+
+@layer pages {
+  .chat-layout {
+    container: ChatLayout / inline-size;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 15rem);
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .chat-container {
+    display: grid;
+    place-self: center;
+    gap: 1.5rem;
+    padding: .5rem;
+    width: 100%;
+    max-width: calc(75cqw - 25%);
+    border: 2px solid var(--theme-outline-surface);
+    background: var(--theme-surface-body-pane);
+    border-radius: v.$rounded-xl;
+
+    @container ChatLayout (width <=900px) {
+      max-width: calc(85cqw);
+    }
+  }
+}

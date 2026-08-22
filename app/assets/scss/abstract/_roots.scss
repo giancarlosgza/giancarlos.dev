@@ -1,0 +1,31 @@
+@use '@colorffy/css/scss/main';
+
+@layer abstracts.tokens {
+  :root {
+    // Brand
+    --color-brand-primary-500: #002662;
+    --color-brand-primary-50: #c4dbff;
+    --color-brand-secondary-500: #22cbff;
+    --color-brand-secondary-50: #90deff;
+    --color-brand-accent-500: #ff5622;
+    --color-brand-accent-50: #ffa47f;
+
+    // On background colors
+    --theme-on-secondary: var(--color-brand-black-500);
+    --theme-on-secondary-inverse: var(--color-brand-white-500);
+    --theme-on-accent: var(--color-brand-black-500);
+    --theme-on-accent-inverse: var(--color-brand-white-500);
+
+    --font-primary: 'Plus Jakarta Sans', sans-serif;
+    --font-secondary: 'Mona Sans', sans-serif;
+    --font-code: 'DM Mono', monospace;
+  }
+
+  .dark-mode {
+    // On background colors
+    --theme-on-secondary: var(--color-brand-black-500);
+    --theme-on-secondary-inverse: var(--color-brand-white-500);
+    --theme-on-accent: var(--color-brand-black-500);
+    --theme-on-accent-inverse: var(--color-brand-white-500);
+  }
+}
