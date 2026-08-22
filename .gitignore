@@ -25,4 +25,7 @@ logs
 
 # Compiled css files
 css
-docs/
+docs
+
+# Firebase hosting deploy cache
+.firebase

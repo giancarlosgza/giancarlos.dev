@@ -84,10 +84,10 @@ export default defineNuxtConfig({
 
   // SEO
   site: {
-    url: process.env.BASE_URL,
+    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://giancarlos.dev',
     name: 'Giancarlos Garza',
     description: 'Front-end engineer and UI/UX designer building high-performance interfaces and design systems.',
-    defaultLocal: 'en'
+    defaultLocale: 'en'
   },
   robots: {
     sitemap: '/sitemap.xml'
