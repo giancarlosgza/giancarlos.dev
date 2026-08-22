@@ -10,8 +10,13 @@ import {
 /** Data */
 const { t } = useI18n()
 const activeProjectId = ref(projects[0]?.id ?? '')
-const colorMode = useColorMode()
-const meshBase = computed(() => (colorMode.value === 'dark' ? '#15151c' : '#ffffff'))
+const activeExperimentId = ref(experiments[0]?.id ?? '')
+
+// Blooms mount only after the expand motion settles, so the WebGL canvas
+// never competes with the layout animation for frame time.
+const { colorMode, meshBase, tokenPalettes: experimentMeshColors } = useMeshGradient(experiments)
+const settledProjectId = useSettledValue(activeProjectId, '')
+const settledExperimentId = useSettledValue(activeExperimentId, '')
 
 /** Meta */
 definePageMeta({
@@ -122,7 +127,7 @@ useSeoMeta({
           >
             <ClientOnly>
               <div
-                v-if="project.id === activeProjectId"
+                v-if="project.id === settledProjectId"
                 class="project-bloom"
                 aria-hidden="true"
               >
@@ -146,10 +151,7 @@ useSeoMeta({
                 <span class="project-name">{{ project.name }}</span>
                 <span class="project-tagline">{{ t(project.tagline) }}</span>
               </span>
-              <span
-                v-show="project.id !== activeProjectId"
-                class="summary-metrics"
-              >
+              <span class="summary-metrics">
                 <span
                   v-for="metric in project.metrics"
                   :key="metric.label"
@@ -161,7 +163,6 @@ useSeoMeta({
             </button>
 
             <div
-              v-show="project.id === activeProjectId"
               :id="`project-panel-${project.id}`"
               class="project-row-panel"
               role="region"
@@ -302,34 +303,67 @@ useSeoMeta({
           </div>
         </header>
 
-        <UiListGroup variant="flush">
-          <UiListItem
+        <div class="experiment-carousel">
+          <article
             v-for="experiment in experiments"
             :key="experiment.id"
-            :title="experiment.title"
-            :text="t(experiment.text)"
-            :icon="experiment.icon"
-            :href="experiment.href"
-            :aria-label="t('experimentsSection.openAria', { title: experiment.title, label: experiment.linkLabel })"
-            custom-icon-wrapper-class="bg-success-fixed"
-            has-actions
+            class="experiment-slide"
+            :class="{ 'is-active': experiment.id === activeExperimentId }"
+            :style="{ '--slide-tint': `var(${experiment.tintVar})` }"
           >
-            <template #list-action>
-              <UiButtonTooltip
-                :id="`experiment-link-${experiment.id}`"
-                variant="text"
-                custom-class="text-neutral m-0"
-                icon
-                :href="experiment.href"
-                :tooltip-text="experiment.linkLabel"
+            <ClientOnly>
+              <div
+                v-if="experiment.id === settledExperimentId && experimentMeshColors[experiment.id]"
+                class="project-bloom"
+                aria-hidden="true"
               >
-                <template #icon>
-                  <UiIconMaterial icon-code="&#xe89e;" />
-                </template>
-              </UiButtonTooltip>
-            </template>
-          </UiListItem>
-        </UiListGroup>
+                <AppStaticMeshGradient
+                  :key="`${experiment.id}-${experimentMeshColors[experiment.id]?.join()}`"
+                  :colors="experimentMeshColors[experiment.id]"
+                />
+              </div>
+            </ClientOnly>
+
+            <button
+              type="button"
+              class="experiment-rail"
+              :aria-expanded="experiment.id === activeExperimentId"
+              :aria-controls="`experiment-panel-${experiment.id}`"
+              :aria-label="t('experimentsSection.expandAria', { title: experiment.title })"
+              @click="activeExperimentId = experiment.id"
+            >
+              <UiIconMaterial :icon-code="experiment.icon" :size="20" />
+              <span class="experiment-rail-title">{{ experiment.title }}</span>
+            </button>
+
+            <div
+              :id="`experiment-panel-${experiment.id}`"
+              class="experiment-panel"
+            >
+              <span class="experiment-chip">
+                <UiIconMaterial :icon-code="experiment.icon" :size="20" />
+              </span>
+              <h3 class="experiment-title">
+                {{ experiment.title }}
+              </h3>
+              <p class="experiment-text">
+                {{ t(experiment.text) }}
+              </p>
+              <div class="d-inline-flex mt-auto">
+                <a
+                  :href="experiment.href"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-link"
+                  :aria-label="t('experimentsSection.openAria', { title: experiment.title, label: experiment.linkLabel })"
+                >
+                  {{ experiment.linkLabel }}
+                  <UiIconMaterial icon-code="&#xf1e1;" class="fs-sm-100" />
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -359,7 +393,7 @@ useSeoMeta({
             <p class="contact-text">
               {{ t('contact.text') }}
             </p>
-            <UiButtonGroup>
+            <UiButtonGroup class="justify-content-center">
               <UiButton
                 variant="filled"
                 color="primary"

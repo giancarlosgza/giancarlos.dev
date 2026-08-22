@@ -34,12 +34,12 @@ export default defineNuxtConfig({
         {
           name: 'title',
           key: 'title',
-          content: 'Giancarlos Garza — Front-End Engineer & UI/UX Designer'
+          content: 'Giancarlos Garza · Front-End Engineer & UI/UX Designer'
         },
         {
           name: 'description',
           key: 'description',
-          content: 'Front-end engineer and UI/UX designer building high-performance interfaces, design systems and resilient web products with Vue, Nuxt and TypeScript.'
+          content: 'Front-end engineer and UI/UX designer building high-performance interfaces, design systems and dependable web products with Vue, Nuxt and TypeScript.'
         },
         {
           name: 'theme-color',
@@ -172,7 +172,7 @@ export default defineNuxtConfig({
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
-      name: 'Giancarlos Garza — Front-End Engineer',
+      name: 'Giancarlos Garza · Front-End Engineer',
       short_name: 'Giancarlos',
       description: 'Front-end engineer and UI/UX designer building high-performance interfaces and design systems.',
       display: 'standalone',

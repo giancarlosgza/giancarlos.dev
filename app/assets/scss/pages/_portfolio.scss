@@ -30,7 +30,7 @@
     }
 
     .hero-title {
-      max-width: 24ch;
+      max-width: 30ch;
       font-size: clamp(2rem, 3.5vw + 0.75rem, 3.25rem);
       line-height: 1.08;
       letter-spacing: -0.02em;
@@ -104,28 +104,53 @@
 
   .project-row {
     position: relative;
-
-    &:not(.is-active) {
-      border-bottom: 1px solid var(--theme-outline-surface);
-    }
+    overflow: hidden;
+    contain: paint;
+    border: 1px solid transparent;
+    border-bottom-color: var(--theme-outline-surface);
+    transition:
+      margin var(--motion-duration-lg) var(--motion-emphasized),
+      border-radius var(--motion-duration-lg) var(--motion-emphasized),
+      border-color 320ms ease,
+      background-color 320ms ease,
+      box-shadow var(--motion-duration-lg) ease;
 
     &.is-active {
-      overflow: hidden;
       margin-block: 0.5rem;
-      border: 1px solid var(--theme-outline-surface);
+      border-color: var(--theme-outline-surface);
       border-radius: v.$rounded-xl;
       background: var(--theme-surface-body-pane);
       box-shadow: 0 20px 50px rgb(10 10 10 / 6%);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
     }
   }
 
   .project-bloom {
     position: absolute;
-    inset: auto 0 0;
-    height: 58%;
+    inset: auto auto 0 0;
+    inline-size: min(80rem, 100vw);
+    block-size: 18rem;
+
+    .experiment-slide & {
+      block-size: 13rem;
+    }
     pointer-events: none;
     opacity: 0.55;
     mask-image: linear-gradient(to bottom, transparent, #000000 55%);
+    animation: bloom-in 600ms ease;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+
+  @keyframes bloom-in {
+    from {
+      opacity: 0;
+    }
   }
 
   .dark-mode .project-bloom {
@@ -148,6 +173,7 @@
     gap: 1rem;
     align-items: baseline;
     padding: 1.75rem 2rem;
+    transition: padding var(--motion-duration-lg) var(--motion-emphasized);
 
     &:focus-visible {
       outline: 2px solid var(--theme-secondary-a10);
@@ -208,6 +234,12 @@
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
+    transition: opacity 240ms ease, visibility 240ms;
+
+    .is-active & {
+      opacity: 0;
+      visibility: hidden;
+    }
 
     @media (width <= 900px) {
       display: none;
@@ -230,24 +262,37 @@
     display: flex;
     flex-direction: column;
     gap: 1.125rem;
+    block-size: auto;
+    overflow: hidden;
     padding: 1rem 2.25rem 2.25rem;
-    animation: project-panel-in 240ms ease;
+    transition:
+      block-size var(--motion-duration-lg) var(--motion-emphasized),
+      padding var(--motion-duration-lg) var(--motion-emphasized),
+      opacity 320ms ease 120ms,
+      visibility var(--motion-duration-lg);
+
+    .project-row:not(.is-active) & {
+      block-size: 0;
+      padding-block: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        block-size var(--motion-duration-lg) var(--motion-emphasized),
+        padding var(--motion-duration-lg) var(--motion-emphasized),
+        opacity 200ms ease,
+        visibility var(--motion-duration-lg);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
 
     @media (width <= 900px) {
       padding: 1rem 1.5rem 1.75rem;
-    }
-  }
 
-  @keyframes project-panel-in {
-    from {
-      opacity: 0;
-      transform: translateY(6px);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .project-row-panel {
-      animation: none;
+      .project-row:not(.is-active) & {
+        padding-block: 0;
+      }
     }
   }
 
@@ -455,6 +500,188 @@
     color: var(--theme-on-background);
     line-height: 1.7;
     font-size: var(--fs-sm-500, 0.9375rem);
+  }
+
+  // Experiments carousel (M3 hero style)
+  .experiment-carousel {
+    display: flex;
+    gap: 0.75rem;
+    min-height: 340px;
+
+    @media (width <= 900px) {
+      flex-direction: column;
+      min-height: 0;
+    }
+  }
+
+  .experiment-slide {
+    position: relative;
+    overflow: hidden;
+    contain: paint;
+    display: flex;
+    min-width: 0;
+    flex: 0 1 5.5rem;
+    border: 1px solid var(--theme-outline-surface);
+    border-radius: v.$rounded-xl;
+    background: var(--theme-surface-body-pane);
+    transition: flex-grow var(--motion-duration-lg) var(--motion-emphasized), box-shadow var(--motion-duration-lg) ease;
+
+    &.is-active {
+      flex: 1 1 5.5rem;
+      box-shadow: 0 20px 50px rgb(10 10 10 / 6%);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+
+    @media (width <= 900px) {
+      flex-direction: column;
+      flex: 0 0 auto;
+
+      &.is-active {
+        flex: 0 0 auto;
+      }
+    }
+  }
+
+  .experiment-rail {
+    appearance: none;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    color: var(--theme-muted-a10);
+    transition: color 160ms ease, background-color 160ms ease, opacity 240ms ease, visibility var(--motion-duration-lg);
+
+    .is-active & {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--slide-tint, var(--theme-on-background));
+        background: var(--theme-surface-container-low, transparent);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--theme-secondary-a10);
+      outline-offset: -2px;
+      border-radius: inherit;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+
+    @media (width <= 900px) {
+      position: static;
+      flex: 0 0 auto;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 0.75rem;
+      block-size: auto;
+      overflow: hidden;
+      padding: 1.125rem 1.5rem;
+      transition:
+        block-size var(--motion-duration-lg) var(--motion-emphasized),
+        padding var(--motion-duration-lg) var(--motion-emphasized),
+        opacity 240ms ease,
+        visibility var(--motion-duration-lg);
+
+      .is-active & {
+        block-size: 0;
+        padding-block: 0;
+      }
+    }
+  }
+
+  .experiment-rail-title {
+    writing-mode: vertical-rl;
+    font-family: var(--font-code);
+    font-size: var(--fs-sm-400);
+    letter-spacing: 0.06em;
+
+    @media (width <= 900px) {
+      writing-mode: horizontal-tb;
+    }
+  }
+
+  .experiment-panel {
+    position: relative;
+    flex: 1 1 auto;
+    min-inline-size: 26rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 280ms ease 140ms, visibility var(--motion-duration-lg);
+
+    .is-active & {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+
+    @media (width <= 900px) {
+      min-inline-size: 0;
+      flex: 0 0 auto;
+      block-size: 0;
+      overflow: hidden;
+      padding-block: 0;
+      transition:
+        block-size var(--motion-duration-lg) var(--motion-emphasized),
+        padding var(--motion-duration-lg) var(--motion-emphasized),
+        opacity 280ms ease 140ms,
+        visibility var(--motion-duration-lg);
+
+      .is-active & {
+        block-size: auto;
+        padding: 1.5rem;
+      }
+    }
+  }
+
+  .experiment-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: v.$rounded-md;
+    background: var(--slide-tint, var(--theme-secondary-a10));
+    color: var(--theme-surface-body-pane);
+  }
+
+  .experiment-title {
+    margin: 0;
+    font-size: 1.375rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--theme-on-background);
+  }
+
+  .experiment-text {
+    margin: 0;
+    max-width: 52ch;
+    line-height: 1.65;
+    color: var(--theme-muted-a10);
   }
 
   // Contact

@@ -13,15 +13,15 @@
   "hero": {
     "badge": "Disponible para proyectos selectos",
     "title": "Interfaces de alto rendimiento y sistemas de diseño, construidos con código y precisión visual.",
-    "lead": "Soy {name} — ingeniero front-end y diseñador UI/UX que crea productos web minimalistas y resilientes con Vue, Nuxt y TypeScript. Actualmente trabajo de forma independiente en productos SaaS y plataformas para clientes. Antes de eso, pasé tres años en el Gobierno Municipal de Monterrey, diseñando y construyendo software administrativo y sistemas de reportes predictivos.",
+    "lead": "Soy {name}, ingeniero front-end y diseñador UI/UX. Construyo productos web minimalistas y confiables con Vue, Nuxt y TypeScript. Hoy trabajo por mi cuenta en productos SaaS y plataformas para clientes. Antes pasé tres años en gobierno municipal, construyendo software administrativo y sistemas de reportes predictivos.",
     "cta": "Contáctame",
     "ctaAria": "Enviar un correo a Giancarlos Garza",
     "metaLocation": "Nuevo León, México",
     "metaExperience": "7+ años lanzando productos web"
   },
   "work": {
-    "title": "Trabajo Seleccionado",
-    "subtitle": "Productos y plataformas donde fui responsable del front-end — medidos por su uso, no por promesas.",
+    "title": "Trabajo",
+    "subtitle": "Productos y plataformas donde fui responsable del front-end, respaldados por números de uso reales.",
     "visitAria": "Visitar {name} en {label}"
   },
   "approach": {
@@ -30,13 +30,14 @@
   },
   "experimentsSection": {
     "title": "Experimentos",
-    "subtitle": "Librerías y herramientas open source que diseño, construyo y mantengo — libres para que cualquiera las instale.",
-    "openAria": "Abrir {title} en {label}"
+    "subtitle": "Librerías y herramientas open source que diseño, construyo y mantengo. Cualquiera puede instalarlas.",
+    "openAria": "Abrir {title} en {label}",
+    "expandAria": "Mostrar detalles de {title}"
   },
   "contact": {
     "badge": "Contacto",
     "title": "Construyamos algo rápido.",
-    "text": "Acepto proyectos selectos de producto y front-end: sistemas de diseño, optimización de rendimiento y aplicaciones web resilientes. La forma más rápida de contactarme es por correo.",
+    "text": "Tomo pocos proyectos de producto y front-end a la vez: sistemas de diseño, optimización de rendimiento y aplicaciones web completas. La forma más rápida de contactarme es por correo.",
     "emailAria": "Enviar un correo a Giancarlos Garza",
     "githubAria": "Abrir el perfil de GitHub de Giancarlos Garza",
     "linkedinAria": "Abrir el perfil de LinkedIn de Giancarlos Garza"
@@ -47,7 +48,7 @@
     "connect": "Conecta",
     "email": "Correo",
     "emailAria": "Enviar un correo a Giancarlos Garza",
-    "copyright": "© {year} Giancarlos Garza — Nuevo León, México",
+    "copyright": "© {year} Giancarlos Garza · Nuevo León, México",
     "versionTitle": "Versión del sitio"
   },
   "colorMode": {
@@ -62,7 +63,7 @@
   "seo": {
     "title": "Ingeniero Front-End y Diseñador UI/UX",
     "description": "Giancarlos Garza construye interfaces de alto rendimiento, plataformas offline-first y sistemas de diseño con Vue, Nuxt y TypeScript.",
-    "ogTitle": "Giancarlos Garza — Ingeniero Front-End y Diseñador UI/UX",
+    "ogTitle": "Giancarlos Garza · Ingeniero Front-End y Diseñador UI/UX",
     "ogDescription": "Interfaces de alto rendimiento, plataformas offline-first y sistemas de diseño construidos con Vue, Nuxt y TypeScript."
   },
   "projects": {
@@ -84,7 +85,7 @@
     "p03": {
       "tagline": "Plataforma de logística y rastreo de flotillas en tiempo real",
       "role": "Ingeniero Front-End",
-      "description": "Una aplicación de telemetría en vivo que muestra la ubicación y el estado operativo de los vehículos en mapas, actualizada continuamente sin comprometer el rendimiento del navegador.",
+      "description": "Una aplicación de telemetría en vivo que muestra la ubicación y el estado operativo de los vehículos en mapas, y se actualiza continuamente mientras el navegador se mantiene fluido.",
       "m1": "puntos GPS simultáneos",
       "m2": "actualización de telemetría"
     },
@@ -106,7 +107,7 @@
   "principles": {
     "performance": {
       "title": "El rendimiento como funcionalidad",
-      "text": "Las interfaces rápidas se diseñan, no se parchan. SSR ligero, presupuestos medidos y Core Web Vitals guían cada decisión de construcción."
+      "text": "La velocidad se planea desde el primer commit. SSR ligero, presupuestos de rendimiento y Core Web Vitals guían cada decisión de construcción."
     },
     "systems": {
       "title": "Sistemas antes que pantallas",
@@ -114,7 +115,7 @@
     },
     "designInCode": {
       "title": "Diseño en código",
-      "text": "Las decisiones de UI/UX viven donde se publican: HTML semántico, estados reales y movimiento en el navegador — no mockups estáticos."
+      "text": "Las decisiones de UI/UX viven donde se publican: HTML semántico, estados reales y movimiento en el navegador en lugar de mockups estáticos."
     }
   },
   "stack": {

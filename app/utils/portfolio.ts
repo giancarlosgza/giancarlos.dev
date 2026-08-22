@@ -45,6 +45,8 @@ export interface IExperiment {
   href: string
   linkLabel: string
   icon: string
+  /** Theme token driving the slide tint and mesh bloom (resolved at runtime). */
+  tintVar: string
 }
 
 /** Data */
@@ -168,7 +170,8 @@ export const experiments: IExperiment[] = [
     text: 'experiments.colorffyUi.text',
     href: 'https://www.npmjs.com/package/@colorffy/ui',
     linkLabel: 'npm',
-    icon: '&#xf720;'
+    icon: '&#xf720;',
+    tintVar: '--theme-info-a10'
   },
   {
     id: 'colorffy-css',
@@ -176,7 +179,8 @@ export const experiments: IExperiment[] = [
     text: 'experiments.colorffyCss.text',
     href: 'https://www.npmjs.com/package/@colorffy/css',
     linkLabel: 'npm',
-    icon: '&#xe40a;'
+    icon: '&#xe40a;',
+    tintVar: '--theme-accent-a10'
   },
   {
     id: 'colorffy-workspace',
@@ -184,7 +188,8 @@ export const experiments: IExperiment[] = [
     text: 'experiments.colorffyWorkspace.text',
     href: 'https://github.com/giancarlosgza/colorffy-workspace',
     linkLabel: 'GitHub',
-    icon: '&#xe86f;'
+    icon: '&#xe86f;',
+    tintVar: '--theme-success-a10'
   }
 ]
 

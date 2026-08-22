@@ -2,6 +2,13 @@
 
 @layer abstracts.tokens {
   :root {
+    // Allow transitions to/from intrinsic sizes (height: auto) — progressive enhancement
+    interpolate-size: allow-keywords;
+
+    // Motion
+    --motion-emphasized: cubic-bezier(0.2, 0, 0, 1);
+    --motion-duration-lg: 480ms;
+
     // Brand
     --color-brand-primary-500: #000000;
     --color-brand-primary-50: #ffffff;

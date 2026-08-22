@@ -5,6 +5,10 @@
     --_pwa-alert-padding: .75rem;
     --_pwa-alert-gap: .75rem;
   }
+
+  ::selection {
+    background: color-mix(in srgb, var(--theme-secondary-base-fixed), transparent 65%);
+  }
 }
 
 @layer pages {

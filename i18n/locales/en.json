@@ -13,15 +13,15 @@
   "hero": {
     "badge": "Available for select projects",
     "title": "High-performance interfaces & design systems, built with code and visual precision.",
-    "lead": "I'm {name} — a front-end engineer and UI/UX designer crafting minimal, resilient web products with Vue, Nuxt and TypeScript. I currently work independently on SaaS products and client platforms. Before that, I spent three years at the Municipal Government of Monterrey, designing and building administrative software and predictive reporting systems.",
+    "lead": "I'm {name}, a front-end engineer and UI/UX designer. I build minimal, dependable web products with Vue, Nuxt and TypeScript. These days I work independently on SaaS products and client platforms. Before that I spent three years at the municipal government, building administrative software and predictive reporting systems.",
     "cta": "Get in touch",
     "ctaAria": "Send an email to Giancarlos Garza",
-    "metaLocation": "Nuevo Leon, Mexico",
+    "metaLocation": "Nuevo León, México",
     "metaExperience": "7+ years shipping web products"
   },
   "work": {
-    "title": "Selected Work",
-    "subtitle": "Products and platforms where I owned the front end — measured by usage, not claims.",
+    "title": "Work",
+    "subtitle": "Products and platforms where I owned the front end, backed by real usage numbers.",
     "visitAria": "Visit {name} at {label}"
   },
   "approach": {
@@ -30,13 +30,14 @@
   },
   "experimentsSection": {
     "title": "Experiments",
-    "subtitle": "Open-source libraries and tools I design, build and maintain — free for anyone to install.",
-    "openAria": "Open {title} on {label}"
+    "subtitle": "Open-source libraries and tools I design, build and maintain. Anyone can install them.",
+    "openAria": "Open {title} on {label}",
+    "expandAria": "Show details for {title}"
   },
   "contact": {
     "badge": "Contact",
     "title": "Let's build something fast.",
-    "text": "I take on selected product and front-end engagements — design systems, performance work and resilient web apps. The fastest way to reach me is email.",
+    "text": "I take on a few product and front-end projects at a time: design systems, performance tuning and full web apps. The fastest way to reach me is email.",
     "emailAria": "Send an email to Giancarlos Garza",
     "githubAria": "Open Giancarlos Garza's GitHub profile",
     "linkedinAria": "Open Giancarlos Garza's LinkedIn profile"
@@ -47,7 +48,7 @@
     "connect": "Connect",
     "email": "Email",
     "emailAria": "Send an email to Giancarlos Garza",
-    "copyright": "© {year} Giancarlos Garza — Nuevo Leon, Mexico",
+    "copyright": "© {year} Giancarlos Garza · Nuevo León, México",
     "versionTitle": "Site version"
   },
   "colorMode": {
@@ -62,7 +63,7 @@
   "seo": {
     "title": "Front-End Engineer & UI/UX Designer",
     "description": "Giancarlos Garza builds high-performance interfaces, offline-first platforms and design systems with Vue, Nuxt and TypeScript.",
-    "ogTitle": "Giancarlos Garza — Front-End Engineer & UI/UX Designer",
+    "ogTitle": "Giancarlos Garza · Front-End Engineer & UI/UX Designer",
     "ogDescription": "High-performance interfaces, offline-first platforms and design systems built with Vue, Nuxt and TypeScript."
   },
   "projects": {
@@ -77,14 +78,14 @@
     "p02": {
       "tagline": "Offline-first corporate food management kiosk",
       "role": "Lead Front-End Engineer & System Architect",
-      "description": "A high-throughput kiosk platform with offline-first architecture, multi-tenant support and shift-based access, designed for touch-first operational speed.",
+      "description": "A high-throughput kiosk platform with offline-first architecture, multi-tenant support and shift-based access, built for fast operation on touch screens.",
       "m1": "monthly transactions",
       "m2": "check-in time"
     },
     "p03": {
       "tagline": "Real-time logistics & fleet tracking platform",
       "role": "Front-End Engineer",
-      "description": "A live telematics application rendering vehicle locations and operational status on maps, refreshed continuously without compromising browser performance.",
+      "description": "A live telematics application that renders vehicle locations and operational status on maps, refreshing continuously while the browser stays responsive.",
       "m1": "simultaneous GPS points",
       "m2": "telemetry refresh"
     },
@@ -106,7 +107,7 @@
   "principles": {
     "performance": {
       "title": "Performance as a feature",
-      "text": "Fast interfaces are designed, not patched. Lean SSR, measured budgets and Core Web Vitals guide every build decision."
+      "text": "Speed gets planned from the first commit. Lean SSR, performance budgets and Core Web Vitals guide every build decision."
     },
     "systems": {
       "title": "Systems over screens",
@@ -114,7 +115,7 @@
     },
     "designInCode": {
       "title": "Design in code",
-      "text": "UI/UX decisions live where they ship: semantic HTML, real states and motion in the browser — not static mockups."
+      "text": "UI/UX decisions live where they ship: semantic HTML, real states and motion in the browser instead of static mockups."
     }
   },
   "stack": {
