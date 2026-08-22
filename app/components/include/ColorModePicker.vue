@@ -15,27 +15,30 @@ const { showLabels = true } = defineProps<IColorModeProps>()
 
 /** Data */
 const { $colorMode } = useNuxtApp()
+const { t } = useI18n()
 const activeMode = ref($colorMode.preference)
-const colorModes: IColorModeOption[] = [
+
+/** Computed */
+const colorModes = computed<IColorModeOption[]>(() => [
   {
     id: 'system',
-    label: 'System',
+    label: t('colorMode.system'),
     icon: '&#xe31e;',
-    description: 'Follow system preference'
+    description: t('colorMode.systemDescription')
   },
   {
     id: 'light',
-    label: 'Light',
+    label: t('colorMode.light'),
     icon: '&#xe518;',
-    description: 'Light theme'
+    description: t('colorMode.lightDescription')
   },
   {
     id: 'dark',
-    label: 'Dark',
+    label: t('colorMode.dark'),
     icon: '&#xe51c;',
-    description: 'Dark theme'
+    description: t('colorMode.darkDescription')
   }
-]
+])
 
 /** Methods */
 function selectColorMode(mode: string) {
@@ -62,7 +65,7 @@ watch(() => $colorMode.preference, (newMode) => {
         tabindex="0"
         class="theme-switcher-button cursor-pointer"
         :class="[{ active: activeMode === mode.id }, `theme-${mode.id}`]"
-        :aria-label="`Switch to ${mode.label} theme - ${mode.description}`"
+        :aria-label="t('colorMode.switchAria', { label: mode.label, description: mode.description })"
         :aria-pressed="activeMode === mode.id"
         @click="selectColorMode(mode.id)"
         @keydown.enter="selectColorMode(mode.id)"

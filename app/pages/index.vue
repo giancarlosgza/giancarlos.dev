@@ -7,17 +7,23 @@ import {
   stackGroups
 } from '~/utils/portfolio'
 
+/** Data */
+const { t } = useI18n()
+const activeProjectId = ref(projects[0]?.id ?? '')
+const colorMode = useColorMode()
+const meshBase = computed(() => (colorMode.value === 'dark' ? '#15151c' : '#ffffff'))
+
 /** Meta */
 definePageMeta({
   pageTitle: 'Giancarlos Garza'
 })
 useSeoMeta({
-  title: 'Front-End Engineer & UI/UX Designer',
-  description: 'Giancarlos Garza builds high-performance interfaces, offline-first platforms and design systems with Vue, Nuxt and TypeScript.',
-  ogTitle: 'Giancarlos Garza — Front-End Engineer & UI/UX Designer',
-  ogDescription: 'High-performance interfaces, offline-first platforms and design systems built with Vue, Nuxt and TypeScript.',
-  twitterTitle: 'Giancarlos Garza — Front-End Engineer & UI/UX Designer',
-  twitterDescription: 'High-performance interfaces, offline-first platforms and design systems built with Vue, Nuxt and TypeScript.',
+  title: () => t('seo.title'),
+  description: () => t('seo.description'),
+  ogTitle: () => t('seo.ogTitle'),
+  ogDescription: () => t('seo.ogDescription'),
+  twitterTitle: () => t('seo.ogTitle'),
+  twitterDescription: () => t('seo.ogDescription'),
   twitterCard: 'summary'
 })
 </script>
@@ -32,7 +38,7 @@ useSeoMeta({
       <div class="container">
         <div class="hero-eyebrow">
           <UiBadge
-            text="Available for select projects"
+            :text="t('hero.badge')"
             variant="tonal tonal-success"
             icon-code="&#xe8e1;"
           />
@@ -42,25 +48,28 @@ useSeoMeta({
           id="hero-title"
           class="hero-title"
         >
-          High-performance interfaces &amp; design systems, built with code and visual precision.
+          {{ t('hero.title') }}
         </h1>
 
-        <p class="hero-lead">
-          I'm <strong>Giancarlos Garza</strong> — a front-end engineer and UI/UX designer crafting
-          minimal, resilient web products with Vue, Nuxt and TypeScript. I currently work independently
-          on SaaS products and client platforms. Before that, I spent three years at the Municipal
-          Government of Monterrey, designing and building administrative software and predictive
-          reporting systems.
-        </p>
+        <i18n-t
+          keypath="hero.lead"
+          tag="p"
+          class="hero-lead"
+          scope="global"
+        >
+          <template #name>
+            <strong>Giancarlos Garza</strong>
+          </template>
+        </i18n-t>
 
         <div class="hero-actions">
           <UiButton
             variant="filled"
             color="primary"
             size="lg"
-            text="Get in touch"
+            :text="t('hero.cta')"
             href="mailto:hello@giancarlos.dev"
-            aria-label="Send an email to Giancarlos Garza"
+            :aria-label="t('hero.ctaAria')"
           >
             <template #icon>
               <UiIconMaterial icon-code="&#xe159;" />
@@ -71,11 +80,11 @@ useSeoMeta({
         <div class="hero-meta">
           <span class="hero-meta-item">
             <UiIconMaterial icon-code="&#xf1db;" :size="18" />
-            Nuevo Leon, Mexico
+            {{ t('hero.metaLocation') }}
           </span>
           <span class="hero-meta-item">
             <UiIconMaterial icon-code="&#xe943;" :size="18" />
-            7+ years shipping web products
+            {{ t('hero.metaExperience') }}
           </span>
         </div>
       </div>
@@ -95,75 +104,118 @@ useSeoMeta({
               id="work-title"
               class="text-heading"
             >
-              Selected Work
+              {{ t('work.title') }}
             </h2>
             <p class="section-sub">
-              Products and platforms where I owned the front end — measured by usage, not claims.
+              {{ t('work.subtitle') }}
             </p>
           </div>
         </header>
 
-        <div class="project-grid">
+        <div class="project-ledger">
           <article
             v-for="project in projects"
             :key="project.id"
-            class="project-card"
+            class="project-row"
+            :class="{ 'is-active': project.id === activeProjectId }"
+            @mouseenter="activeProjectId = project.id"
           >
-            <div class="project-card-head">
-              <span class="project-index">{{ project.id }}</span>
-              <UiBadge
-                :text="project.role"
-                variant="tonal tonal-primary"
-                custom-class="project-role"
-              />
-            </div>
-
-            <h3 class="project-name">
-              {{ project.name }}
-            </h3>
-            <p class="project-tagline">
-              {{ project.tagline }}
-            </p>
-            <p class="project-description">
-              {{ project.description }}
-            </p>
-
-            <dl class="project-metrics">
+            <ClientOnly>
               <div
-                v-for="metric in project.metrics"
-                :key="metric.label"
-                class="project-metric"
+                v-if="project.id === activeProjectId"
+                class="project-bloom"
+                aria-hidden="true"
               >
-                <dt class="project-metric-label">
-                  {{ metric.label }}
-                </dt>
-                <dd class="project-metric-value">
-                  {{ metric.value }}
-                </dd>
-              </div>
-            </dl>
-
-            <div class="project-foot">
-              <div class="project-stack">
-                <UiBadge
-                  v-for="tech in project.stack"
-                  :key="tech"
-                  :text="tech"
-                  variant="outline"
+                <AppStaticMeshGradient
+                  :key="`${project.id}-${colorMode.value}`"
+                  :colors="[meshBase, ...project.meshColors]"
                 />
               </div>
-              <div class="d-inline-flex">
-                <a
-                  v-if="project.href"
-                  :href="project.href"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-link"
-                  :aria-label="`Visit ${project.name} at ${project.linkLabel}`"
+            </ClientOnly>
+
+            <button
+              :id="`project-head-${project.id}`"
+              type="button"
+              class="project-row-head"
+              :aria-expanded="project.id === activeProjectId"
+              :aria-controls="`project-panel-${project.id}`"
+              @click="activeProjectId = project.id"
+            >
+              <span class="project-index">{{ project.id }}</span>
+              <span class="project-heading">
+                <span class="project-name">{{ project.name }}</span>
+                <span class="project-tagline">{{ t(project.tagline) }}</span>
+              </span>
+              <span
+                v-show="project.id !== activeProjectId"
+                class="summary-metrics"
+              >
+                <span
+                  v-for="metric in project.metrics"
+                  :key="metric.label"
+                  class="summary-metric"
                 >
-                  {{ project.linkLabel }}
-                  <UiIconMaterial icon-code="&#xf1e1;" class="fs-sm-100" />
-                </a>
+                  <strong>{{ metric.value }}</strong> {{ t(metric.label) }}
+                </span>
+              </span>
+            </button>
+
+            <div
+              v-show="project.id === activeProjectId"
+              :id="`project-panel-${project.id}`"
+              class="project-row-panel"
+              role="region"
+              :aria-labelledby="`project-head-${project.id}`"
+            >
+              <div class="d-inline-flex">
+                <UiBadge
+                  :text="t(project.role)"
+                  variant="tonal tonal-primary"
+                  custom-class="project-role"
+                />
+              </div>
+
+              <p class="project-description">
+                {{ t(project.description) }}
+              </p>
+
+              <ul class="project-timeline">
+                <li
+                  v-for="metric in project.metrics"
+                  :key="metric.label"
+                  class="project-step"
+                >
+                  <span class="project-step-chip">
+                    <UiIconMaterial :icon-code="metric.icon" :size="18" />
+                  </span>
+                  <span class="project-step-text">
+                    <strong>{{ metric.value }}</strong> {{ t(metric.label) }}
+                  </span>
+                </li>
+              </ul>
+
+              <div class="project-foot">
+                <div class="project-stack">
+                  <UiBadge
+                    v-for="tech in project.stack"
+                    :key="tech"
+                    :text="tech"
+                    variant="outline"
+                  />
+                </div>
+                <div class="d-inline-flex">
+                  <a
+                    v-if="project.href"
+                    :href="project.href"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-link"
+                    :aria-label="t('work.visitAria', { name: project.name, label: project.linkLabel })"
+                  >
+                    {{ project.linkLabel }}
+                    <UiIconMaterial icon-code="&#xf1e1;" class="fs-sm-100" />
+                  </a>
+                </div>
               </div>
             </div>
           </article>
@@ -185,45 +237,43 @@ useSeoMeta({
               id="approach-title"
               class="text-heading"
             >
-              How I Work
+              {{ t('approach.title') }}
             </h2>
             <p class="section-sub">
-              The overlap of front-end engineering, interface design and reusable systems.
+              {{ t('approach.subtitle') }}
             </p>
           </div>
         </header>
 
-        <div class="d-grid grid-repeat-cols-1 grid-repeat-cols-md-3 gap-3 mb-4">
+        <div class="principles-grid">
           <div
-            v-for="principle in principles"
+            v-for="(principle, index) in principles"
             :key="principle.id"
-            class="principle-card"
+            class="principle-item"
           >
-            <UiIconMaterial
-              :icon-code="principle.icon"
-              class="principle-icon"
-            />
+            <span class="principle-numeral" aria-hidden="true">
+              {{ String(index + 1).padStart(2, '0') }}
+            </span>
             <h3 class="principle-title">
-              {{ principle.title }}
+              {{ t(principle.title) }}
             </h3>
             <p class="principle-text">
-              {{ principle.text }}
+              {{ t(principle.text) }}
             </p>
           </div>
         </div>
 
-        <div class="stack-groups">
+        <div class="stack-strip">
           <div
             v-for="group in stackGroups"
             :key="group.id"
-            class="stack-group"
+            class="stack-col"
           >
-            <span class="stack-group-label">
-              <UiIconMaterial :icon-code="group.icon" :size="18" />
-              {{ group.label }}
+            <span class="stack-col-label">
+              {{ t(group.label) }}
             </span>
-            <p class="stack-group-items">
-              {{ group.items }}
+            <p class="stack-col-items">
+              {{ t(group.items) }}
             </p>
           </div>
         </div>
@@ -244,10 +294,10 @@ useSeoMeta({
               id="writing-title"
               class="text-heading"
             >
-              Experiments
+              {{ t('experimentsSection.title') }}
             </h2>
             <p class="section-sub">
-              Open-source libraries and tools I design, build and maintain — free for anyone to install.
+              {{ t('experimentsSection.subtitle') }}
             </p>
           </div>
         </header>
@@ -257,10 +307,10 @@ useSeoMeta({
             v-for="experiment in experiments"
             :key="experiment.id"
             :title="experiment.title"
-            :text="experiment.text"
+            :text="t(experiment.text)"
             :icon="experiment.icon"
             :href="experiment.href"
-            :aria-label="`Open ${experiment.title} on ${experiment.linkLabel}`"
+            :aria-label="t('experimentsSection.openAria', { title: experiment.title, label: experiment.linkLabel })"
             custom-icon-wrapper-class="bg-success-fixed"
             has-actions
           >
@@ -296,7 +346,7 @@ useSeoMeta({
           </ClientOnly>
           <div class="contact-content">
             <UiBadge
-              text="Contact"
+              :text="t('contact.badge')"
               variant="tonal tonal-accent"
               custom-class="mb-3"
             />
@@ -304,11 +354,10 @@ useSeoMeta({
               id="contact-title"
               class="contact-title"
             >
-              Let's build something fast.
+              {{ t('contact.title') }}
             </h2>
             <p class="contact-text">
-              I take on selected product and front-end engagements — design systems, performance
-              work and resilient web apps. The fastest way to reach me is email.
+              {{ t('contact.text') }}
             </p>
             <UiButtonGroup>
               <UiButton
@@ -317,7 +366,7 @@ useSeoMeta({
                 size="lg"
                 text="hello@giancarlos.dev"
                 href="mailto:hello@giancarlos.dev"
-                aria-label="Send an email to Giancarlos Garza"
+                :aria-label="t('contact.emailAria')"
               >
                 <template #icon>
                   <UiIconMaterial icon-code="&#xe159;" />
@@ -328,7 +377,7 @@ useSeoMeta({
                 size="lg"
                 text="GitHub"
                 href="https://github.com/giancarlosgza"
-                aria-label="Open Giancarlos Garza's GitHub profile"
+                :aria-label="t('contact.githubAria')"
               >
                 <template #icon>
                   <UiIconSvg :content="brandIcons.github" :size="20" />
@@ -339,7 +388,7 @@ useSeoMeta({
                 size="lg"
                 text="LinkedIn"
                 href="https://www.linkedin.com/in/giancarlos-garza-b37897139"
-                aria-label="Open Giancarlos Garza's LinkedIn profile"
+                :aria-label="t('contact.linkedinAria')"
               >
                 <template #icon>
                   <UiIconSvg :content="brandIcons.linkedin" :size="20" />

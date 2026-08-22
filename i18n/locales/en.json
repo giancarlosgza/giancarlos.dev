@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "work": "Work",
+    "workAria": "Jump to selected work section",
+    "approach": "Approach",
+    "approachAria": "Jump to approach section",
+    "experiments": "Experiments",
+    "experimentsAria": "Jump to experiments section",
+    "contact": "Contact",
+    "contactAria": "Jump to contact section",
+    "switchLocale": "Switch language to Spanish"
+  },
+  "hero": {
+    "badge": "Available for select projects",
+    "title": "High-performance interfaces & design systems, built with code and visual precision.",
+    "lead": "I'm {name} — a front-end engineer and UI/UX designer crafting minimal, resilient web products with Vue, Nuxt and TypeScript. I currently work independently on SaaS products and client platforms. Before that, I spent three years at the Municipal Government of Monterrey, designing and building administrative software and predictive reporting systems.",
+    "cta": "Get in touch",
+    "ctaAria": "Send an email to Giancarlos Garza",
+    "metaLocation": "Nuevo Leon, Mexico",
+    "metaExperience": "7+ years shipping web products"
+  },
+  "work": {
+    "title": "Selected Work",
+    "subtitle": "Products and platforms where I owned the front end — measured by usage, not claims.",
+    "visitAria": "Visit {name} at {label}"
+  },
+  "approach": {
+    "title": "How I Work",
+    "subtitle": "The overlap of front-end engineering, interface design and reusable systems."
+  },
+  "experimentsSection": {
+    "title": "Experiments",
+    "subtitle": "Open-source libraries and tools I design, build and maintain — free for anyone to install.",
+    "openAria": "Open {title} on {label}"
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Let's build something fast.",
+    "text": "I take on selected product and front-end engagements — design systems, performance work and resilient web apps. The fastest way to reach me is email.",
+    "emailAria": "Send an email to Giancarlos Garza",
+    "githubAria": "Open Giancarlos Garza's GitHub profile",
+    "linkedinAria": "Open Giancarlos Garza's LinkedIn profile"
+  },
+  "footer": {
+    "subtitle": "Front-End Engineer & UI/UX Designer building high-performance interfaces and design systems.",
+    "explore": "Explore",
+    "connect": "Connect",
+    "email": "Email",
+    "emailAria": "Send an email to Giancarlos Garza",
+    "copyright": "© {year} Giancarlos Garza — Nuevo Leon, Mexico",
+    "versionTitle": "Site version"
+  },
+  "colorMode": {
+    "switchAria": "Switch to {label} theme - {description}",
+    "system": "System",
+    "systemDescription": "Follow system preference",
+    "light": "Light",
+    "lightDescription": "Light theme",
+    "dark": "Dark",
+    "darkDescription": "Dark theme"
+  },
+  "seo": {
+    "title": "Front-End Engineer & UI/UX Designer",
+    "description": "Giancarlos Garza builds high-performance interfaces, offline-first platforms and design systems with Vue, Nuxt and TypeScript.",
+    "ogTitle": "Giancarlos Garza — Front-End Engineer & UI/UX Designer",
+    "ogDescription": "High-performance interfaces, offline-first platforms and design systems built with Vue, Nuxt and TypeScript."
+  },
+  "projects": {
+    "p01": {
+      "tagline": "Design SaaS & universal component libraries",
+      "role": "Creator & Lead Engineer",
+      "description": "A web color suite and design platform with client-side color algorithms, real-time contrast tools and its own published npm libraries for UI and CSS.",
+      "m1": "unique visitors / year",
+      "m2": "page views / year",
+      "m3": "published npm libraries"
+    },
+    "p02": {
+      "tagline": "Offline-first corporate food management kiosk",
+      "role": "Lead Front-End Engineer & System Architect",
+      "description": "A high-throughput kiosk platform with offline-first architecture, multi-tenant support and shift-based access, designed for touch-first operational speed.",
+      "m1": "monthly transactions",
+      "m2": "check-in time"
+    },
+    "p03": {
+      "tagline": "Real-time logistics & fleet tracking platform",
+      "role": "Front-End Engineer",
+      "description": "A live telematics application rendering vehicle locations and operational status on maps, refreshed continuously without compromising browser performance.",
+      "m1": "simultaneous GPS points",
+      "m2": "telemetry refresh"
+    },
+    "p04": {
+      "tagline": "Catering management SaaS",
+      "role": "Product Designer & Front-End Developer",
+      "description": "An SSR platform for caterers and hospitality teams with real-time quote generation, booking workflows and responsive layouts for office and on-site work.",
+      "m1": "Status",
+      "m2": "Nuxt 4 architecture"
+    },
+    "p05": {
+      "tagline": "Healthcare operations & clinical ERP web app",
+      "role": "Full-Stack Front-End Developer",
+      "description": "A healthcare management platform for medical clinics covering patient records, clinical scheduling, automated service-charge billing and multi-tier financial approval workflows.",
+      "m1": "installable web app",
+      "m2": "clinical & financial ops"
+    }
+  },
+  "principles": {
+    "performance": {
+      "title": "Performance as a feature",
+      "text": "Fast interfaces are designed, not patched. Lean SSR, measured budgets and Core Web Vitals guide every build decision."
+    },
+    "systems": {
+      "title": "Systems over screens",
+      "text": "Tokens, libraries and reusable patterns replace one-off pages, so products stay consistent and cheap to evolve."
+    },
+    "designInCode": {
+      "title": "Design in code",
+      "text": "UI/UX decisions live where they ship: semantic HTML, real states and motion in the browser — not static mockups."
+    }
+  },
+  "stack": {
+    "frontend": {
+      "label": "Front-End & UI",
+      "items": "Vue 3 · Nuxt 4 · TypeScript · SCSS · Colorffy UI/CSS · Accessibility"
+    },
+    "platform": {
+      "label": "Platform & Data",
+      "items": "Node.js · PostgreSQL · REST APIs · IndexedDB · Offline-first"
+    },
+    "infrastructure": {
+      "label": "Infrastructure",
+      "items": "Docker · Nginx · Linux · Firebase Hosting · CI/CD"
+    }
+  },
+  "experiments": {
+    "colorffyUi": {
+      "text": "Headless Vue 3 component library with 70+ typed components."
+    },
+    "colorffyCss": {
+      "text": "SCSS framework with a tonal color system, utilities and layout grid."
+    },
+    "colorffyWorkspace": {
+      "text": "Open-source monorepo where both libraries are designed and built."
+    }
+  }
+}

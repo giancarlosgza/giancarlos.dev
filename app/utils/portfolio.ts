@@ -1,7 +1,14 @@
-/** Interfaces */
+/**
+ * Interfaces
+ *
+ * Note: `tagline`, `role`, `description`, metric `label`, principle `title`/`text`,
+ * stack group `label`/`items` and experiment `text` hold i18n message keys —
+ * resolve them with `t()`/`$t()` in components. Everything else is literal data.
+ */
 export interface IProjectMetric {
   value: string
   label: string
+  icon: string
 }
 
 export interface IProject {
@@ -11,6 +18,7 @@ export interface IProject {
   role: string
   description: string
   metrics: IProjectMetric[]
+  meshColors: string[]
   stack: string[]
   href?: string
   linkLabel?: string
@@ -44,14 +52,15 @@ export const projects: IProject[] = [
   {
     id: '01',
     name: 'Colorffy',
-    tagline: 'Design SaaS & universal component libraries',
-    role: 'Creator & Lead Engineer',
-    description: 'A web color suite and design platform with client-side color algorithms, real-time contrast tools and its own published npm libraries for UI and CSS.',
+    tagline: 'projects.p01.tagline',
+    role: 'projects.p01.role',
+    description: 'projects.p01.description',
     metrics: [
-      { value: '400K+', label: 'unique visitors / year' },
-      { value: '900K+', label: 'page views / year' },
-      { value: '2', label: 'published npm libraries' }
+      { value: '400K+', label: 'projects.p01.m1', icon: '&#xe7ef;' },
+      { value: '900K+', label: 'projects.p01.m2', icon: '&#xe8f4;' },
+      { value: '2', label: 'projects.p01.m3', icon: '&#xf720;' }
     ],
+    meshColors: ['#223fff', '#9099ff', '#adb4fe'],
     stack: ['Nuxt 4', 'Vue', 'TypeScript', 'Docker', 'Nginx', 'PostgreSQL'],
     href: 'https://colorffy.com',
     linkLabel: 'colorffy.com'
@@ -59,49 +68,53 @@ export const projects: IProject[] = [
   {
     id: '02',
     name: 'ProChef',
-    tagline: 'Offline-first corporate food management kiosk',
-    role: 'Lead Front-End Engineer & System Architect',
-    description: 'A high-throughput kiosk platform with offline-first architecture, multi-tenant support and shift-based access, designed for touch-first operational speed.',
+    tagline: 'projects.p02.tagline',
+    role: 'projects.p02.role',
+    description: 'projects.p02.description',
     metrics: [
-      { value: '10K+', label: 'monthly transactions' },
-      { value: '−80%', label: 'check-in time' }
+      { value: '10K+', label: 'projects.p02.m1', icon: '&#xef6e;' },
+      { value: '−80%', label: 'projects.p02.m2', icon: '&#xe425;' }
     ],
+    meshColors: ['#ff5622', '#ffa47f'],
     stack: ['Vue', 'TypeScript', 'IndexedDB', 'Docker', 'PostgreSQL']
   },
   {
     id: '03',
     name: 'Fleets GPS',
-    tagline: 'Real-time logistics & fleet tracking platform',
-    role: 'Front-End Engineer',
-    description: 'A live telematics application rendering vehicle locations and operational status on maps, refreshed continuously without compromising browser performance.',
+    tagline: 'projects.p03.tagline',
+    role: 'projects.p03.role',
+    description: 'projects.p03.description',
     metrics: [
-      { value: '200+', label: 'simultaneous GPS points' },
-      { value: '5s', label: 'telemetry refresh' }
+      { value: '200+', label: 'projects.p03.m1', icon: '&#xe55c;' },
+      { value: '5s', label: 'projects.p03.m2', icon: '&#xe5d5;' }
     ],
+    meshColors: ['#223fff', '#9099ff'],
     stack: ['Vue', 'TypeScript', 'Realtime APIs', 'Docker']
   },
   {
     id: '04',
     name: 'Cheffy Events',
-    tagline: 'Catering management SaaS',
-    role: 'Product Designer & Front-End Developer',
-    description: 'An SSR platform for caterers and hospitality teams with real-time quote generation, booking workflows and responsive layouts for office and on-site work.',
+    tagline: 'projects.p04.tagline',
+    role: 'projects.p04.role',
+    description: 'projects.p04.description',
     metrics: [
-      { value: 'WIP', label: 'Status' },
-      { value: 'SSR', label: 'Nuxt 4 architecture' }
+      { value: 'WIP', label: 'projects.p04.m1', icon: '&#xea3c;' },
+      { value: 'SSR', label: 'projects.p04.m2', icon: '&#xe53b;' }
     ],
+    meshColors: ['#ff5622', '#ffa47f'],
     stack: ['Nuxt 4', 'TypeScript', 'PostgreSQL']
   },
   {
     id: '05',
     name: 'CEPREP Desk',
-    tagline: 'Healthcare operations & clinical ERP web app',
-    role: 'Full-Stack Front-End Developer',
-    description: 'A healthcare management platform for medical clinics covering patient records, clinical scheduling, automated service-charge billing and multi-tier financial approval workflows.',
+    tagline: 'projects.p05.tagline',
+    role: 'projects.p05.role',
+    description: 'projects.p05.description',
     metrics: [
-      { value: 'PWA', label: 'installable web app' },
-      { value: 'ERP', label: 'clinical & financial ops' }
+      { value: 'PWA', label: 'projects.p05.m1', icon: '&#xe337;' },
+      { value: 'ERP', label: 'projects.p05.m2', icon: '&#xe871;' }
     ],
+    meshColors: ['#223fff', '#9099ff'],
     stack: ['Nuxt', 'Vue', 'Vuex', 'Bootstrap 5', 'SCSS', 'JWT', 'FullCalendar']
   }
 ]
@@ -110,41 +123,41 @@ export const principles: IPrinciple[] = [
   {
     id: 'performance',
     icon: '&#xea0b;',
-    title: 'Performance as a feature',
-    text: 'Fast interfaces are designed, not patched. Lean SSR, measured budgets and Core Web Vitals guide every build decision.'
+    title: 'principles.performance.title',
+    text: 'principles.performance.text'
   },
   {
     id: 'systems',
     icon: '&#xe53b;',
-    title: 'Systems over screens',
-    text: 'Tokens, libraries and reusable patterns replace one-off pages, so products stay consistent and cheap to evolve.'
+    title: 'principles.systems.title',
+    text: 'principles.systems.text'
   },
   {
     id: 'design-in-code',
     icon: '&#xf10a;',
-    title: 'Design in code',
-    text: 'UI/UX decisions live where they ship: semantic HTML, real states and motion in the browser — not static mockups.'
+    title: 'principles.designInCode.title',
+    text: 'principles.designInCode.text'
   }
 ]
 
 export const stackGroups: IStackGroup[] = [
   {
     id: 'frontend',
-    label: 'Front-End & UI',
+    label: 'stack.frontend.label',
     icon: '&#xe86f;',
-    items: 'Vue 3 · Nuxt 4 · TypeScript · SCSS · Colorffy UI/CSS · Accessibility'
+    items: 'stack.frontend.items'
   },
   {
     id: 'platform',
-    label: 'Platform & Data',
+    label: 'stack.platform.label',
     icon: '&#xf20e;',
-    items: 'Node.js · PostgreSQL · REST APIs · IndexedDB · Offline-first'
+    items: 'stack.platform.items'
   },
   {
     id: 'infrastructure',
-    label: 'Infrastructure',
+    label: 'stack.infrastructure.label',
     icon: '&#xf720;',
-    items: 'Docker · Nginx · Linux · Firebase Hosting · CI/CD'
+    items: 'stack.infrastructure.items'
   }
 ]
 
@@ -152,7 +165,7 @@ export const experiments: IExperiment[] = [
   {
     id: 'colorffy-ui',
     title: '@colorffy/ui',
-    text: 'Headless Vue 3 component library with 70+ typed components.',
+    text: 'experiments.colorffyUi.text',
     href: 'https://www.npmjs.com/package/@colorffy/ui',
     linkLabel: 'npm',
     icon: '&#xf720;'
@@ -160,7 +173,7 @@ export const experiments: IExperiment[] = [
   {
     id: 'colorffy-css',
     title: '@colorffy/css',
-    text: 'SCSS framework with a tonal color system, utilities and layout grid.',
+    text: 'experiments.colorffyCss.text',
     href: 'https://www.npmjs.com/package/@colorffy/css',
     linkLabel: 'npm',
     icon: '&#xe40a;'
@@ -168,7 +181,7 @@ export const experiments: IExperiment[] = [
   {
     id: 'colorffy-workspace',
     title: 'Colorffy Workspace',
-    text: 'Open-source monorepo where both libraries are designed and built.',
+    text: 'experiments.colorffyWorkspace.text',
     href: 'https://github.com/giancarlosgza/colorffy-workspace',
     linkLabel: 'GitHub',
     icon: '&#xe86f;'

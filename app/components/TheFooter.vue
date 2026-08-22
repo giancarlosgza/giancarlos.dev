@@ -1,4 +1,7 @@
 <script setup lang="ts">
+/** Data */
+const { t } = useI18n()
+
 /** Computed */
 const appVersion = useAppVersion()
 const currentYear = computed<number>(() => new Date().getFullYear())
@@ -13,24 +16,24 @@ const currentYear = computed<number>(() => new Date().getFullYear())
             Giancarlos Garza
           </p>
           <p class="footer-subtitle mb-3">
-            Front-End Engineer & UI/UX Designer building high-performance interfaces and design systems.
+            {{ t('footer.subtitle') }}
           </p>
           <ClientOnly>
             <LazyIncludeColorModePicker :show-labels="false" class="d-inline-flex" />
           </ClientOnly>
         </div>
         <div class="col-6 col-md-4 footer-group footer-col">
-          <p>Explore</p>
-          <a href="#work">Work</a>
-          <a href="#approach">Approach</a>
-          <a href="#writing">Experiments</a>
+          <p>{{ t('footer.explore') }}</p>
+          <a href="#work">{{ t('nav.work') }}</a>
+          <a href="#approach">{{ t('nav.approach') }}</a>
+          <a href="#writing">{{ t('nav.experiments') }}</a>
         </div>
         <div class="col-6 col-md-4 footer-group footer-col">
-          <p>Connect</p>
+          <p>{{ t('footer.connect') }}</p>
           <a
             href="mailto:hello@giancarlos.dev"
-            aria-label="Send an email to Giancarlos Garza"
-          >Email</a>
+            :aria-label="t('footer.emailAria')"
+          >{{ t('footer.email') }}</a>
           <a
             href="https://github.com/giancarlosgza"
             target="_blank"
@@ -46,12 +49,12 @@ const currentYear = computed<number>(() => new Date().getFullYear())
 
       <div class="footer-bottom">
         <p class="footer-copyright">
-          © {{ currentYear }} Giancarlos Garza — Nuevo Leon, Mexico
+          {{ t('footer.copyright', { year: currentYear }) }}
         </p>
 
         <UiBadge
           :text="`v${appVersion}`"
-          title="Site version"
+          :title="t('footer.versionTitle')"
           variant="outline"
           icon-code="&#xf720;"
           icon-class="text-accent-fixed"

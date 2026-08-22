@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "work": "Trabajo",
+    "workAria": "Ir a la sección de trabajo seleccionado",
+    "approach": "Enfoque",
+    "approachAria": "Ir a la sección de enfoque",
+    "experiments": "Experimentos",
+    "experimentsAria": "Ir a la sección de experimentos",
+    "contact": "Contacto",
+    "contactAria": "Ir a la sección de contacto",
+    "switchLocale": "Cambiar idioma a inglés"
+  },
+  "hero": {
+    "badge": "Disponible para proyectos selectos",
+    "title": "Interfaces de alto rendimiento y sistemas de diseño, construidos con código y precisión visual.",
+    "lead": "Soy {name} — ingeniero front-end y diseñador UI/UX que crea productos web minimalistas y resilientes con Vue, Nuxt y TypeScript. Actualmente trabajo de forma independiente en productos SaaS y plataformas para clientes. Antes de eso, pasé tres años en el Gobierno Municipal de Monterrey, diseñando y construyendo software administrativo y sistemas de reportes predictivos.",
+    "cta": "Contáctame",
+    "ctaAria": "Enviar un correo a Giancarlos Garza",
+    "metaLocation": "Nuevo León, México",
+    "metaExperience": "7+ años lanzando productos web"
+  },
+  "work": {
+    "title": "Trabajo Seleccionado",
+    "subtitle": "Productos y plataformas donde fui responsable del front-end — medidos por su uso, no por promesas.",
+    "visitAria": "Visitar {name} en {label}"
+  },
+  "approach": {
+    "title": "Cómo Trabajo",
+    "subtitle": "La intersección entre ingeniería front-end, diseño de interfaces y sistemas reutilizables."
+  },
+  "experimentsSection": {
+    "title": "Experimentos",
+    "subtitle": "Librerías y herramientas open source que diseño, construyo y mantengo — libres para que cualquiera las instale.",
+    "openAria": "Abrir {title} en {label}"
+  },
+  "contact": {
+    "badge": "Contacto",
+    "title": "Construyamos algo rápido.",
+    "text": "Acepto proyectos selectos de producto y front-end: sistemas de diseño, optimización de rendimiento y aplicaciones web resilientes. La forma más rápida de contactarme es por correo.",
+    "emailAria": "Enviar un correo a Giancarlos Garza",
+    "githubAria": "Abrir el perfil de GitHub de Giancarlos Garza",
+    "linkedinAria": "Abrir el perfil de LinkedIn de Giancarlos Garza"
+  },
+  "footer": {
+    "subtitle": "Ingeniero Front-End y Diseñador UI/UX construyendo interfaces de alto rendimiento y sistemas de diseño.",
+    "explore": "Explora",
+    "connect": "Conecta",
+    "email": "Correo",
+    "emailAria": "Enviar un correo a Giancarlos Garza",
+    "copyright": "© {year} Giancarlos Garza — Nuevo León, México",
+    "versionTitle": "Versión del sitio"
+  },
+  "colorMode": {
+    "switchAria": "Cambiar al tema {label} - {description}",
+    "system": "Sistema",
+    "systemDescription": "Seguir la preferencia del sistema",
+    "light": "Claro",
+    "lightDescription": "Tema claro",
+    "dark": "Oscuro",
+    "darkDescription": "Tema oscuro"
+  },
+  "seo": {
+    "title": "Ingeniero Front-End y Diseñador UI/UX",
+    "description": "Giancarlos Garza construye interfaces de alto rendimiento, plataformas offline-first y sistemas de diseño con Vue, Nuxt y TypeScript.",
+    "ogTitle": "Giancarlos Garza — Ingeniero Front-End y Diseñador UI/UX",
+    "ogDescription": "Interfaces de alto rendimiento, plataformas offline-first y sistemas de diseño construidos con Vue, Nuxt y TypeScript."
+  },
+  "projects": {
+    "p01": {
+      "tagline": "SaaS de diseño y librerías de componentes universales",
+      "role": "Creador e Ingeniero Principal",
+      "description": "Una suite de color web y plataforma de diseño con algoritmos de color del lado del cliente, herramientas de contraste en tiempo real y sus propias librerías npm publicadas para UI y CSS.",
+      "m1": "visitantes únicos / año",
+      "m2": "vistas de página / año",
+      "m3": "librerías npm publicadas"
+    },
+    "p02": {
+      "tagline": "Kiosco offline-first para gestión de comedores corporativos",
+      "role": "Ingeniero Front-End Principal y Arquitecto de Sistema",
+      "description": "Una plataforma de kioscos de alto volumen con arquitectura offline-first, soporte multi-tenant y acceso por turnos, diseñada para operar con rapidez en pantallas táctiles.",
+      "m1": "transacciones mensuales",
+      "m2": "tiempo de check-in"
+    },
+    "p03": {
+      "tagline": "Plataforma de logística y rastreo de flotillas en tiempo real",
+      "role": "Ingeniero Front-End",
+      "description": "Una aplicación de telemetría en vivo que muestra la ubicación y el estado operativo de los vehículos en mapas, actualizada continuamente sin comprometer el rendimiento del navegador.",
+      "m1": "puntos GPS simultáneos",
+      "m2": "actualización de telemetría"
+    },
+    "p04": {
+      "tagline": "SaaS de gestión de catering",
+      "role": "Diseñador de Producto y Desarrollador Front-End",
+      "description": "Una plataforma SSR para servicios de catering y equipos de hospitalidad con generación de cotizaciones en tiempo real, flujos de reservación y diseños responsivos para trabajar en oficina y en sitio.",
+      "m1": "Estado",
+      "m2": "arquitectura Nuxt 4"
+    },
+    "p05": {
+      "tagline": "Aplicación web de operaciones de salud y ERP clínico",
+      "role": "Desarrollador Front-End Full-Stack",
+      "description": "Una plataforma de gestión para clínicas médicas que cubre expedientes de pacientes, agenda clínica, facturación automatizada de cargos por servicio y flujos de aprobación financiera de varios niveles.",
+      "m1": "aplicación web instalable",
+      "m2": "operación clínica y financiera"
+    }
+  },
+  "principles": {
+    "performance": {
+      "title": "El rendimiento como funcionalidad",
+      "text": "Las interfaces rápidas se diseñan, no se parchan. SSR ligero, presupuestos medidos y Core Web Vitals guían cada decisión de construcción."
+    },
+    "systems": {
+      "title": "Sistemas antes que pantallas",
+      "text": "Tokens, librerías y patrones reutilizables reemplazan páginas únicas, para que los productos se mantengan consistentes y fáciles de evolucionar."
+    },
+    "designInCode": {
+      "title": "Diseño en código",
+      "text": "Las decisiones de UI/UX viven donde se publican: HTML semántico, estados reales y movimiento en el navegador — no mockups estáticos."
+    }
+  },
+  "stack": {
+    "frontend": {
+      "label": "Front-End y UI",
+      "items": "Vue 3 · Nuxt 4 · TypeScript · SCSS · Colorffy UI/CSS · Accesibilidad"
+    },
+    "platform": {
+      "label": "Plataforma y Datos",
+      "items": "Node.js · PostgreSQL · REST APIs · IndexedDB · Offline-first"
+    },
+    "infrastructure": {
+      "label": "Infraestructura",
+      "items": "Docker · Nginx · Linux · Firebase Hosting · CI/CD"
+    }
+  },
+  "experiments": {
+    "colorffyUi": {
+      "text": "Librería de componentes headless para Vue 3 con más de 70 componentes tipados."
+    },
+    "colorffyCss": {
+      "text": "Framework SCSS con un sistema de color tonal, utilidades y grid de layout."
+    },
+    "colorffyWorkspace": {
+      "text": "Monorepo open source donde ambas librerías se diseñan y construyen."
+    }
+  }
+}
