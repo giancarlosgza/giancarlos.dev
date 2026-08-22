@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-01-01',
 
   devServer: {
-    port: 3001
+    port: 3029
   },
   nitro: {
     preset: 'node-server',
@@ -73,7 +73,8 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     '@vite-pwa/nuxt',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    'nuxt-vuefire'
   ],
 
   // SEO
@@ -84,6 +85,7 @@ export default defineNuxtConfig({
     defaultLocal: 'en'
   },
   robots: {
+    sitemap: '/sitemap.xml'
   },
   sitemap: {
     experimentalCompression: true,
@@ -99,6 +101,20 @@ export default defineNuxtConfig({
   colorMode: {
     preference: 'system',
     classSuffix: '-mode'
+  },
+
+  // Firebase
+  vuefire: {
+    emulators: {
+      enabled: process.env.NODE_ENV !== 'production'
+    },
+    config: {
+      apiKey: process.env.NUXT_PUBLIC_VUEFIRE_CONFIG_API_KEY || 'placeholder-api-key',
+      authDomain: process.env.NUXT_PUBLIC_VUEFIRE_CONFIG_AUTH_DOMAIN || 'placeholder-auth-domain',
+      projectId: process.env.NUXT_PUBLIC_VUEFIRE_CONFIG_PROJECT_ID || 'placeholder-project-id',
+      storageBucket: process.env.NUXT_PUBLIC_VUEFIRE_CONFIG_STORAGE_BUCKET || 'placeholder-storage-bucket',
+      appId: process.env.NUXT_PUBLIC_VUEFIRE_CONFIG_APP_ID || 'placeholder-app-id'
+    }
   },
 
   // Fonts
