@@ -5,8 +5,8 @@
     // Brand
     --color-brand-primary-500: #000000;
     --color-brand-primary-50: #ffffff;
-    --color-brand-secondary-500: #22cbff;
-    --color-brand-secondary-50: #90deff;
+    --color-brand-secondary-500: #223fff;
+    --color-brand-secondary-50: #9099ff;
     --color-brand-accent-500: #ff5622;
     --color-brand-accent-50: #ffa47f;
 
@@ -16,9 +16,9 @@
     --theme-on-accent: var(--color-brand-black-500);
     --theme-on-accent-inverse: var(--color-brand-white-500);
 
-    --font-primary: 'Plus Jakarta Sans', sans-serif;
-    --font-secondary: 'Mona Sans', sans-serif;
-    --font-code: 'DM Mono', monospace;
+    --font-primary: 'DM Mono', sans-serif;
+    --font-secondary: 'Google Sans', sans-serif;
+    --font-code: monospace;
   }
 
   .dark-mode {

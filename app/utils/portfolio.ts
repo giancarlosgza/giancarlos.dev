@@ -91,6 +91,18 @@ export const projects: IProject[] = [
       { value: 'SSR', label: 'Nuxt 4 architecture' }
     ],
     stack: ['Nuxt 4', 'TypeScript', 'PostgreSQL']
+  },
+  {
+    id: '05',
+    name: 'CEPREP Desk',
+    tagline: 'Healthcare operations & clinical ERP web app',
+    role: 'Full-Stack Front-End Developer',
+    description: 'A healthcare management platform for medical clinics covering patient records, clinical scheduling, automated service-charge billing and multi-tier financial approval workflows.',
+    metrics: [
+      { value: 'PWA', label: 'installable web app' },
+      { value: 'ERP', label: 'clinical & financial ops' }
+    ],
+    stack: ['Nuxt', 'Vue', 'Vuex', 'Bootstrap 5', 'SCSS', 'JWT', 'FullCalendar']
   }
 ]
 

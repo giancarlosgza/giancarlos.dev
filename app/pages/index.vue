@@ -152,17 +152,19 @@ useSeoMeta({
                   variant="outline"
                 />
               </div>
-              <a
-                v-if="project.href"
-                :href="project.href"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-link"
-                :aria-label="`Visit ${project.name} at ${project.linkLabel}`"
-              >
-                {{ project.linkLabel }}
-                <UiIconMaterial icon-code="&#xf1e1;" :size="18" />
-              </a>
+              <div class="d-inline-flex">
+                <a
+                  v-if="project.href"
+                  :href="project.href"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-link"
+                  :aria-label="`Visit ${project.name} at ${project.linkLabel}`"
+                >
+                  {{ project.linkLabel }}
+                  <UiIconMaterial icon-code="&#xf1e1;" class="fs-sm-100" />
+                </a>
+              </div>
             </div>
           </article>
         </div>
@@ -257,9 +259,10 @@ useSeoMeta({
             :title="experiment.title"
             :text="experiment.text"
             :icon="experiment.icon"
-            has-actions
             :href="experiment.href"
             :aria-label="`Open ${experiment.title} on ${experiment.linkLabel}`"
+            custom-icon-wrapper-class="bg-success-fixed"
+            has-actions
           >
             <template #list-action>
               <UiButtonTooltip
@@ -288,57 +291,62 @@ useSeoMeta({
     >
       <div class="container">
         <div class="contact-panel">
-          <UiBadge
-            text="04 — Contact"
-            variant="tonal tonal-accent"
-            custom-class="mb-3"
-          />
-          <h2
-            id="contact-title"
-            class="contact-title"
-          >
-            Let's build something fast.
-          </h2>
-          <p class="contact-text">
-            I take on selected product and front-end engagements — design systems, performance
-            work and resilient web apps. The fastest way to reach me is email.
-          </p>
-          <UiButtonGroup>
-            <UiButton
-              variant="filled"
-              color="primary"
-              size="lg"
-              text="hello@giancarlos.dev"
-              href="mailto:hello@giancarlos.dev"
-              aria-label="Send an email to Giancarlos Garza"
+          <ClientOnly>
+            <AppStaticMeshGradient />
+          </ClientOnly>
+          <div class="contact-content">
+            <UiBadge
+              text="Contact"
+              variant="tonal tonal-accent"
+              custom-class="mb-3"
+            />
+            <h2
+              id="contact-title"
+              class="contact-title"
             >
-              <template #icon>
-                <UiIconMaterial icon-code="&#xe159;" />
-              </template>
-            </UiButton>
-            <UiButton
-              variant="outline"
-              size="lg"
-              text="GitHub"
-              href="https://github.com/giancarlosgza"
-              aria-label="Open Giancarlos Garza's GitHub profile"
-            >
-              <template #icon>
-                <UiIconSvg :content="brandIcons.github" :size="20" />
-              </template>
-            </UiButton>
-            <UiButton
-              variant="outline"
-              size="lg"
-              text="LinkedIn"
-              href="https://www.linkedin.com/in/giancarlos-garza-b37897139"
-              aria-label="Open Giancarlos Garza's LinkedIn profile"
-            >
-              <template #icon>
-                <UiIconSvg :content="brandIcons.linkedin" :size="20" />
-              </template>
-            </UiButton>
-          </UiButtonGroup>
+              Let's build something fast.
+            </h2>
+            <p class="contact-text">
+              I take on selected product and front-end engagements — design systems, performance
+              work and resilient web apps. The fastest way to reach me is email.
+            </p>
+            <UiButtonGroup>
+              <UiButton
+                variant="filled"
+                color="primary"
+                size="lg"
+                text="hello@giancarlos.dev"
+                href="mailto:hello@giancarlos.dev"
+                aria-label="Send an email to Giancarlos Garza"
+              >
+                <template #icon>
+                  <UiIconMaterial icon-code="&#xe159;" />
+                </template>
+              </UiButton>
+              <UiButton
+                variant="frosted"
+                size="lg"
+                text="GitHub"
+                href="https://github.com/giancarlosgza"
+                aria-label="Open Giancarlos Garza's GitHub profile"
+              >
+                <template #icon>
+                  <UiIconSvg :content="brandIcons.github" :size="20" />
+                </template>
+              </UiButton>
+              <UiButton
+                variant="frosted"
+                size="lg"
+                text="LinkedIn"
+                href="https://www.linkedin.com/in/giancarlos-garza-b37897139"
+                aria-label="Open Giancarlos Garza's LinkedIn profile"
+              >
+                <template #icon>
+                  <UiIconSvg :content="brandIcons.linkedin" :size="20" />
+                </template>
+              </UiButton>
+            </UiButtonGroup>
+          </div>
         </div>
       </div>
     </section>

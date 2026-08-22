@@ -10,8 +10,5 @@
     </main>
 
     <TheFooter />
-
-    <!-- PWA Prompt -->
-    <LazyIncludePwaPromptAlert />
   </div>
 </template>
