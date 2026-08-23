@@ -202,6 +202,7 @@ useSeoMeta({
                     :key="tech"
                     :text="tech"
                     variant="outline"
+                    class="bg-frosted"
                   />
                 </div>
                 <div class="d-inline-flex">

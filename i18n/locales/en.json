@@ -13,7 +13,7 @@
   "hero": {
     "badge": "Available for select projects",
     "title": "High-performance interfaces & design systems, built with code and visual precision.",
-    "lead": "I'm {name}, a front-end engineer and UI/UX designer. I build minimal, dependable web products with Vue, Nuxt and TypeScript. These days I work independently on SaaS products and client platforms. Before that I spent three years at the municipal government, building administrative software and predictive reporting systems.",
+    "lead": "I'm {name}, a front-end engineer and UI/UX designer. I build refined, dependable web products with Vue, Nuxt and TypeScript. Currently, I work independently on SaaS products and client platforms. Prior to that, I spent three years in municipal government building administrative software and predictive reporting systems.",
     "cta": "Get in touch",
     "ctaAria": "Send an email to Giancarlos Garza",
     "metaLocation": "Nuevo León, México",
@@ -21,22 +21,22 @@
   },
   "work": {
     "title": "Work",
-    "subtitle": "Products and platforms where I owned the front end, backed by real usage numbers.",
+    "subtitle": "Products and platforms where I led front-end development, backed by measurable production metrics.",
     "visitAria": "Visit {name} at {label}"
   },
   "approach": {
     "title": "How I Work",
-    "subtitle": "The overlap of front-end engineering, interface design and reusable systems."
+    "subtitle": "Operating at the intersection of front-end engineering, interface design, and scalable systems."
   },
   "experimentsSection": {
     "title": "Experiments",
-    "subtitle": "Open-source libraries and tools I design, build and maintain. Anyone can install them.",
+    "subtitle": "Open-source libraries and tools I design, build, and maintain for the developer community.",
     "openAria": "Open {title} on {label}",
     "expandAria": "Show details for {title}"
   },
   "contact": {
     "badge": "Contact",
-    "title": "Let's build something fast.",
+    "title": "Let's build something fast & dependable.",
     "text": "I take on a few product and front-end projects at a time: design systems, performance tuning and full web apps. The fastest way to reach me is email.",
     "emailAria": "Send an email to Giancarlos Garza",
     "githubAria": "Open Giancarlos Garza's GitHub profile",
@@ -76,7 +76,7 @@
       "m3": "published npm libraries"
     },
     "p02": {
-      "tagline": "Offline-first corporate food management kiosk",
+      "tagline": "Offline-first corporate dining kiosk",
       "role": "Lead Front-End Engineer & System Architect",
       "description": "A high-throughput kiosk platform with offline-first architecture, multi-tenant support and shift-based access, built for fast operation on touch screens.",
       "m1": "monthly transactions",
@@ -85,7 +85,7 @@
     "p03": {
       "tagline": "Real-time logistics & fleet tracking platform",
       "role": "Front-End Engineer",
-      "description": "A live telematics application that renders vehicle locations and operational status on maps, refreshing continuously while the browser stays responsive.",
+      "description": "A live telematics application that renders vehicle locations and operational status on maps, refreshing continuously without sacrificing browser responsiveness.",
       "m1": "simultaneous GPS points",
       "m2": "telemetry refresh"
     },
@@ -106,16 +106,16 @@
   },
   "principles": {
     "performance": {
-      "title": "Performance as a feature",
-      "text": "Speed gets planned from the first commit. Lean SSR, performance budgets and Core Web Vitals guide every build decision."
+      "title": "Performance by design",
+      "text": "Speed is engineered from the first commit. Lean SSR, performance budgets, and Core Web Vitals drive every technical decision."
     },
     "systems": {
       "title": "Systems over screens",
-      "text": "Tokens, libraries and reusable patterns replace one-off pages, so products stay consistent and cheap to evolve."
+      "text": "Design tokens, component libraries, and reusable patterns replace ad-hoc layouts, keeping products consistent and cost-effective to scale."
     },
     "designInCode": {
       "title": "Design in code",
-      "text": "UI/UX decisions live where they ship: semantic HTML, real states and motion in the browser instead of static mockups."
+      "text": "Code is the final design canvas. Semantic structure, fluid motion, and live component states evaluated where users actually interact."
     }
   },
   "stack": {
@@ -129,7 +129,7 @@
     },
     "infrastructure": {
       "label": "Infrastructure",
-      "items": "Docker · Nginx · Linux · Firebase Hosting · CI/CD"
+      "items": "Docker · Nginx · Linux · Firebase · CI/CD"
     }
   },
   "experiments": {

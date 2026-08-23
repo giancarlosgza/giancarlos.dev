@@ -13,7 +13,7 @@
   "hero": {
     "badge": "Disponible para proyectos selectos",
     "title": "Interfaces de alto rendimiento y sistemas de diseño, construidos con código y precisión visual.",
-    "lead": "Soy {name}, ingeniero front-end y diseñador UI/UX. Construyo productos web minimalistas y confiables con Vue, Nuxt y TypeScript. Hoy trabajo por mi cuenta en productos SaaS y plataformas para clientes. Antes pasé tres años en gobierno municipal, construyendo software administrativo y sistemas de reportes predictivos.",
+    "lead": "Soy {name}, ingeniero front-end y diseñador UI/UX. Construyo productos web refinados y confiables con Vue, Nuxt y TypeScript. Actualmente trabajo de forma independiente en productos SaaS y plataformas para clientes. Anteriormente pasé tres años en el gobierno municipal construyendo software administrativo y sistemas de reportes predictivos.",
     "cta": "Contáctame",
     "ctaAria": "Enviar un correo a Giancarlos Garza",
     "metaLocation": "Nuevo León, México",
@@ -21,22 +21,22 @@
   },
   "work": {
     "title": "Trabajo",
-    "subtitle": "Productos y plataformas donde fui responsable del front-end, respaldados por números de uso reales.",
+    "subtitle": "Productos y plataformas donde lideré el desarrollo front-end, respaldados por métricas reales de adopción y rendimiento.",
     "visitAria": "Visitar {name} en {label}"
   },
   "approach": {
-    "title": "Cómo Trabajo",
-    "subtitle": "La intersección entre ingeniería front-end, diseño de interfaces y sistemas reutilizables."
+    "title": "Cómo trabajo",
+    "subtitle": "En la intersección entre ingeniería front-end, diseño de interfaces y sistemas escalables."
   },
   "experimentsSection": {
     "title": "Experimentos",
-    "subtitle": "Librerías y herramientas open source que diseño, construyo y mantengo. Cualquiera puede instalarlas.",
+    "subtitle": "Librerías y herramientas open source que diseño, construyo y mantengo para la comunidad de desarrolladores.",
     "openAria": "Abrir {title} en {label}",
     "expandAria": "Mostrar detalles de {title}"
   },
   "contact": {
     "badge": "Contacto",
-    "title": "Construyamos algo rápido.",
+    "title": "Construyamos algo sólido y veloz.",
     "text": "Tomo pocos proyectos de producto y front-end a la vez: sistemas de diseño, optimización de rendimiento y aplicaciones web completas. La forma más rápida de contactarme es por correo.",
     "emailAria": "Enviar un correo a Giancarlos Garza",
     "githubAria": "Abrir el perfil de GitHub de Giancarlos Garza",
@@ -85,14 +85,14 @@
     "p03": {
       "tagline": "Plataforma de logística y rastreo de flotillas en tiempo real",
       "role": "Ingeniero Front-End",
-      "description": "Una aplicación de telemetría en vivo que muestra la ubicación y el estado operativo de los vehículos en mapas, y se actualiza continuamente mientras el navegador se mantiene fluido.",
+      "description": "Una aplicación de telemetría en vivo que muestra la ubicación y el estado operativo de los vehículos en mapas, con actualización continua sin degradar la fluidez del navegador.",
       "m1": "puntos GPS simultáneos",
       "m2": "actualización de telemetría"
     },
     "p04": {
       "tagline": "SaaS de gestión de catering",
       "role": "Diseñador de Producto y Desarrollador Front-End",
-      "description": "Una plataforma SSR para servicios de catering y equipos de hospitalidad con generación de cotizaciones en tiempo real, flujos de reservación y diseños responsivos para trabajar en oficina y en sitio.",
+      "description": "Una plataforma SSR para servicios de catering y equipos de hospitalidad con generación de cotizaciones en tiempo real, flujos de reservación y diseños responsivos para operar tanto en oficina como en sitio.",
       "m1": "Estado",
       "m2": "arquitectura Nuxt 4"
     },
@@ -106,16 +106,16 @@
   },
   "principles": {
     "performance": {
-      "title": "El rendimiento como funcionalidad",
-      "text": "La velocidad se planea desde el primer commit. SSR ligero, presupuestos de rendimiento y Core Web Vitals guían cada decisión de construcción."
+      "title": "Rendimiento desde la base",
+      "text": "La velocidad se diseña desde el primer commit. SSR ligero, presupuestos de rendimiento y Core Web Vitals guían cada decisión técnica."
     },
     "systems": {
       "title": "Sistemas antes que pantallas",
-      "text": "Tokens, librerías y patrones reutilizables reemplazan páginas únicas, para que los productos se mantengan consistentes y fáciles de evolucionar."
+      "text": "Design tokens, librerías y patrones reutilizables sustituyen soluciones improvisadas, garantizando consistencia y escalabilidad a largo plazo."
     },
     "designInCode": {
       "title": "Diseño en código",
-      "text": "Las decisiones de UI/UX viven donde se publican: HTML semántico, estados reales y movimiento en el navegador en lugar de mockups estáticos."
+      "text": "El código es el lienzo final. Estructura semántica, movimiento fluido y estados reales evaluados donde el usuario realmente interactúa."
     }
   },
   "stack": {
@@ -129,7 +129,7 @@
     },
     "infrastructure": {
       "label": "Infraestructura",
-      "items": "Docker · Nginx · Linux · Firebase Hosting · CI/CD"
+      "items": "Docker · Nginx · Linux · Firebase · CI/CD"
     }
   },
   "experiments": {
