@@ -34,6 +34,11 @@
       pointer-events: none;
       opacity: 0.16;
       mask-image: linear-gradient(to top, #000000 35%, transparent 96%);
+      animation: bloom-in 1000ms ease-out;
+
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
     }
 
     .hero-eyebrow {
