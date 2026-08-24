@@ -20,10 +20,21 @@
   .portfolio-hero {
     position: relative;
     overflow: hidden;
+    min-height: clamp(30rem, 78vh, 42rem);
+    min-height: clamp(30rem, 78svh, 42rem);
     padding: clamp(4rem, 12vw, 8rem) 0 clamp(3rem, 8vw, 5rem);
-    background:
-      radial-gradient(60rem 30rem at 85% -10%, color-mix(in oklab, var(--theme-secondary-a10) 18%, transparent) 0%, transparent 60%),
-      radial-gradient(50rem 26rem at -10% 20%, color-mix(in oklab, var(--theme-accent-a10) 10%, transparent) 0%, transparent 55%);
+
+    > .container {
+      position: relative;
+    }
+
+    .hero-field {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.16;
+      mask-image: linear-gradient(to top, #000000 35%, transparent 96%);
+    }
 
     .hero-eyebrow {
       margin-bottom: 1.5rem;
@@ -51,8 +62,14 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      align-items: center;
+      gap: 1.5rem;
       margin-bottom: 2rem;
+    }
+
+    .hero-secondary {
+      font-family: var(--font-code);
+      font-weight: 500;
     }
 
     .hero-meta {
@@ -131,7 +148,7 @@
   .project-bloom {
     position: absolute;
     inset: auto auto 0 0;
-    inline-size: min(80rem, 100vw);
+    inline-size: 100vw;
     block-size: 18rem;
 
     .experiment-slide & {
@@ -155,6 +172,10 @@
 
   .dark-mode .project-bloom {
     opacity: 0.65;
+  }
+
+  .dark-mode .portfolio-hero .hero-field {
+    opacity: 0.3;
   }
 
   .project-row-head {

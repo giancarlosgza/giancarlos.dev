@@ -12,9 +12,10 @@
   },
   "hero": {
     "badge": "Available for select projects",
-    "title": "High-performance interfaces & design systems, built with code and visual precision.",
-    "lead": "I'm {name}, a front-end engineer and UI/UX designer. I build refined, dependable web products with Vue, Nuxt and TypeScript. Currently, I work independently on SaaS products and client platforms. Prior to that, I spent three years in municipal government building administrative software and predictive reporting systems.",
+    "title": "High-performance interfaces & design systems.",
+    "lead": "I'm {name}, a front-end engineer and UI/UX designer. I build refined, dependable web products with Vue, Nuxt and TypeScript. Currently, I work independently on SaaS products and client platforms.",
     "cta": "Get in touch",
+    "secondaryCta": "See the work",
     "ctaAria": "Send an email to Giancarlos Garza",
     "metaLocation": "Nuevo León, México",
     "metaExperience": "7+ years shipping web products"

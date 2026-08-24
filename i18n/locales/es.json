@@ -12,9 +12,10 @@
   },
   "hero": {
     "badge": "Disponible para proyectos selectos",
-    "title": "Interfaces de alto rendimiento y sistemas de diseño, construidos con código y precisión visual.",
-    "lead": "Soy {name}, ingeniero front-end y diseñador UI/UX. Construyo productos web refinados y confiables con Vue, Nuxt y TypeScript. Actualmente trabajo de forma independiente en productos SaaS y plataformas para clientes. Anteriormente pasé tres años en el gobierno municipal construyendo software administrativo y sistemas de reportes predictivos.",
+    "title": "Interfaces de alto rendimiento y sistemas de diseño.",
+    "lead": "Soy {name}, ingeniero front-end y diseñador UI/UX. Construyo productos web refinados y confiables con Vue, Nuxt y TypeScript. Actualmente trabajo de forma independiente en productos SaaS y plataformas para clientes.",
     "cta": "Contáctame",
+    "secondaryCta": "Ver el trabajo",
     "ctaAria": "Enviar un correo a Giancarlos Garza",
     "metaLocation": "Nuevo León, México",
     "metaExperience": "7+ años lanzando productos web"

@@ -40,6 +40,18 @@ useSeoMeta({
       class="portfolio-hero"
       aria-labelledby="hero-title"
     >
+      <ClientOnly>
+        <div
+          class="hero-field"
+          aria-hidden="true"
+        >
+          <AppStaticMeshGradient
+            :key="`hero-${colorMode.value}`"
+            :colors="[meshBase, '#223fff', '#9099ff', '#ffa47f']"
+          />
+        </div>
+      </ClientOnly>
+
       <div class="container">
         <div class="hero-eyebrow">
           <UiBadge
@@ -67,7 +79,10 @@ useSeoMeta({
           </template>
         </i18n-t>
 
-        <div class="hero-actions">
+        <UiButtonGroup
+          variant="connected"
+          class="mb-5"
+        >
           <UiButton
             variant="filled"
             color="primary"
@@ -80,7 +95,14 @@ useSeoMeta({
               <UiIconMaterial icon-code="&#xe159;" />
             </template>
           </UiButton>
-        </div>
+          <UiButton
+            href="#work"
+            variant="text"
+            size="lg"
+            :text="t('hero.secondaryCta')"
+            :aria-label="t('hero.ctaAria')"
+          />
+        </UiButtonGroup>
 
         <div class="hero-meta">
           <span class="hero-meta-item">
