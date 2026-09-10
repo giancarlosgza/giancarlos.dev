@@ -91,11 +91,11 @@
       "m2": "telemetry refresh"
     },
     "p04": {
-      "tagline": "Catering management SaaS",
+      "tagline": "Smart access control & community management platform",
       "role": "Product Designer & Front-End Developer",
-      "description": "An SSR platform for caterers and hospitality teams with real-time quote generation, booking workflows and responsive layouts for office and on-site work.",
-      "m1": "Status",
-      "m2": "Nuxt 4 architecture"
+      "description": "An all-in-one platform for gated communities and residential developments unifying WhatsApp QR passes, guard booth photo logs, LPR recognition and real-time dues administration.",
+      "m1": "apps",
+      "m2": "photo evidence per entry"
     },
     "p05": {
       "tagline": "Healthcare operations & clinical ERP web app",
@@ -103,6 +103,13 @@
       "description": "A healthcare management platform for medical clinics covering patient records, clinical scheduling, automated service-charge billing and multi-tier financial approval workflows.",
       "m1": "installable web app",
       "m2": "clinical & financial ops"
+    },
+    "p06": {
+      "tagline": "Catering management SaaS",
+      "role": "Product Designer & Front-End Developer",
+      "description": "An SSR platform for caterers and hospitality teams with real-time quote generation, booking workflows and responsive layouts for office and on-site work.",
+      "m1": "Status",
+      "m2": "Nuxt 4 architecture"
     }
   },
   "principles": {

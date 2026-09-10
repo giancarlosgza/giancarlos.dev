@@ -77,12 +77,14 @@ export const projects: IProject[] = [
       { value: '10K+', label: 'projects.p02.m1', icon: '&#xef6e;' },
       { value: '−80%', label: 'projects.p02.m2', icon: '&#xe425;' }
     ],
-    meshColors: ['#ff5622', '#ffa47f'],
-    stack: ['Vue', 'TypeScript', 'IndexedDB', 'Docker', 'PostgreSQL']
+    meshColors: ['#f8bc15', '#83fb83'],
+    stack: ['Vue', 'TypeScript', 'IndexedDB', 'Docker', 'PostgreSQL'],
+    href: 'https://prochefexpress.com/',
+    linkLabel: 'prochefexpress.com'
   },
   {
     id: '03',
-    name: 'Fleets GPS',
+    name: 'RastreoExpress',
     tagline: 'projects.p03.tagline',
     role: 'projects.p03.role',
     description: 'projects.p03.description',
@@ -90,21 +92,25 @@ export const projects: IProject[] = [
       { value: '200+', label: 'projects.p03.m1', icon: '&#xe55c;' },
       { value: '5s', label: 'projects.p03.m2', icon: '&#xe5d5;' }
     ],
-    meshColors: ['#223fff', '#9099ff'],
-    stack: ['Vue', 'TypeScript', 'Realtime APIs', 'Docker']
+    meshColors: ['#ca1414', '#1455e1'],
+    stack: ['Vue', 'TypeScript', 'Realtime APIs', 'Docker'],
+    href: 'https://rastreo.express',
+    linkLabel: 'rastreo.express'
   },
   {
     id: '04',
-    name: 'Cheffy Events',
+    name: 'SysGate',
     tagline: 'projects.p04.tagline',
     role: 'projects.p04.role',
     description: 'projects.p04.description',
     metrics: [
-      { value: 'WIP', label: 'projects.p04.m1', icon: '&#xea3c;' },
-      { value: 'SSR', label: 'projects.p04.m2', icon: '&#xe53b;' }
+      { value: 'Android & iOS', label: 'projects.p04.m1', icon: '&#xe325;' },
+      { value: '100%', label: 'projects.p04.m2', icon: '&#xe412;' }
     ],
-    meshColors: ['#ff5622', '#ffa47f'],
-    stack: ['Nuxt 4', 'TypeScript', 'PostgreSQL']
+    meshColors: ['#566272', '#dd691c'],
+    stack: ['Nuxt', 'Vue', 'TypeScript', 'Firebase', 'Android', 'iOS', 'PWA'],
+    href: 'https://sysgate.app/',
+    linkLabel: 'sysgate.app'
   },
   {
     id: '05',
@@ -116,8 +122,21 @@ export const projects: IProject[] = [
       { value: 'PWA', label: 'projects.p05.m1', icon: '&#xe337;' },
       { value: 'ERP', label: 'projects.p05.m2', icon: '&#xe871;' }
     ],
-    meshColors: ['#223fff', '#9099ff'],
-    stack: ['Nuxt', 'Vue', 'Vuex', 'Bootstrap 5', 'SCSS', 'JWT', 'FullCalendar']
+    meshColors: ['#d622ff', '#e798ff'],
+    stack: ['Nuxt', 'Vue', 'Vuex', 'SCSS', 'JWT', 'FullCalendar']
+  },
+  {
+    id: '06',
+    name: 'Cheffy Events',
+    tagline: 'projects.p06.tagline',
+    role: 'projects.p06.role',
+    description: 'projects.p06.description',
+    metrics: [
+      { value: 'WIP', label: 'projects.p06.m1', icon: '&#xea3c;' },
+      { value: 'SSR', label: 'projects.p06.m2', icon: '&#xe53b;' }
+    ],
+    meshColors: ['#ff2222ff', '#ff7f7fff'],
+    stack: ['Nuxt 4', 'TypeScript', 'PostgreSQL']
   }
 ]
 

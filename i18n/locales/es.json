@@ -91,11 +91,11 @@
       "m2": "actualización de telemetría"
     },
     "p04": {
-      "tagline": "SaaS de gestión de catering",
+      "tagline": "Control de acceso inteligente y administración para fraccionamientos",
       "role": "Diseñador de Producto y Desarrollador Front-End",
-      "description": "Una plataforma SSR para servicios de catering y equipos de hospitalidad con generación de cotizaciones en tiempo real, flujos de reservación y diseños responsivos para operar tanto en oficina como en sitio.",
-      "m1": "Estado",
-      "m2": "arquitectura Nuxt 4"
+      "description": "Plataforma integral para fraccionamientos y condominios que unifica pases QR por WhatsApp, registro fotográfico en caseta, lectura LPR y administración de cuotas en tiempo real.",
+      "m1": "apps",
+      "m2": "evidencia fotográfica por acceso"
     },
     "p05": {
       "tagline": "Aplicación web de operaciones de salud y ERP clínico",
@@ -103,6 +103,13 @@
       "description": "Una plataforma de gestión para clínicas médicas que cubre expedientes de pacientes, agenda clínica, facturación automatizada de cargos por servicio y flujos de aprobación financiera de varios niveles.",
       "m1": "aplicación web instalable",
       "m2": "operación clínica y financiera"
+    },
+    "p06": {
+      "tagline": "SaaS de gestión de catering",
+      "role": "Diseñador de Producto y Desarrollador Front-End",
+      "description": "Una plataforma SSR para servicios de catering y equipos de hospitalidad con generación de cotizaciones en tiempo real, flujos de reservación y diseños responsivos para operar tanto en oficina como en sitio.",
+      "m1": "Estado",
+      "m2": "arquitectura Nuxt 4"
     }
   },
   "principles": {
