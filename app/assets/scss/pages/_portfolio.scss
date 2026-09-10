@@ -87,7 +87,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      font-size: var(--fs-sm-400);
+      font-size: var(--fs-3xs);
       color: var(--theme-muted-a10);
     }
   }
@@ -106,7 +106,7 @@
 
     .section-index {
       font-family: var(--font-code);
-      font-size: var(--fs-sm-400);
+      font-size: var(--fs-3xs);
       color: var(--theme-secondary-a10);
       padding-top: 0.55rem;
     }
@@ -223,7 +223,7 @@
 
   .project-index {
     font-family: var(--font-code);
-    font-size: var(--fs-sm-400);
+    font-size: var(--fs-3xs);
     color: var(--theme-muted-a10);
 
     .is-active & {
@@ -274,7 +274,7 @@
 
   .summary-metric {
     font-family: var(--font-code);
-    font-size: var(--fs-sm-400);
+    font-size: var(--fs-3xs);
     color: var(--theme-muted-a10);
 
     strong {
@@ -469,7 +469,7 @@
     color: var(--theme-muted-a10);
     line-height: 1.7;
     margin: 0;
-    font-size: var(--fs-sm-500, 0.9375rem);
+    font-size: var(--fs-4xs, 0.9375rem);
   }
 
   // Stack strip (How I Work — ruled strip)
@@ -514,7 +514,7 @@
 
   .stack-col-label {
     font-family: var(--font-code);
-    font-size: var(--fs-sm-400);
+    font-size: var(--fs-3xs);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--theme-muted-a10);
@@ -525,7 +525,7 @@
     font-family: var(--font-code);
     color: var(--theme-on-background);
     line-height: 1.7;
-    font-size: var(--fs-sm-500, 0.9375rem);
+    font-size: var(--fs-4xs, 0.9375rem);
   }
 
   // Experiments carousel (M3 hero style)
@@ -636,7 +636,7 @@
   .experiment-rail-title {
     writing-mode: vertical-rl;
     font-family: var(--font-code);
-    font-size: var(--fs-sm-400);
+    font-size: var(--fs-3xs);
     letter-spacing: 0.06em;
 
     @media (width <= 900px) {
@@ -762,7 +762,7 @@
 
     .footer-copyright {
       margin: 0;
-      font-size: var(--fs-sm-400);
+      font-size: var(--fs-3xs);
       color: var(--theme-muted-a10);
     }
   }

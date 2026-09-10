@@ -150,7 +150,7 @@ watch(() => $colorMode.preference, (newMode) => {
   }
 
   .theme-switcher-label {
-    font-size: var(--fs-sm-400);
+    font-size: var(--fs-3xs);
     color: var(--theme-muted-a10);
     text-transform: capitalize;
     margin-bottom: 0;

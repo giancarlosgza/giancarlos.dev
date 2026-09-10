@@ -22,7 +22,7 @@ const { $pwa } = useNuxtApp()
           <div>
             <UiIconMaterial
               icon-code="&#xf000;"
-              class="icon-wrap icon-wrap-xs icon-wrap-outline fs-600 text-on-body bg-success-fixed bg-opacity-20"
+              class="icon-wrap icon-wrap-xs icon-wrap-outline fs-base text-on-body bg-success-fixed bg-opacity-20"
             />
           </div>
           <div class="pwa-content-text-wrapper">

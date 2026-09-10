@@ -90,7 +90,7 @@ async function switchLocale(): Promise<void> {
 
 <style scoped lang="scss">
 .locale-switcher-code {
-  font-size: var(--fs-sm-400);
+  font-size: var(--fs-3xs);
   font-weight: 700;
   letter-spacing: 0.04em;
   line-height: 1;

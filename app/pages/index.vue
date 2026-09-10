@@ -237,7 +237,7 @@ useSeoMeta({
                     :aria-label="t('work.visitAria', { name: project.name, label: project.linkLabel })"
                   >
                     {{ project.linkLabel }}
-                    <UiIconMaterial icon-code="&#xf1e1;" class="fs-sm-100" />
+                    <UiIconMaterial icon-code="&#xf1e1;" class="fs-sm" />
                   </a>
                 </div>
               </div>
@@ -381,7 +381,7 @@ useSeoMeta({
                   :aria-label="t('experimentsSection.openAria', { title: experiment.title, label: experiment.linkLabel })"
                 >
                   {{ experiment.linkLabel }}
-                  <UiIconMaterial icon-code="&#xf1e1;" class="fs-sm-100" />
+                  <UiIconMaterial icon-code="&#xf1e1;" class="fs-sm" />
                 </a>
               </div>
             </div>

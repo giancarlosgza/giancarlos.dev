@@ -27,8 +27,8 @@
     "version:major": "npm version major"
   },
   "dependencies": {
-    "@colorffy/css": "2.0.1",
-    "@colorffy/ui": "2.0.1",
+    "@colorffy/css": "2.5.0",
+    "@colorffy/ui": "2.5.0",
     "@material-symbols/font-700": "0.46.0",
     "@nuxtjs/i18n": "^10.6.0",
     "@paper-design/shaders": "0.0.80",
