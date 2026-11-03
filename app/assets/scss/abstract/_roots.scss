@@ -10,29 +10,33 @@
     --motion-duration-lg: 480ms;
 
     // Brand
-    --color-brand-primary-500: #000000;
-    --color-brand-primary-50: #ffffff;
-    --color-brand-secondary-500: #223fff;
-    --color-brand-secondary-50: #9099ff;
-    --color-brand-accent-500: #ff5622;
-    --color-brand-accent-50: #ffa47f;
+    --cffy-color-brand-primary-500: #000000;
+    --cffy-color-brand-primary-50: #ffffff;
+    --cffy-color-brand-secondary-500: #223fff;
+    --cffy-color-brand-secondary-50: #9099ff;
+    --cffy-color-brand-accent-500: #ff5622;
+    --cffy-color-brand-accent-50: #ffa47f;
 
     // On background colors
-    --theme-on-secondary: var(--color-brand-black-500);
-    --theme-on-secondary-inverse: var(--color-brand-white-500);
-    --theme-on-accent: var(--color-brand-black-500);
-    --theme-on-accent-inverse: var(--color-brand-white-500);
+    --cffy-on-secondary: var(--cffy-color-brand-black-500);
+    --cffy-on-accent: var(--cffy-color-brand-black-500);
 
-    --font-primary: 'DM Mono', sans-serif;
-    --font-secondary: 'Google Sans', sans-serif;
-    --font-code: monospace;
+    --font-dm-mono: 'DM Mono', sans-serif;
+    --font-google-sans: 'Google Sans', sans-serif;
+
+    --cffy-font-primary: var(--font-dm-mono);
+    --cffy-font-secondary: var(--font-google-sans);
+    --cffy-font-code: monospace;
+
+    // Shape roles (cards, inputs, buttons)
+    --cffy-shape-container: 4px;
+    --cffy-shape-field: 4px;
+    --cffy-shape-control: 4px;
   }
 
   .dark-mode {
     // On background colors
-    --theme-on-secondary: var(--color-brand-black-500);
-    --theme-on-secondary-inverse: var(--color-brand-white-500);
-    --theme-on-accent: var(--color-brand-black-500);
-    --theme-on-accent-inverse: var(--color-brand-white-500);
+    --cffy-on-secondary: var(--cffy-color-brand-black-500);
+    --cffy-on-accent: var(--cffy-color-brand-black-500);
   }
 }

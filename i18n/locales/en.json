@@ -53,13 +53,10 @@
     "versionTitle": "Site version"
   },
   "colorMode": {
-    "switchAria": "Switch to {label} theme - {description}",
+    "label": "Color mode",
     "system": "System",
-    "systemDescription": "Follow system preference",
     "light": "Light",
-    "lightDescription": "Light theme",
-    "dark": "Dark",
-    "darkDescription": "Dark theme"
+    "dark": "Dark"
   },
   "seo": {
     "title": "Front-End Engineer & UI/UX Designer",

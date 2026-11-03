@@ -53,13 +53,10 @@
     "versionTitle": "Versión del sitio"
   },
   "colorMode": {
-    "switchAria": "Cambiar al tema {label} - {description}",
+    "label": "Modo de color",
     "system": "Sistema",
-    "systemDescription": "Seguir la preferencia del sistema",
     "light": "Claro",
-    "lightDescription": "Tema claro",
-    "dark": "Oscuro",
-    "darkDescription": "Tema oscuro"
+    "dark": "Oscuro"
   },
   "seo": {
     "title": "Ingeniero Front-End y Diseñador UI/UX",

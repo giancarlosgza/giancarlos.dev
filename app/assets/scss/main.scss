@@ -1,5 +1,7 @@
-@use './abstract/variables';
 @use './abstract/roots';
+
+// Components
+@use './components/pwa-prompt';
 
 // Project custom styles
 @use './pages/core';

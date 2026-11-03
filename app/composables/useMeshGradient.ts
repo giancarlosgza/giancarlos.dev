@@ -1,7 +1,7 @@
 /** Interfaces */
 export interface IMeshTintSource {
   id: string
-  /** CSS custom property holding the tint color, e.g. '--theme-info-a10'. */
+  /** CSS custom property holding the tint color, e.g. '--cffy-info-a10'. */
   tintVar: string
 }
 

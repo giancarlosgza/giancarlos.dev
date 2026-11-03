@@ -50,7 +50,7 @@ async function switchLocale(): Promise<void> {
         icon
         :tooltip-text="localeSwitchLabel"
         :aria-label="localeSwitchLabel"
-        @on-click="switchLocale"
+        @click="switchLocale"
       >
         <template #icon>
           <span class="locale-switcher-code">{{ targetLocale.toUpperCase() }}</span>
@@ -59,24 +59,21 @@ async function switchLocale(): Promise<void> {
     </UiNavbarMobileMenu>
 
     <UiNavbarCollapse>
-      <UiNavbarNav position="start">
-        <UiNavbarItem
+      <UiNavbarNav position="end">
+        <UiNavbarLink
           v-for="link in navLinks"
           :key="link.id"
-        >
-          <UiNavbarLink
-            :href="link.href"
-            :text="link.label"
-            :aria-label="link.ariaLabel"
-          />
-        </UiNavbarItem>
+          :href="link.href"
+          :text="link.label"
+          :aria-label="link.ariaLabel"
+        />
         <UiNavbarItem>
           <UiButtonTooltip
             id="locale-switcher"
             icon
             :tooltip-text="localeSwitchLabel"
             :aria-label="localeSwitchLabel"
-            @on-click="switchLocale"
+            @click="switchLocale"
           >
             <template #icon>
               <span class="locale-switcher-code">{{ targetLocale.toUpperCase() }}</span>
@@ -90,7 +87,7 @@ async function switchLocale(): Promise<void> {
 
 <style scoped lang="scss">
 .locale-switcher-code {
-  font-size: var(--fs-3xs);
+  font-size: var(--cffy-fs-3xs);
   font-weight: 700;
   letter-spacing: 0.04em;
   line-height: 1;

@@ -27,15 +27,15 @@
     "version:major": "npm version major"
   },
   "dependencies": {
-    "@colorffy/css": "2.5.0",
-    "@colorffy/ui": "2.5.0",
+    "@colorffy/css": "3.0.0",
+    "@colorffy/ui": "3.0.0",
     "@material-symbols/font-700": "0.47.2",
     "@nuxtjs/i18n": "10.6.0",
     "@paper-design/shaders": "0.0.80",
     "@vite-pwa/nuxt": "1.1.1",
     "@vueuse/components": "14.4.0",
     "firebase": "12.19.0",
-    "floating-vue": "5.2.2",
+    "floating-vue": "5.4.0",
     "vue": "3.5.42",
     "vue-router": "5.3.1"
   },

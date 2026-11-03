@@ -190,7 +190,7 @@ export const experiments: IExperiment[] = [
     href: 'https://www.npmjs.com/package/@colorffy/ui',
     linkLabel: 'npm',
     icon: '&#xf720;',
-    tintVar: '--theme-info-a10'
+    tintVar: '--cffy-info-a10'
   },
   {
     id: 'colorffy-css',
@@ -199,7 +199,7 @@ export const experiments: IExperiment[] = [
     href: 'https://www.npmjs.com/package/@colorffy/css',
     linkLabel: 'npm',
     icon: '&#xe40a;',
-    tintVar: '--theme-accent-a10'
+    tintVar: '--cffy-accent-a10'
   },
   {
     id: 'colorffy-workspace',
@@ -208,7 +208,7 @@ export const experiments: IExperiment[] = [
     href: 'https://github.com/giancarlosgza/colorffy-workspace',
     linkLabel: 'GitHub',
     icon: '&#xe86f;',
-    tintVar: '--theme-success-a10'
+    tintVar: '--cffy-success-a10'
   }
 ]
 

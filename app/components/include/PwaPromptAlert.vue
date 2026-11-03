@@ -40,7 +40,7 @@ const { $pwa } = useNuxtApp()
             text="Reload"
             size="sm"
             class="text-neutral"
-            @on-click="$pwa?.updateServiceWorker()"
+            @click="$pwa?.updateServiceWorker()"
           />
         </div>
       </div>
@@ -72,14 +72,14 @@ const { $pwa } = useNuxtApp()
             class="text-neutral"
             text="Not now"
             size="sm"
-            @on-click="$pwa.cancelInstall()"
+            @click="$pwa.cancelInstall()"
           />
           <UiButton
             variant="gradient"
             text="Install"
             size="sm"
             rounded class="px-3"
-            @on-click="$pwa.install()"
+            @click="$pwa.install()"
           />
         </div>
       </div>
