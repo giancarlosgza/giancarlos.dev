@@ -32,7 +32,9 @@ export default antfu({
     'node/prefer-global/process': ['off'],
     'no-console': [
       'error',
-      { allow: ['log'] }
+      {
+        allow: ['log']
+      }
     ]
   }
 })

@@ -24,7 +24,12 @@ interface IStaticMeshGradientProps {
   speed?: number
 }
 const props = withDefaults(defineProps<IStaticMeshGradientProps>(), {
-  colors: () => ['#000000', '#223fff', '#9099ff', '#adb4fe'],
+  colors: () => [
+    '#000000',
+    '#223fff',
+    '#9099ff',
+    '#adb4fe'
+  ],
   positions: 2,
   waveX: 1,
   waveXShift: 0.6,

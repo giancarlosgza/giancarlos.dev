@@ -63,7 +63,14 @@ export const projects: IProject[] = [
       { value: '2', label: 'projects.p01.m3', icon: '&#xf720;' }
     ],
     meshColors: ['#223fff', '#9099ff', '#adb4fe'],
-    stack: ['Nuxt 4', 'Vue', 'TypeScript', 'Docker', 'Nginx', 'PostgreSQL'],
+    stack: [
+      'Nuxt 4',
+      'Vue',
+      'TypeScript',
+      'Docker',
+      'Nginx',
+      'PostgreSQL'
+    ],
     href: 'https://colorffy.com',
     linkLabel: 'colorffy.com'
   },
@@ -78,7 +85,13 @@ export const projects: IProject[] = [
       { value: '−80%', label: 'projects.p02.m2', icon: '&#xe425;' }
     ],
     meshColors: ['#f8bc15', '#83fb83'],
-    stack: ['Vue', 'TypeScript', 'IndexedDB', 'Docker', 'PostgreSQL'],
+    stack: [
+      'Vue',
+      'TypeScript',
+      'IndexedDB',
+      'Docker',
+      'PostgreSQL'
+    ],
     href: 'https://prochefexpress.com/',
     linkLabel: 'prochefexpress.com'
   },
@@ -93,7 +106,12 @@ export const projects: IProject[] = [
       { value: '5s', label: 'projects.p03.m2', icon: '&#xe5d5;' }
     ],
     meshColors: ['#ca1414', '#1455e1'],
-    stack: ['Vue', 'TypeScript', 'Realtime APIs', 'Docker'],
+    stack: [
+      'Vue',
+      'TypeScript',
+      'Realtime APIs',
+      'Docker'
+    ],
     href: 'https://rastreo.express',
     linkLabel: 'rastreo.express'
   },
@@ -108,7 +126,15 @@ export const projects: IProject[] = [
       { value: '100%', label: 'projects.p04.m2', icon: '&#xe412;' }
     ],
     meshColors: ['#566272', '#dd691c'],
-    stack: ['Nuxt', 'Vue', 'TypeScript', 'Firebase', 'Android', 'iOS', 'PWA'],
+    stack: [
+      'Nuxt',
+      'Vue',
+      'TypeScript',
+      'Firebase',
+      'Android',
+      'iOS',
+      'PWA'
+    ],
     href: 'https://sysgate.app/',
     linkLabel: 'sysgate.app'
   },
@@ -123,7 +149,14 @@ export const projects: IProject[] = [
       { value: 'ERP', label: 'projects.p05.m2', icon: '&#xe871;' }
     ],
     meshColors: ['#d622ff', '#e798ff'],
-    stack: ['Nuxt', 'Vue', 'Vuex', 'SCSS', 'JWT', 'FullCalendar']
+    stack: [
+      'Nuxt',
+      'Vue',
+      'Vuex',
+      'SCSS',
+      'JWT',
+      'FullCalendar'
+    ]
   },
   {
     id: '06',

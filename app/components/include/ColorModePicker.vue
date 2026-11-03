@@ -17,9 +17,21 @@ const idPrefix = useId()
 
 /** Computed */
 const colorModeTabs = computed<ITabItem[]>(() => [
-  { id: `${idPrefix}-system`, label: t('colorMode.system'), icon: '&#xe31e;' },
-  { id: `${idPrefix}-light`, label: t('colorMode.light'), icon: '&#xe518;' },
-  { id: `${idPrefix}-dark`, label: t('colorMode.dark'), icon: '&#xe51c;' }
+  {
+    id: `${idPrefix}-system`,
+    label: t('colorMode.system'),
+    icon: '&#xe31e;'
+  },
+  {
+    id: `${idPrefix}-light`,
+    label: t('colorMode.light'),
+    icon: '&#xe518;'
+  },
+  {
+    id: `${idPrefix}-dark`,
+    label: t('colorMode.dark'),
+    icon: '&#xe51c;'
+  }
 ])
 const activeTab = computed<string>(() => `${idPrefix}-${colorMode.preference}`)
 

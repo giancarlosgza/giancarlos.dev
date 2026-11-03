@@ -15,12 +15,34 @@ const localePath = useLocalePath()
 
 /** Computed */
 const navLinks = computed<INavLink[]>(() => [
-  { id: 'work', label: t('nav.work'), href: '#work', ariaLabel: t('nav.workAria') },
-  { id: 'approach', label: t('nav.approach'), href: '#approach', ariaLabel: t('nav.approachAria') },
-  { id: 'writing', label: t('nav.experiments'), href: '#writing', ariaLabel: t('nav.experimentsAria') },
-  { id: 'contact', label: t('nav.contact'), href: '#contact', ariaLabel: t('nav.contactAria') }
+  {
+    id: 'work',
+    label: t('nav.work'),
+    href: '#work',
+    ariaLabel: t('nav.workAria')
+  },
+  {
+    id: 'approach',
+    label: t('nav.approach'),
+    href: '#approach',
+    ariaLabel: t('nav.approachAria')
+  },
+  {
+    id: 'writing',
+    label: t('nav.experiments'),
+    href: '#writing',
+    ariaLabel: t('nav.experimentsAria')
+  },
+  {
+    id: 'contact',
+    label: t('nav.contact'),
+    href: '#contact',
+    ariaLabel: t('nav.contactAria')
+  }
 ])
-const targetLocale = computed<'en' | 'es'>(() => (locale.value === 'en' ? 'es' : 'en'))
+const targetLocale = computed<'en' | 'es'>(() => (locale.value === 'en'
+  ? 'es'
+  : 'en'))
 const localeSwitchLabel = computed<string>(() => t('nav.switchLocale'))
 
 /** Methods */

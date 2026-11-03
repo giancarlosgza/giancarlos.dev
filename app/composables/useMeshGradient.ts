@@ -15,7 +15,9 @@ export interface IMeshTintSource {
  */
 export function useMeshGradient(sources: IMeshTintSource[] = []) {
   const colorMode = useColorMode()
-  const meshBase = computed(() => (colorMode.value === 'dark' ? '#15151c' : '#ffffff'))
+  const meshBase = computed(() => (colorMode.value === 'dark'
+    ? '#15151c'
+    : '#ffffff'))
   const tokenPalettes = ref<Record<string, string[]>>({})
 
   function resolveCssColor(value: string, fallback: string): string {
