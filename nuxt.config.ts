@@ -140,9 +140,6 @@ export default defineNuxtConfig({
 
   // Fonts
   fonts: {
-    assets: {
-      prefix: '/fonts/'
-    },
     provider: 'fontsource',
     families: [
       {
