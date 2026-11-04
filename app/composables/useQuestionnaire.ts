@@ -21,6 +21,7 @@ import {
 
 /** Interfaces */
 interface IQuestionnaireDraft {
+  invite: string | null
   niche: TNiche | null
   lastNiche: TNiche | null
   stepId: TStepId
@@ -39,8 +40,9 @@ interface IStepErrors {
 /** Constants */
 const DRAFT_KEY = 'gg-questionnaire-draft'
 
-function emptyDraft(): IQuestionnaireDraft {
+function emptyDraft(invite: string | null = null): IQuestionnaireDraft {
   return {
+    invite,
     niche: null,
     lastNiche: null,
     stepId: 'contact',
@@ -198,8 +200,8 @@ export function useQuestionnaire() {
     draft.value.niche = null
   }
 
-  function clearDraft(): void {
-    draft.value = emptyDraft()
+  function clearDraft(invite: string | null = null): void {
+    draft.value = emptyDraft(invite)
     files.value = {}
   }
 

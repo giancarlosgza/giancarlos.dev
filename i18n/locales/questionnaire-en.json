@@ -584,6 +584,11 @@
       "privacyConsent": {
         "label": "I agree that these answers are used to build my website"
       }
+    },
+    "invalid": {
+      "title": "This link isn't valid",
+      "lead": "It may have been used already or expired. Message me and I'll send you a new one.",
+      "contact": "Message me"
     }
   }
 }

@@ -57,6 +57,12 @@ export interface IQuestionStep {
   fields: IQuestionField[]
 }
 
+export interface IInvite {
+  code: string
+  clientName: string | null
+  niche: TNiche | null
+}
+
 export interface IUploadedFile {
   key: string
   path: string
@@ -857,7 +863,7 @@ export function validateRepeaterRow(field: IQuestionField, row: TRepeaterRow): R
   return errors
 }
 
-/** Matches storage.rules */
+/** Matches storage.rules in giancarlos-admin */
 export const MAX_UPLOAD_BYTES = 10 * 1024 * 1024
 export const UPLOAD_ACCEPT = 'image/*,application/pdf'
 

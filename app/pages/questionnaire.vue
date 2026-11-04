@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { IStepItem } from '@colorffy/ui'
-import type { TNiche, TStepId } from '~/utils/questionnaire'
+import type { IInvite, TNiche, TStepId } from '~/utils/questionnaire'
 import { NuxtLink } from '#components'
 
 /** Meta */
@@ -38,8 +38,9 @@ const {
   collectAnswers,
   collectFiles
 } = useQuestionnaire()
-const { isSubmitting, submitError, submit } = useQuestionnaireSubmit()
+const { isSubmitting, submitError, loadInvite, submit } = useQuestionnaireFirebase()
 const isReady = ref<boolean>(false)
+const invite = ref<IInvite | null>(null)
 const isSubmitted = ref<boolean>(false)
 const showStepError = ref<boolean>(false)
 const honeypot = ref<string>('')
@@ -99,7 +100,7 @@ function syncHistory(replace: boolean): void {
 
   historyStep = step
   const target = {
-    query: { ...route.query, step }
+    query: { ...route.query, invite: draft.value.invite ?? undefined, step }
   }
   if (replace)
     router.replace(target)
@@ -115,7 +116,7 @@ async function onSubmit(): Promise<void> {
     return
   }
 
-  if (!validateAll() || !niche.value) {
+  if (!validateAll() || !niche.value || !draft.value.invite) {
     await focusFirstError()
     return
   }
@@ -127,6 +128,7 @@ async function onSubmit(): Promise<void> {
   }
 
   const sent = await submit({
+    invite: draft.value.invite,
     niche: niche.value,
     locale: locale.value,
     answers: collectAnswers(),
@@ -169,7 +171,7 @@ watch(() => route.query.step, (step) => {
 
   historyStep = step as string | undefined
   if (!step) {
-    if (niche.value)
+    if (niche.value && !invite.value?.niche)
       resetNiche()
     return
   }
@@ -189,7 +191,21 @@ watch([errors, rowErrors], () => {
 }, { deep: true })
 
 /** Lifecycle */
-onMounted(() => {
+onMounted(async () => {
+  const code = typeof route.query.invite === 'string'
+    ? route.query.invite
+    : draft.value.invite
+  if (code && code !== draft.value.invite)
+    clearDraft(code)
+
+  invite.value = code
+    ? await loadInvite(code)
+    : null
+  if (invite.value?.niche && draft.value.niche !== invite.value.niche)
+    selectNiche(invite.value.niche)
+  if (invite.value?.clientName && !draft.value.answers.contactName)
+    setAnswer('contactName', invite.value.clientName)
+
   isReady.value = true
   historyStep = route.query.step as string | undefined
   syncHistory(true)
@@ -239,6 +255,34 @@ useSeoMeta({
       />
     </section>
 
+    <section
+      v-else-if="!invite"
+      class="questionnaire-done container"
+      aria-labelledby="questionnaire-invalid-title"
+    >
+      <UiIconMaterial
+        icon-code="&#xe16f;"
+        size="xl"
+        class="text-secondary"
+      />
+      <h1
+        id="questionnaire-invalid-title"
+        class="questionnaire-start-title"
+      >
+        {{ t('questionnaire.invalid.title') }}
+      </h1>
+      <p class="questionnaire-lead">
+        {{ t('questionnaire.invalid.lead') }}
+      </p>
+      <UiButton
+        variant="filled"
+        color="primary"
+        size="lg"
+        :text="t('questionnaire.invalid.contact')"
+        href="mailto:hello@giancarlos.dev"
+      />
+    </section>
+
     <QuestionnaireNichePicker
       v-else-if="!niche"
       :model-value="draft.lastNiche"
@@ -269,6 +313,7 @@ useSeoMeta({
           {{ t('questionnaire.savedNote') }}
         </p>
         <UiButton
+          v-if="!invite?.niche"
           variant="text"
           size="sm"
           :text="t('questionnaire.changeNiche')"
@@ -278,6 +323,7 @@ useSeoMeta({
             <UiIconMaterial icon-code="&#xe8d4;" />
           </template>
         </UiButton>
+        <IncludeColorModePicker :show-labels="false" />
       </aside>
 
       <form

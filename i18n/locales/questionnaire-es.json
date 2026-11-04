@@ -584,6 +584,11 @@
       "privacyConsent": {
         "label": "Acepto que estas respuestas se usen para construir mi sitio web"
       }
+    },
+    "invalid": {
+      "title": "Este enlace no es válido",
+      "lead": "Puede que ya se haya usado o que haya vencido. Escríbeme y te mando uno nuevo.",
+      "contact": "Escríbeme"
     }
   }
 }

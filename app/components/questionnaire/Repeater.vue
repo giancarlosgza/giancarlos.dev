@@ -85,7 +85,7 @@ onMounted(() => {
       <li
         v-for="(row, index) in rows"
         :key="index"
-        class="repeater-row card card-pane"
+        class="repeater-row card card-pane card-outline shadow-sm"
       >
         <span
           class="repeater-index"

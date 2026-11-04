@@ -94,7 +94,7 @@ function formatValue(field: IQuestionField): string {
       <header class="review-head">
         <h2
           :id="`review-${section.id}`"
-          class="review-title fw-500"
+          class="review-title fw-600"
         >
           {{ section.title }}
         </h2>
