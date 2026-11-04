@@ -9,37 +9,44 @@ interface INavLink {
   ariaLabel: string
 }
 
+/** Props */
+const props = defineProps<{
+  minimal?: boolean
+}>()
+
 /** Data */
 const { locale, setLocale, t } = useI18n()
 const localePath = useLocalePath()
 
 /** Computed */
-const navLinks = computed<INavLink[]>(() => [
-  {
-    id: 'work',
-    label: t('nav.work'),
-    href: '#work',
-    ariaLabel: t('nav.workAria')
-  },
-  {
-    id: 'approach',
-    label: t('nav.approach'),
-    href: '#approach',
-    ariaLabel: t('nav.approachAria')
-  },
-  {
-    id: 'writing',
-    label: t('nav.experiments'),
-    href: '#writing',
-    ariaLabel: t('nav.experimentsAria')
-  },
-  {
-    id: 'contact',
-    label: t('nav.contact'),
-    href: '#contact',
-    ariaLabel: t('nav.contactAria')
-  }
-])
+const navLinks = computed<INavLink[]>(() => props.minimal
+  ? []
+  : [
+      {
+        id: 'work',
+        label: t('nav.work'),
+        href: '#work',
+        ariaLabel: t('nav.workAria')
+      },
+      {
+        id: 'approach',
+        label: t('nav.approach'),
+        href: '#approach',
+        ariaLabel: t('nav.approachAria')
+      },
+      {
+        id: 'writing',
+        label: t('nav.experiments'),
+        href: '#writing',
+        ariaLabel: t('nav.experimentsAria')
+      },
+      {
+        id: 'contact',
+        label: t('nav.contact'),
+        href: '#contact',
+        ariaLabel: t('nav.contactAria')
+      }
+    ])
 const targetLocale = computed<'en' | 'es'>(() => (locale.value === 'en'
   ? 'es'
   : 'en'))

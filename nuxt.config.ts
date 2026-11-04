@@ -10,9 +10,16 @@ export default defineNuxtConfig({
     preset: 'node-server',
     compressPublicAssets: true,
     prerender: {
-      routes: ['/'],
+      // The questionnaire is unlinked, so crawlLinks never finds it
+      routes: ['/', '/questionnaire', '/es/cuestionario'],
       crawlLinks: true
     }
+  },
+
+  // Private client questionnaire, kept out of search
+  routeRules: {
+    '/questionnaire': { robots: false, sitemap: false },
+    '/es/cuestionario': { robots: false, sitemap: false }
   },
 
   runtimeConfig: {
@@ -112,15 +119,22 @@ export default defineNuxtConfig({
         code: 'en',
         language: 'en-US',
         name: 'English',
-        file: 'en.json'
+        files: ['en.json', 'questionnaire-en.json']
       },
       {
         code: 'es',
         language: 'es-MX',
         name: 'Español',
-        file: 'es.json'
+        files: ['es.json', 'questionnaire-es.json']
       }
     ],
+    customRoutes: 'config',
+    pages: {
+      questionnaire: {
+        en: '/questionnaire',
+        es: '/cuestionario'
+      }
+    },
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
@@ -136,9 +150,18 @@ export default defineNuxtConfig({
 
   // Firebase
   vuefire: {
+    // With SSR, detected emulators make VueFire load firebase-admin
     emulators: {
-      enabled: process.env.NODE_ENV !== 'production'
+      enabled: false
     },
+    // Auth off for the same reason; the questionnaire signs in on the client
+    appCheck: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY
+      ? {
+          provider: 'ReCaptchaV3',
+          key: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY,
+          isTokenAutoRefreshEnabled: true
+        }
+      : undefined,
     config: {
       apiKey: process.env.NUXT_PUBLIC_VUEFIRE_CONFIG_API_KEY || 'placeholder-api-key',
       authDomain: process.env.NUXT_PUBLIC_VUEFIRE_CONFIG_AUTH_DOMAIN || 'placeholder-auth-domain',

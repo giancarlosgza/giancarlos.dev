@@ -1,0 +1,589 @@
+{
+  "questionnaire": {
+    "seo": {
+      "title": "Website questionnaire",
+      "description": "Tell me about your business so I can build your website."
+    },
+    "start": {
+      "badge": "Welcome. Your website is on its way.",
+      "title": "What kind of business is it?",
+      "lead": "I tailor the questions to your business. They take about 10 minutes, and you can pause and come back later on this device.",
+      "legend": "Business type",
+      "continue": "Continue",
+      "niches": {
+        "cafe": {
+          "title": "Coffee shop",
+          "description": "Specialty coffee shops, roasters, bakeries and brew bars.",
+          "asks": "Menu · hours · orders · photos"
+        },
+        "health": {
+          "title": "Health",
+          "description": "Doctors, dentists, psychologists and other specialists.",
+          "asks": "License · services · appointments · credentials"
+        },
+        "music": {
+          "title": "Music",
+          "description": "Solo artists and groups who teach, play events, or both.",
+          "asks": "Repertoire · packages · lessons · videos"
+        }
+      }
+    },
+    "steps": {
+      "contact": {
+        "title": "Contact",
+        "lead": "So I can reach you while I build your site. Your WhatsApp or your email is enough; it isn't published."
+      },
+      "business": {
+        "title": "Your business",
+        "lead": "This goes on the home section and the \"About\" section of your site."
+      },
+      "audience": {
+        "title": "Audience",
+        "lead": "Who you want to reach and what they should do when they arrive."
+      },
+      "location": {
+        "title": "Location and hours",
+        "lead": "Where and when people can find you."
+      },
+      "online": {
+        "title": "Online presence",
+        "lead": "Your profiles and your domain. Paste the full links."
+      },
+      "brand": {
+        "title": "Brand",
+        "lead": "Your logo, colors and the feel you want. If you don't have these, I'll help."
+      },
+      "content": {
+        "title": "Services and content",
+        "lead": "What you offer, your photos and your reviews."
+      },
+      "review": {
+        "title": "Review and send",
+        "lead": "Check your answers. You can go back to any step before sending."
+      }
+    },
+    "stepper": "Questionnaire steps",
+    "stepCount": "Step {current} of {total}",
+    "progress": "Questionnaire progress",
+    "savedNote": "Your progress is saved on this device. You can close this page and come back later.",
+    "filesNote": "Files stay selected until you close this page, and upload when you send.",
+    "changeNiche": "Change business type",
+    "actions": {
+      "back": "Back",
+      "next": "Next",
+      "submit": "Send answers",
+      "add": "Add",
+      "remove": "Remove",
+      "edit": "Edit",
+      "addFiles": "Add files",
+      "removeFile": "Remove {name}",
+      "toReview": "Back to review"
+    },
+    "errors": {
+      "required": "This field is required.",
+      "email": "Enter a valid email address.",
+      "url": "Enter a valid link that starts with https://",
+      "tel": "Enter a 10-digit number.",
+      "step": "Some answers need your attention.",
+      "submit": "Your answers couldn't be sent. Check your connection and try again; nothing has been lost.",
+      "fileType": "Only PDF files or images under 10 MB.",
+      "denied": "Your answers couldn't be saved. Reload the page and try again; if it keeps happening, message me on WhatsApp.",
+      "niche": "Choose a business type to continue.",
+      "max": "You can choose up to {max}.",
+      "numeric": "Use numbers only.",
+      "either": "Enter your WhatsApp or your email; one is enough."
+    },
+    "review": {
+      "empty": "Not answered",
+      "files": "{count} file(s)",
+      "rows": "{count} item(s)",
+      "yes": "Yes"
+    },
+    "success": {
+      "title": "Thank you! I have everything I need.",
+      "lead": "I'll start on your landing page and get in touch with the first preview.",
+      "home": "Go to giancarlos.dev"
+    },
+    "fields": {
+      "contactName": {
+        "label": "Your name"
+      },
+      "contactEmail": {
+        "label": "Email"
+      },
+      "contactWhatsapp": {
+        "label": "WhatsApp",
+        "hint": "Mexican numbers only, 10 digits.",
+        "placeholder": "81 1234 5678"
+      },
+      "cafeVenueType": {
+        "label": "What best describes you?",
+        "options": {
+          "specialty": "Specialty café",
+          "roaster": "Roaster",
+          "bakery": "Bakery",
+          "brewBar": "Brew bar",
+          "food": "Café with food"
+        }
+      },
+      "healthProfession": {
+        "label": "Your profession",
+        "options": {
+          "doctor": "Doctor",
+          "dentist": "Dentist",
+          "psychologist": "Psychologist",
+          "nutritionist": "Nutritionist",
+          "physio": "Physiotherapist",
+          "other": "Other"
+        }
+      },
+      "musicActType": {
+        "label": "How do you perform?",
+        "options": {
+          "solo": "Solo artist",
+          "duo": "Duo",
+          "band": "Band",
+          "ensemble": "Ensemble"
+        }
+      },
+      "healthTitle": {
+        "label": "Title",
+        "placeholder": "Choose",
+        "options": {
+          "dra": "Dra.",
+          "dr": "Dr.",
+          "lic": "Lic.",
+          "mtra": "Mtra.",
+          "mtro": "Mtro.",
+          "psic": "Psic."
+        }
+      },
+      "businessName": {
+        "label": "Name as it should appear",
+        "hint": "Your business, brand or professional name."
+      },
+      "healthSpecialty": {
+        "label": "Specialty",
+        "placeholder": "e.g. Orthodontics"
+      },
+      "healthCedula": {
+        "label": "Professional license (cédula)",
+        "hint": "Shown in the footer, as health advertising rules require."
+      },
+      "tagline": {
+        "label": "Tagline",
+        "hint": "A short phrase, if you have one."
+      },
+      "shortDescription": {
+        "label": "Describe your business in one or two sentences",
+        "placeholder": "What you do, for whom and where"
+      },
+      "story": {
+        "label": "Your story",
+        "placeholder": "How it started and what you care about"
+      },
+      "differentiators": {
+        "label": "What sets you apart (up to 3)",
+        "placeholder": "Type one and press Enter"
+      },
+      "problemsSolved": {
+        "label": "What problems do you solve for your customers?",
+        "hint": "Your own words help people find you on Google and in AI search."
+      },
+      "healthEducation": {
+        "label": "Education",
+        "add": "Add education",
+        "fields": {
+          "degree": {
+            "label": "Degree"
+          },
+          "institution": {
+            "label": "Institution"
+          },
+          "year": {
+            "label": "Year"
+          }
+        }
+      },
+      "musicMembers": {
+        "label": "Members",
+        "add": "Add member",
+        "fields": {
+          "name": {
+            "label": "Name"
+          },
+          "role": {
+            "label": "Instrument or role"
+          }
+        }
+      },
+      "musicGoals": {
+        "label": "What is the site for?",
+        "options": {
+          "booking": "Booking shows",
+          "teaching": "Teaching lessons",
+          "both": "Both"
+        }
+      },
+      "musicGenres": {
+        "label": "Genres",
+        "placeholder": "Type one and press Enter"
+      },
+      "primaryCta": {
+        "label": "The main action a visitor should take",
+        "options": {
+          "whatsapp": "Send a WhatsApp message",
+          "call": "Call",
+          "booking": "Book an appointment",
+          "directions": "Get directions",
+          "order": "Place an order"
+        }
+      },
+      "audience": {
+        "label": "Who are your ideal customers?",
+        "placeholder": "Age, interests, what they're looking for"
+      },
+      "serviceArea": {
+        "label": "Areas you serve",
+        "placeholder": "e.g. San Pedro, Monterrey",
+        "hint": "Neighborhoods or cities. Press Enter after each one."
+      },
+      "publicWhatsapp": {
+        "label": "WhatsApp for customers",
+        "hint": "Leave it empty to use the one you gave in Contact.",
+        "placeholder": "81 1234 5678"
+      },
+      "publicEmail": {
+        "label": "Public email"
+      },
+      "locationType": {
+        "label": "Do customers visit you?",
+        "options": {
+          "one": "Yes, one location",
+          "several": "Yes, several locations",
+          "visit": "No, I go to them",
+          "online": "No, online only"
+        }
+      },
+      "locations": {
+        "label": "Locations",
+        "add": "Add location",
+        "fields": {
+          "name": {
+            "label": "Branch name"
+          },
+          "address": {
+            "label": "Address"
+          },
+          "hours": {
+            "label": "Hours",
+            "placeholder": "Mon–Fri 8:00–20:00, Sat 9:00–14:00"
+          }
+        }
+      },
+      "cafeAmenities": {
+        "label": "What do you offer?",
+        "options": {
+          "wifi": "Wi-Fi",
+          "work": "Work-friendly",
+          "pets": "Pet-friendly",
+          "terrace": "Terrace",
+          "parking": "Parking",
+          "kids": "Kid-friendly",
+          "accessible": "Accessible",
+          "liveMusic": "Live music"
+        }
+      },
+      "healthBooking": {
+        "label": "How do patients book?",
+        "options": {
+          "whatsapp": "WhatsApp",
+          "phone": "Phone call",
+          "platform": "A booking platform"
+        }
+      },
+      "healthBookingUrl": {
+        "label": "Booking link",
+        "placeholder": "https://"
+      },
+      "musicCoverage": {
+        "label": "Where do you travel to play?",
+        "placeholder": "e.g. Monterrey and surrounding area"
+      },
+      "socialInstagram": {
+        "label": "Instagram",
+        "placeholder": "https://instagram.com/"
+      },
+      "socialFacebook": {
+        "label": "Facebook",
+        "placeholder": "https://facebook.com/"
+      },
+      "socialTiktok": {
+        "label": "TikTok",
+        "placeholder": "https://tiktok.com/"
+      },
+      "socialYoutube": {
+        "label": "YouTube",
+        "placeholder": "https://youtube.com/"
+      },
+      "googleProfile": {
+        "label": "Do you have a Google Maps / Google Business profile?",
+        "options": {
+          "yes": "Yes",
+          "no": "No",
+          "unsure": "Not sure"
+        }
+      },
+      "googleProfileUrl": {
+        "label": "Google profile link",
+        "placeholder": "https://"
+      },
+      "domain": {
+        "label": "Domain",
+        "options": {
+          "have": "I have one",
+          "need": "I need one",
+          "unsure": "Not sure"
+        }
+      },
+      "domainName": {
+        "label": "Your domain",
+        "placeholder": "yourbusiness.com"
+      },
+      "domainIdeas": {
+        "label": "Names you'd like",
+        "placeholder": "Type one and press Enter"
+      },
+      "healthCofepris": {
+        "label": "COFEPRIS advertising permit number",
+        "hint": "Only if you have one."
+      },
+      "musicLinks": {
+        "label": "Where to listen",
+        "add": "Add link",
+        "fields": {
+          "platform": {
+            "label": "Platform",
+            "placeholder": "Choose",
+            "options": {
+              "spotify": "Spotify",
+              "appleMusic": "Apple Music",
+              "youtube": "YouTube",
+              "soundcloud": "SoundCloud",
+              "bandcamp": "Bandcamp",
+              "other": "Other"
+            }
+          },
+          "url": {
+            "label": "Link"
+          }
+        }
+      },
+      "musicVideos": {
+        "label": "Up to 3 videos to feature",
+        "placeholder": "Paste a link and press Enter"
+      },
+      "logoFile": {
+        "label": "Logo",
+        "inputLabel": "Choose your logo or drop it here",
+        "hint": "An image (SVG or PNG preferred) or PDF, up to 10 MB."
+      },
+      "noLogo": {
+        "label": "I don't have a logo, use my name as text"
+      },
+      "brandColors": {
+        "label": "Brand colors",
+        "hint": "Up to 3.",
+        "add": "Add color"
+      },
+      "brandHelp": {
+        "label": "Help me choose colors"
+      },
+      "styleKeywords": {
+        "label": "How should it feel? (up to 3)",
+        "options": {
+          "minimal": "Minimal",
+          "warm": "Warm",
+          "elegant": "Elegant",
+          "bold": "Bold",
+          "playful": "Playful",
+          "clinical": "Clinical",
+          "natural": "Natural",
+          "premium": "Premium",
+          "modern": "Modern",
+          "retro": "Retro"
+        }
+      },
+      "references": {
+        "label": "Websites you like",
+        "add": "Add website",
+        "fields": {
+          "url": {
+            "label": "Link"
+          },
+          "note": {
+            "label": "What you like about it"
+          }
+        }
+      },
+      "cafeMenuFiles": {
+        "label": "Your menu",
+        "inputLabel": "Choose a PDF or photos of your menu, or drop them here",
+        "hint": "A PDF or photos of your current menu. I turn it into the web menu."
+      },
+      "cafeSignatureItems": {
+        "label": "Your 3 best sellers",
+        "placeholder": "Type one and press Enter"
+      },
+      "cafeOrdering": {
+        "label": "How can people order?",
+        "options": {
+          "whatsapp": "WhatsApp",
+          "pickup": "Pickup",
+          "delivery": "Delivery apps",
+          "dineIn": "Dine-in only"
+        }
+      },
+      "healthServices": {
+        "label": "Services or treatments",
+        "add": "Add service",
+        "fields": {
+          "category": {
+            "label": "Category",
+            "placeholder": "e.g. Orthodontics"
+          },
+          "name": {
+            "label": "Service"
+          },
+          "description": {
+            "label": "Short description"
+          },
+          "price": {
+            "label": "Price (optional)"
+          }
+        }
+      },
+      "healthApproaches": {
+        "label": "Therapeutic approaches",
+        "placeholder": "e.g. CBT"
+      },
+      "healthPopulations": {
+        "label": "Who do you work with?",
+        "options": {
+          "children": "Children",
+          "teens": "Teens",
+          "adults": "Adults",
+          "couples": "Couples",
+          "families": "Families"
+        }
+      },
+      "healthCases": {
+        "label": "Before/after or success cases",
+        "inputLabel": "Choose photos or drop them here",
+        "hint": "Only with your patients' consent."
+      },
+      "musicEventTypes": {
+        "label": "Events you play",
+        "options": {
+          "weddings": "Weddings",
+          "corporate": "Corporate",
+          "private": "Private parties",
+          "venues": "Bars and restaurants",
+          "festivals": "Festivals",
+          "quince": "XV años",
+          "ceremonies": "Ceremonies"
+        }
+      },
+      "musicPackages": {
+        "label": "Your packages",
+        "add": "Add package",
+        "fields": {
+          "name": {
+            "label": "Package",
+            "placeholder": "e.g. Ceremony"
+          },
+          "duration": {
+            "label": "Duration"
+          },
+          "lineup": {
+            "label": "Lineup"
+          },
+          "price": {
+            "label": "Starting price (optional)"
+          }
+        }
+      },
+      "musicInstruments": {
+        "label": "Instruments or subjects you teach",
+        "placeholder": "Type one and press Enter"
+      },
+      "musicLevels": {
+        "label": "Levels",
+        "options": {
+          "beginner": "Beginner",
+          "intermediate": "Intermediate",
+          "advanced": "Advanced"
+        }
+      },
+      "musicLessonPlace": {
+        "label": "Where do lessons happen?",
+        "options": {
+          "studio": "My studio",
+          "home": "Student's home",
+          "online": "Online"
+        }
+      },
+      "musicLessonFormats": {
+        "label": "Lesson formats",
+        "add": "Add format",
+        "fields": {
+          "name": {
+            "label": "Format",
+            "placeholder": "e.g. Individual"
+          },
+          "duration": {
+            "label": "Duration"
+          },
+          "price": {
+            "label": "Price (optional)"
+          }
+        }
+      },
+      "portrait": {
+        "label": "Photo of you or your team",
+        "inputLabel": "Choose a photo or drop it here"
+      },
+      "photos": {
+        "label": "Photos of your place, products or work",
+        "inputLabel": "Choose photos or drop them here"
+      },
+      "useGoogleReviews": {
+        "label": "Show my Google reviews on the site"
+      },
+      "faq": {
+        "label": "Questions customers always ask",
+        "add": "Add question",
+        "fields": {
+          "question": {
+            "label": "Question"
+          },
+          "answer": {
+            "label": "Answer"
+          }
+        }
+      },
+      "launchDate": {
+        "label": "When would you like to launch?"
+      },
+      "notes": {
+        "label": "Anything else I should know?"
+      },
+      "contentRights": {
+        "label": "I own, or have permission to use, the files I uploaded"
+      },
+      "privacyConsent": {
+        "label": "I agree that these answers are used to build my website"
+      }
+    }
+  }
+}

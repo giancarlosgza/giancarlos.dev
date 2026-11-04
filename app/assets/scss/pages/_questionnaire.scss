@@ -1,0 +1,428 @@
+@layer pages {
+  .questionnaire-page {
+    container: questionnaire / inline-size;
+    padding-block: var(--cffy-space-32) var(--cffy-space-96);
+
+    .questionnaire-loading {
+      display: grid;
+      place-content: center;
+      justify-items: center;
+      min-block-size: 50vh;
+      text-align: center;
+    }
+
+    .questionnaire-kicker {
+      font-family: var(--cffy-font-primary);
+      font-size: var(--cffy-fs-3xs);
+      color: var(--cffy-secondary-a10);
+    }
+
+    .questionnaire-lead {
+      max-inline-size: 60ch;
+      margin: 0;
+      font-size: var(--cffy-fs-base);
+      line-height: 1.6;
+      color: var(--cffy-muted-a10);
+    }
+
+    .questionnaire-note {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--cffy-space-8);
+      margin: 0;
+      font-size: var(--cffy-fs-2xs);
+      line-height: 1.5;
+      color: var(--cffy-muted-a10);
+    }
+
+    // Business type picker
+    .questionnaire-start,
+    .questionnaire-done {
+      display: grid;
+      justify-items: start;
+      gap: var(--cffy-space-20);
+      padding-block: var(--cffy-space-48);
+    }
+
+    .questionnaire-done {
+      justify-items: center;
+      text-align: center;
+    }
+
+    .questionnaire-start-title {
+      max-inline-size: 24ch;
+      margin: 0;
+      font-size: clamp(2rem, 3.5vw + 0.75rem, 3.25rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      font-weight: 800;
+      text-wrap: balance;
+    }
+
+    .questionnaire-start-form {
+      display: grid;
+      justify-items: start;
+      gap: var(--cffy-space-24);
+      inline-size: 100%;
+      margin-block-start: var(--cffy-space-16);
+    }
+
+    .niche-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      gap: var(--cffy-space-20);
+      inline-size: 100%;
+      margin: 0;
+      padding: 0;
+      border: 0;
+
+      .niche-option {
+        --niche-color: var(--cffy-secondary-a10);
+
+        display: flex;
+        flex-direction: column;
+        gap: var(--cffy-space-12);
+        min-block-size: 17rem;
+        padding: var(--cffy-space-24);
+        cursor: pointer;
+
+        &[data-niche='cafe'] {
+          --niche-color: var(--cffy-accent-a10);
+        }
+
+        &[data-niche='music'] {
+          --niche-color: var(--cffy-success-a10);
+        }
+
+        &:has(:checked) {
+          border-color: var(--niche-color);
+          box-shadow: 0 0 0 4px color-mix(in srgb, var(--niche-color), transparent 80%);
+        }
+
+        &:has(:focus-visible) {
+          outline: 2px solid var(--cffy-secondary-a10);
+          outline-offset: 2px;
+        }
+
+        .niche-option-icon {
+          display: inline-grid;
+          place-items: center;
+          inline-size: 2.75rem;
+          aspect-ratio: 1;
+          border-radius: var(--cffy-radius-md);
+          background: var(--cffy-surface-body-pane);
+          color: var(--niche-color);
+          border: var(--cffy-border-width-sm) solid var(--cffy-outline-surface);
+        }
+
+        .niche-option-title {
+          font-family: var(--cffy-font-primary);
+          font-size: var(--cffy-fs-xl);
+          font-weight: 700;
+          letter-spacing: -0.02em;
+        }
+
+        .niche-option-description {
+          color: var(--cffy-muted-a10);
+          line-height: 1.55;
+        }
+
+        .niche-option-asks {
+          margin-block-start: auto;
+          padding-block-start: var(--cffy-space-12);
+          border-block-start: 1px solid var(--cffy-outline-surface);
+          font-family: var(--cffy-font-primary);
+          font-size: var(--cffy-fs-3xs);
+          color: var(--cffy-muted-a10);
+        }
+      }
+    }
+
+    // Steps
+    .questionnaire-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--cffy-space-32);
+      align-items: start;
+
+      @container questionnaire (width >= 60rem) {
+        grid-template-columns: 15rem minmax(0, 1fr);
+      }
+
+      // Below the form on phones, without the step list
+      .questionnaire-aside {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--cffy-space-12);
+
+        .questionnaire-steps {
+          display: none;
+        }
+
+        @container questionnaire (width >= 60rem) {
+          order: 0;
+          position: sticky;
+          inset-block-start: 6rem;
+          gap: var(--cffy-space-20);
+
+          .questionnaire-steps {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .questionnaire-form {
+      container-type: inline-size;
+      display: flex;
+      flex-direction: column;
+      gap: var(--cffy-space-24);
+      padding: clamp(var(--cffy-space-20), 4cqi, var(--cffy-space-40));
+
+      .questionnaire-step-head {
+        display: grid;
+        gap: var(--cffy-space-8);
+      }
+
+      .questionnaire-step-title {
+        margin: 0;
+        font-size: clamp(1.75rem, 2vw + 1rem, 2.25rem);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .questionnaire-actions {
+        position: sticky;
+        inset-block-end: 0;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--cffy-space-12);
+        margin-block-start: var(--cffy-space-8);
+        padding-block: var(--cffy-space-16);
+        border-block-start: 1px solid var(--cffy-outline-surface);
+        background: var(--cffy-surface-body-pane);
+
+        .questionnaire-next {
+          margin-inline-start: auto;
+        }
+      }
+    }
+
+    // Fields grid
+    .questionnaire-fields {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--cffy-space-24) var(--cffy-space-20);
+
+      @container (width >= 40rem) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .questionnaire-field {
+        display: grid;
+        align-content: start;
+        gap: var(--cffy-space-6);
+        min-inline-size: 0;
+        // Clears the floating navbar
+        scroll-margin-block-start: 7rem;
+
+        &.is-wide {
+          grid-column: 1 / -1;
+        }
+
+        // Spacing comes from the grid gap
+        .form-group {
+          margin-block-end: 0;
+        }
+      }
+    }
+
+    .questionnaire-hint,
+    .questionnaire-error {
+      margin: 0;
+      font-size: var(--cffy-fs-2xs);
+      line-height: 1.5;
+    }
+
+    .questionnaire-hint {
+      color: var(--cffy-muted-a10);
+    }
+
+    .questionnaire-error {
+      color: var(--cffy-danger-a10);
+    }
+
+    // Matches Colorffy's field labels
+    .questionnaire-legend {
+      padding: 0;
+      font-size: var(--cffy-fs-2xs);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .questionnaire-group {
+      display: grid;
+      justify-items: start;
+      gap: var(--cffy-space-12);
+      min-inline-size: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+
+      // A legend sits outside the grid, so it can't use the gap
+      .questionnaire-legend {
+        margin-block-end: var(--cffy-space-12);
+      }
+    }
+
+    .questionnaire-repeater {
+      justify-items: stretch;
+
+      > .btn {
+        justify-self: start;
+      }
+
+      .repeater-rows {
+        display: grid;
+        gap: var(--cffy-space-12);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      // Narrow cards put the number and delete button above the cells
+      .repeater-row {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        grid-template-areas:
+          'index . remove'
+          'cells cells cells';
+        align-items: start;
+        gap: var(--cffy-space-12);
+        padding: var(--cffy-space-16);
+
+        @container (width >= 40rem) {
+          grid-template-areas: 'index cells remove';
+        }
+
+        .repeater-remove {
+          grid-area: remove;
+        }
+
+        .repeater-index {
+          grid-area: index;
+          padding-block-start: var(--cffy-space-6);
+          font-family: var(--cffy-font-primary);
+          font-size: var(--cffy-fs-3xs);
+          color: var(--cffy-secondary-a10);
+        }
+
+        .repeater-cells {
+          grid-area: cells;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+          gap: var(--cffy-space-12);
+
+          .questionnaire-field[data-type='textarea'] {
+            grid-column: 1 / -1;
+          }
+        }
+      }
+    }
+
+    .questionnaire-colors {
+      .color-row {
+        display: flex;
+        align-items: center;
+        gap: var(--cffy-space-8);
+      }
+    }
+
+    .questionnaire-files {
+      display: grid;
+      gap: var(--cffy-space-12);
+
+      .file-list {
+        display: grid;
+        gap: var(--cffy-space-8);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .file-item {
+        display: flex;
+        align-items: center;
+        gap: var(--cffy-space-8);
+        padding: var(--cffy-space-6) var(--cffy-space-6) var(--cffy-space-6) var(--cffy-space-12);
+        border: 1px solid var(--cffy-outline-surface);
+        border-radius: var(--cffy-radius-md);
+
+        .file-name {
+          flex: 1 1 auto;
+          min-inline-size: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .file-size {
+          font-size: var(--cffy-fs-2xs);
+          color: var(--cffy-muted-a10);
+        }
+      }
+    }
+
+    .questionnaire-review {
+      display: grid;
+
+      .review-section {
+        padding-block: var(--cffy-space-16);
+        border-block-end: 1px solid var(--cffy-outline-surface);
+      }
+
+      .review-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--cffy-space-12);
+      }
+
+      .review-title {
+        margin: 0;
+        font-size: var(--cffy-fs-base);
+      }
+
+      .review-list {
+        display: grid;
+        gap: var(--cffy-space-8);
+        margin: var(--cffy-space-12) 0 0;
+      }
+
+      .review-item {
+        display: grid;
+        gap: var(--cffy-space-4) var(--cffy-space-16);
+
+        @container (width >= 40rem) {
+          grid-template-columns: 16rem minmax(0, 1fr);
+        }
+
+        dt {
+          color: var(--cffy-muted-a10);
+        }
+
+        dd {
+          margin: 0;
+          overflow-wrap: anywhere;
+        }
+      }
+    }
+  }
+}
