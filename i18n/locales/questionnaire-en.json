@@ -230,7 +230,7 @@
         "placeholder": "Type one and press Enter"
       },
       "primaryCta": {
-        "label": "The main action a visitor should take",
+        "label": "The main actions a visitor should take",
         "options": {
           "whatsapp": "Send a WhatsApp message",
           "call": "Call",

@@ -278,7 +278,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
     fields: [
       {
         key: 'primaryCta',
-        type: 'radio',
+        type: 'chips',
         required: true,
         wide: true,
         options: [

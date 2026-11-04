@@ -230,7 +230,7 @@
         "placeholder": "Escribe uno y presiona Enter"
       },
       "primaryCta": {
-        "label": "La acción principal del visitante",
+        "label": "Las acciones principales del visitante",
         "options": {
           "whatsapp": "Enviar un WhatsApp",
           "call": "Llamar",
