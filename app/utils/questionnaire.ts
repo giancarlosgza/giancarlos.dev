@@ -41,7 +41,6 @@ export interface IQuestionField {
   /** Option ids; labels live at `questionnaire.fields.<key>.options.<id>` */
   options?: string[]
   max?: number
-  maxFor?: (answers: TAnswers) => number
   /** Required only when this other answer is empty */
   requiredWithout?: string
   format?: 'url'
@@ -318,20 +317,18 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
       },
       {
         key: 'locationType',
-        type: 'radio',
+        type: 'chips',
         required: true,
         wide: true,
-        options: ['one', 'several', 'visit', 'online']
+        options: ['storefront', 'visit', 'online']
       },
       {
         key: 'locations',
         type: 'repeater',
         required: true,
         wide: true,
-        maxFor: answers => answers.locationType === 'one'
-          ? 1
-          : 10,
-        showIf: answers => ['one', 'several'].includes(answers.locationType as string),
+        max: 10,
+        showIf: answers => Array.isArray(answers.locationType) && (answers.locationType as string[]).includes('storefront'),
         fields: [
           { key: 'name', type: 'text', maxlength: 80 },
           {
@@ -773,12 +770,6 @@ export function isFieldVisible(field: IQuestionField, niche: TNiche, answers: TA
 export function getVisibleFields(step: IQuestionStep, niche: TNiche, answers: TAnswers): IQuestionField[] {
   return step.fields
     .filter(field => isFieldVisible(field, niche, answers))
-    .map(field => field.maxFor
-      ? {
-          ...field,
-          max: field.maxFor(answers)
-        }
-      : field)
 }
 
 export function isEmptyAnswer(value: TAnswerValue | undefined): boolean {

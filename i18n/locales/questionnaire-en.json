@@ -257,12 +257,11 @@
         "label": "Public email"
       },
       "locationType": {
-        "label": "Do customers visit you?",
+        "label": "How do you serve your customers?",
         "options": {
-          "one": "Yes, one location",
-          "several": "Yes, several locations",
-          "visit": "No, I go to them",
-          "online": "No, online only"
+          "storefront": "At my shop or location",
+          "visit": "I go to them",
+          "online": "Online"
         }
       },
       "locations": {

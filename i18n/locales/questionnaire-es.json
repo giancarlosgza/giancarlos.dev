@@ -257,12 +257,11 @@
         "label": "Correo público"
       },
       "locationType": {
-        "label": "¿Tus clientes te visitan?",
+        "label": "¿Cómo atiendes a tus clientes?",
         "options": {
-          "one": "Sí, una sucursal",
-          "several": "Sí, varias sucursales",
-          "visit": "No, yo voy con ellos",
-          "online": "No, solo en línea"
+          "storefront": "En mi local o sucursal",
+          "visit": "Voy con ellos",
+          "online": "En línea"
         }
       },
       "locations": {

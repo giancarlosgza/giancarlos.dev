@@ -84,17 +84,6 @@ export function useQuestionnaire() {
       if (field.requiredWithout === key)
         clearError(field.key)
     }
-    trimRows()
-  }
-
-  // An answer can lower a list's limit (several locations → one)
-  function trimRows(): void {
-    for (const field of steps.flatMap(item => item.fields)) {
-      const rows = draft.value.answers[field.key]
-      const max = field.maxFor?.(draft.value.answers)
-      if (max && Array.isArray(rows) && rows.length > max)
-        draft.value.answers[field.key] = rows.slice(0, max) as TRepeaterRow[]
-    }
   }
 
   function setFiles(key: string, list: File[]): void {
