@@ -10,8 +10,8 @@
     "contactAria": "Jump to contact section",
     "switchLocale": "Switch language to Spanish"
   },
+  "availability": "Open to new projects",
   "hero": {
-    "badge": "Available for select projects",
     "title": "High-performance interfaces & design systems.",
     "lead": "I'm {name}, a front-end engineer and UI/UX designer. I build refined, dependable web products with Vue, Nuxt and TypeScript. Currently, I work independently on SaaS products and client platforms.",
     "cta": "Get in touch",
@@ -47,10 +47,10 @@
     "subtitle": "Front-End Engineer & UI/UX Designer building high-performance interfaces and design systems.",
     "explore": "Explore",
     "connect": "Connect",
-    "email": "Email",
     "emailAria": "Send an email to Giancarlos Garza",
     "copyright": "© {year} Giancarlos Garza · Nuevo León, México",
-    "versionTitle": "Site version"
+    "versionTitle": "Site version",
+    "backToTop": "Back to top"
   },
   "colorMode": {
     "label": "Color mode",

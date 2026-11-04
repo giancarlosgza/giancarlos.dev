@@ -54,11 +54,7 @@ useSeoMeta({
 
       <div class="container">
         <div class="hero-eyebrow">
-          <UiBadge
-            :text="t('hero.badge')"
-            variant="tonal tonal-success"
-            icon-code="&#xe8e1;"
-          />
+          <IncludeStatusLabel :text="t('availability')" />
         </div>
 
         <h1

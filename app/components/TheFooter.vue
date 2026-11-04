@@ -5,60 +5,110 @@ const { t } = useI18n()
 /** Computed */
 const appVersion = useAppVersion()
 const currentYear = computed<number>(() => new Date().getFullYear())
+
+/** Methods */
+function scrollToTop(): void {
+  window.scrollTo({ top: 0 })
+}
 </script>
 
 <template>
   <footer class="portfolio-footer">
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-4 mb-4">
-          <p class="footer-title mb-2">
-            Giancarlos Garza
-          </p>
-          <p class="footer-subtitle mb-3">
+      <div class="footer-top">
+        <div class="footer-intro">
+          <p class="footer-lead">
             {{ t('footer.subtitle') }}
           </p>
-          <ClientOnly>
-            <LazyIncludeColorModePicker :show-labels="false" class="d-inline-flex" />
-          </ClientOnly>
+          <IncludeStatusLabel :text="t('availability')" />
         </div>
-        <div class="col-6 col-md-4 footer-group footer-col">
-          <p>{{ t('footer.explore') }}</p>
-          <a href="#work">{{ t('nav.work') }}</a>
-          <a href="#approach">{{ t('nav.approach') }}</a>
-          <a href="#writing">{{ t('nav.experiments') }}</a>
-        </div>
-        <div class="col-6 col-md-4 footer-group footer-col">
-          <p>{{ t('footer.connect') }}</p>
+
+        <nav
+          class="footer-group footer-explore"
+          :aria-label="t('footer.explore')"
+        >
+          <p class="footer-group-title-overline">
+            {{ t('footer.explore') }}
+          </p>
+          <a
+            href="#work"
+            class="footer-item"
+          >{{ t('nav.work') }}</a>
+          <a
+            href="#approach"
+            class="footer-item"
+          >{{ t('nav.approach') }}</a>
+          <a
+            href="#writing"
+            class="footer-item"
+          >{{ t('nav.experiments') }}</a>
+        </nav>
+
+        <nav
+          class="footer-group footer-connect"
+          :aria-label="t('footer.connect')"
+        >
+          <p class="footer-group-title-overline">
+            {{ t('footer.connect') }}
+          </p>
           <a
             href="mailto:hello@giancarlos.dev"
+            class="footer-item"
             :aria-label="t('footer.emailAria')"
-          >{{ t('footer.email') }}</a>
+          >hello@giancarlos.dev</a>
           <a
             href="https://github.com/giancarlosgza"
+            class="footer-item"
             target="_blank"
             rel="noopener noreferrer"
           >GitHub</a>
           <a
             href="https://www.linkedin.com/in/giancarlos-garza-b37897139"
+            class="footer-item"
             target="_blank"
             rel="noopener noreferrer"
           >LinkedIn</a>
+        </nav>
+
+        <div class="footer-top-action">
+          <UiButtonTooltip
+            id="footer-back-to-top"
+            icon
+            rounded
+            variant="outline"
+            :tooltip-text="t('footer.backToTop')"
+            :aria-label="t('footer.backToTop')"
+            @click="scrollToTop"
+          >
+            <template #icon>
+              <UiIconMaterial icon-code="&#xe5d8;" />
+            </template>
+          </UiButtonTooltip>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p class="footer-copyright">
-          {{ t('footer.copyright', { year: currentYear }) }}
-        </p>
+      <p
+        class="footer-wordmark"
+        aria-hidden="true"
+      >
+        Giancarlos Garza
+      </p>
 
-        <UiBadge
-          :text="`v${appVersion}`"
-          :title="t('footer.versionTitle')"
-          variant="outline"
-          icon-code="&#xf720;"
-          icon-class="text-accent-fixed"
-        />
+      <div class="footer-bottom">
+        <p>{{ t('footer.copyright', { year: currentYear }) }}</p>
+
+        <div class="footer-meta">
+          <ClientOnly>
+            <LazyIncludeColorModePicker :show-labels="false" />
+          </ClientOnly>
+          <UiBadge
+            :text="`v${appVersion}`"
+            :title="t('footer.versionTitle')"
+            variant="outline"
+            icon-code="&#xf720;"
+            icon-class="text-accent-fixed"
+          />
+        </div>
       </div>
     </div>
   </footer>

@@ -10,8 +10,8 @@
     "contactAria": "Ir a la sección de contacto",
     "switchLocale": "Cambiar idioma a inglés"
   },
+  "availability": "Disponible para nuevos proyectos",
   "hero": {
-    "badge": "Disponible para proyectos selectos",
     "title": "Interfaces de alto rendimiento y sistemas de diseño.",
     "lead": "Soy {name}, ingeniero front-end y diseñador UI/UX. Construyo productos web refinados y confiables con Vue, Nuxt y TypeScript. Actualmente trabajo de forma independiente en productos SaaS y plataformas para clientes.",
     "cta": "Contáctame",
@@ -47,10 +47,10 @@
     "subtitle": "Ingeniero Front-End y Diseñador UI/UX construyendo interfaces de alto rendimiento y sistemas de diseño.",
     "explore": "Explora",
     "connect": "Conecta",
-    "email": "Correo",
     "emailAria": "Enviar un correo a Giancarlos Garza",
     "copyright": "© {year} Giancarlos Garza · Nuevo León, México",
-    "versionTitle": "Versión del sitio"
+    "versionTitle": "Versión del sitio",
+    "backToTop": "Volver arriba"
   },
   "colorMode": {
     "label": "Modo de color",
