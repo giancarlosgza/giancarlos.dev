@@ -1,5 +1,9 @@
 @layer pages {
   .questionnaire-page {
+    --_questionnaire-divider: var(--cffy-border-width-sm) solid var(--cffy-outline-surface);
+    --_questionnaire-tracking-tight: -0.02em;
+    --_questionnaire-focus-ring: var(--cffy-border-width-md) solid var(--cffy-secondary-a10);
+
     container: questionnaire / inline-size;
     padding-block: var(--cffy-space-32) var(--cffy-space-96);
 
@@ -31,24 +35,144 @@
       gap: var(--cffy-space-8);
       margin: 0;
       font-size: var(--cffy-fs-2xs);
-      line-height: 1.5;
+      line-height: var(--cffy-fs-base--line-height);
       color: var(--cffy-muted-a10);
     }
 
-    // Business type picker
+    // Hints and errors share a style; the variant swaps the color
+    .questionnaire-hint,
+    .questionnaire-error {
+      --_message-color: var(--cffy-muted-a10);
+
+      margin: 0;
+      font-size: var(--cffy-fs-2xs);
+      line-height: var(--cffy-fs-base--line-height);
+      color: var(--_message-color);
+    }
+
+    .questionnaire-error {
+      --_message-color: var(--cffy-danger-a10);
+    }
+
+    .questionnaire-start-title {
+      max-inline-size: 24ch;
+      margin: 0;
+      font-size: clamp(2rem, 3.5vw + 0.75rem, 3.25rem);
+      line-height: 1.08;
+      letter-spacing: var(--_questionnaire-tracking-tight);
+      font-weight: var(--cffy-fw-800);
+      text-wrap: balance;
+    }
+
+    // Business type picker, and the invalid-link screen that centers it
     .questionnaire-start,
     .questionnaire-done {
+      --_state-align: start;
+
       display: grid;
-      justify-items: start;
+      justify-items: var(--_state-align);
       gap: var(--cffy-space-20);
       padding-block: var(--cffy-space-48);
+      text-align: var(--_state-align);
     }
 
     .questionnaire-done {
-      justify-items: center;
-      text-align: center;
+      --_state-align: center;
     }
 
+    .questionnaire-start-form {
+      display: grid;
+      justify-items: start;
+      gap: var(--cffy-space-24);
+      inline-size: 100%;
+      margin-block-start: var(--cffy-space-16);
+
+      .niche-options {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--cffy-space-20);
+        inline-size: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+
+        // Two by two until all four fit, so no card sits alone on a row
+        @container questionnaire (width >= 34rem) {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @container questionnaire (width >= 68rem) {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .niche-option {
+          --_niche-color: var(--cffy-secondary-a10);
+
+          display: flex;
+          flex-direction: column;
+          gap: var(--cffy-space-12);
+          min-block-size: 17rem;
+          padding: var(--cffy-space-24);
+          cursor: pointer;
+
+          &[data-niche='cafe'] {
+            --_niche-color: var(--cffy-accent-a10);
+          }
+
+          &[data-niche='music'] {
+            --_niche-color: var(--cffy-success-a10);
+          }
+
+          &[data-niche='other'] {
+            --_niche-color: var(--cffy-warning-a10);
+          }
+
+          &:has(:checked) {
+            border-color: var(--_niche-color);
+            box-shadow: 0 0 0 var(--cffy-space-4) color-mix(in srgb, var(--_niche-color), transparent 80%);
+          }
+
+          &:has(:focus-visible) {
+            outline: var(--_questionnaire-focus-ring);
+            outline-offset: var(--cffy-border-width-md);
+          }
+
+          .niche-option-icon {
+            display: inline-grid;
+            place-items: center;
+            inline-size: 2.75rem;
+            aspect-ratio: 1;
+            border-radius: var(--cffy-radius-md);
+            background: var(--cffy-surface-body-pane);
+            color: var(--_niche-color);
+            border: var(--_questionnaire-divider);
+          }
+
+          .niche-option-title {
+            font-family: var(--cffy-font-primary);
+            font-size: var(--cffy-fs-xl);
+            font-weight: var(--cffy-fw-700);
+            letter-spacing: var(--_questionnaire-tracking-tight);
+          }
+
+          .niche-option-description {
+            color: var(--cffy-muted-a10);
+            line-height: 1.55;
+          }
+
+          .niche-option-asks {
+            margin-block-start: auto;
+            padding-block-start: var(--cffy-space-12);
+            border-block-start: var(--_questionnaire-divider);
+            font-family: var(--cffy-font-primary);
+            font-size: var(--cffy-fs-3xs);
+            color: var(--cffy-muted-a10);
+          }
+        }
+      }
+    }
+
+    // Submitted
     .questionnaire-success {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
@@ -70,147 +194,47 @@
       .success-work {
         display: grid;
         gap: var(--cffy-space-24);
-      }
 
-      .success-projects {
-        display: grid;
-        gap: var(--cffy-space-12);
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .success-project {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: var(--cffy-space-16);
-        padding: var(--cffy-space-12);
-        color: inherit;
-        text-decoration: none;
-
-        img {
-          flex: none;
-          inline-size: 6.5rem;
-          block-size: auto;
-          aspect-ratio: 16 / 10;
-          object-fit: cover;
-          object-position: top;
-          border-radius: var(--cffy-radius-md);
-          border: var(--cffy-border-width-sm) solid var(--cffy-outline-surface);
-
-          @container questionnaire (width >= 34rem) {
-            inline-size: 9.5rem;
-          }
-        }
-
-        .success-project-body {
-          flex: 1;
-          min-inline-size: 0;
+        .success-projects {
           display: grid;
-          gap: var(--cffy-space-4);
-        }
-      }
-    }
+          gap: var(--cffy-space-12);
+          margin: 0;
+          padding: 0;
+          list-style: none;
 
-    .questionnaire-start-title {
-      max-inline-size: 24ch;
-      margin: 0;
-      font-size: clamp(2rem, 3.5vw + 0.75rem, 3.25rem);
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-      font-weight: 800;
-      text-wrap: balance;
-    }
+          .success-project {
+            --_project-thumb-size: 6.5rem;
 
-    .questionnaire-start-form {
-      display: grid;
-      justify-items: start;
-      gap: var(--cffy-space-24);
-      inline-size: 100%;
-      margin-block-start: var(--cffy-space-16);
-    }
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: var(--cffy-space-16);
+            padding: var(--cffy-space-12);
+            color: inherit;
+            text-decoration: none;
 
-    .niche-options {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: var(--cffy-space-20);
-      inline-size: 100%;
-      margin: 0;
-      padding: 0;
-      border: 0;
+            @container questionnaire (width >= 34rem) {
+              --_project-thumb-size: 9.5rem;
+            }
 
-      // Two by two until all four fit, so no card sits alone on a row
-      @container questionnaire (width >= 34rem) {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+            img {
+              flex: none;
+              inline-size: var(--_project-thumb-size);
+              block-size: auto;
+              aspect-ratio: 16 / 10;
+              object-fit: cover;
+              object-position: top;
+              border-radius: var(--cffy-radius-md);
+              border: var(--_questionnaire-divider);
+            }
 
-      @container questionnaire (width >= 68rem) {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .niche-option {
-        --niche-color: var(--cffy-secondary-a10);
-
-        display: flex;
-        flex-direction: column;
-        gap: var(--cffy-space-12);
-        min-block-size: 17rem;
-        padding: var(--cffy-space-24);
-        cursor: pointer;
-
-        &[data-niche='cafe'] {
-          --niche-color: var(--cffy-accent-a10);
-        }
-
-        &[data-niche='music'] {
-          --niche-color: var(--cffy-success-a10);
-        }
-
-        &[data-niche='other'] {
-          --niche-color: var(--cffy-warning-a10);
-        }
-
-        &:has(:checked) {
-          border-color: var(--niche-color);
-          box-shadow: 0 0 0 4px color-mix(in srgb, var(--niche-color), transparent 80%);
-        }
-
-        &:has(:focus-visible) {
-          outline: 2px solid var(--cffy-secondary-a10);
-          outline-offset: 2px;
-        }
-
-        .niche-option-icon {
-          display: inline-grid;
-          place-items: center;
-          inline-size: 2.75rem;
-          aspect-ratio: 1;
-          border-radius: var(--cffy-radius-md);
-          background: var(--cffy-surface-body-pane);
-          color: var(--niche-color);
-          border: var(--cffy-border-width-sm) solid var(--cffy-outline-surface);
-        }
-
-        .niche-option-title {
-          font-family: var(--cffy-font-primary);
-          font-size: var(--cffy-fs-xl);
-          font-weight: 700;
-          letter-spacing: -0.02em;
-        }
-
-        .niche-option-description {
-          color: var(--cffy-muted-a10);
-          line-height: 1.55;
-        }
-
-        .niche-option-asks {
-          margin-block-start: auto;
-          padding-block-start: var(--cffy-space-12);
-          border-block-start: 1px solid var(--cffy-outline-surface);
-          font-family: var(--cffy-font-primary);
-          font-size: var(--cffy-fs-3xs);
-          color: var(--cffy-muted-a10);
+            .success-project-body {
+              flex: 1;
+              min-inline-size: 0;
+              display: grid;
+              gap: var(--cffy-space-4);
+            }
+          }
         }
       }
     }
@@ -261,16 +285,16 @@
       .questionnaire-step-head {
         display: grid;
         gap: var(--cffy-space-8);
-      }
 
-      .questionnaire-step-title {
-        margin: 0;
-        font-size: clamp(1.75rem, 2vw + 1rem, 2.25rem);
-        line-height: 1.1;
-        letter-spacing: -0.02em;
+        .questionnaire-step-title {
+          margin: 0;
+          font-size: clamp(1.75rem, 2vw + 1rem, 2.25rem);
+          line-height: 1.1;
+          letter-spacing: var(--_questionnaire-tracking-tight);
 
-        &:focus {
-          outline: none;
+          &:focus {
+            outline: none;
+          }
         }
       }
 
@@ -283,7 +307,7 @@
         gap: var(--cffy-space-12);
         margin-block-start: var(--cffy-space-8);
         padding-block: var(--cffy-space-16);
-        border-block-start: 1px solid var(--cffy-outline-surface);
+        border-block-start: var(--_questionnaire-divider);
         background: var(--cffy-surface-body-pane);
 
         .questionnaire-next {
@@ -321,26 +345,11 @@
       }
     }
 
-    .questionnaire-hint,
-    .questionnaire-error {
-      margin: 0;
-      font-size: var(--cffy-fs-2xs);
-      line-height: 1.5;
-    }
-
-    .questionnaire-hint {
-      color: var(--cffy-muted-a10);
-    }
-
-    .questionnaire-error {
-      color: var(--cffy-danger-a10);
-    }
-
     // Matches Colorffy's field labels
     .questionnaire-legend {
       padding: 0;
       font-size: var(--cffy-fs-2xs);
-      font-weight: 600;
+      font-weight: var(--cffy-fw-600);
       letter-spacing: -0.01em;
     }
 
@@ -357,68 +366,68 @@
       .questionnaire-legend {
         margin-block-end: var(--cffy-space-12);
       }
-    }
 
-    .questionnaire-repeater {
-      justify-items: stretch;
+      &.questionnaire-repeater {
+        justify-items: stretch;
 
-      > .btn {
-        justify-self: start;
-      }
-
-      .repeater-rows {
-        display: grid;
-        gap: var(--cffy-space-12);
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      // Narrow cards put the number and delete button above the cells
-      .repeater-row {
-        display: grid;
-        grid-template-columns: auto minmax(0, 1fr) auto;
-        grid-template-areas:
-          'index . remove'
-          'cells cells cells';
-        align-items: start;
-        gap: var(--cffy-space-12);
-        padding: var(--cffy-space-16);
-
-        @container (width >= 40rem) {
-          grid-template-areas: 'index cells remove';
+        > .btn {
+          justify-self: start;
         }
 
-        .repeater-remove {
-          grid-area: remove;
-        }
-
-        .repeater-index {
-          grid-area: index;
-          padding-block-start: var(--cffy-space-6);
-          font-family: var(--cffy-font-primary);
-          font-size: var(--cffy-fs-3xs);
-          color: var(--cffy-secondary-a10);
-        }
-
-        .repeater-cells {
-          grid-area: cells;
+        .repeater-rows {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
           gap: var(--cffy-space-12);
+          margin: 0;
+          padding: 0;
+          list-style: none;
 
-          .questionnaire-field[data-type='textarea'] {
-            grid-column: 1 / -1;
+          // Narrow cards put the number and delete button above the cells
+          .repeater-row {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr) auto;
+            grid-template-areas:
+              'index . remove'
+              'cells cells cells';
+            align-items: start;
+            gap: var(--cffy-space-12);
+            padding: var(--cffy-space-16);
+
+            @container (width >= 40rem) {
+              grid-template-areas: 'index cells remove';
+            }
+
+            .repeater-remove {
+              grid-area: remove;
+            }
+
+            .repeater-index {
+              grid-area: index;
+              padding-block-start: var(--cffy-space-6);
+              font-family: var(--cffy-font-primary);
+              font-size: var(--cffy-fs-3xs);
+              color: var(--cffy-secondary-a10);
+            }
+
+            .repeater-cells {
+              grid-area: cells;
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+              gap: var(--cffy-space-12);
+
+              .questionnaire-field[data-type='textarea'] {
+                grid-column: 1 / -1;
+              }
+            }
           }
         }
       }
-    }
 
-    .questionnaire-colors {
-      .color-row {
-        display: flex;
-        align-items: center;
-        gap: var(--cffy-space-8);
+      &.questionnaire-colors {
+        .color-row {
+          display: flex;
+          align-items: center;
+          gap: var(--cffy-space-8);
+        }
       }
     }
 
@@ -432,27 +441,27 @@
         margin: 0;
         padding: 0;
         list-style: none;
-      }
 
-      .file-item {
-        display: flex;
-        align-items: center;
-        gap: var(--cffy-space-8);
-        padding: var(--cffy-space-6) var(--cffy-space-6) var(--cffy-space-6) var(--cffy-space-12);
-        border: 1px solid var(--cffy-outline-surface);
-        border-radius: var(--cffy-radius-md);
+        .file-item {
+          display: flex;
+          align-items: center;
+          gap: var(--cffy-space-8);
+          padding: var(--cffy-space-6) var(--cffy-space-6) var(--cffy-space-6) var(--cffy-space-12);
+          border: var(--_questionnaire-divider);
+          border-radius: var(--cffy-radius-md);
 
-        .file-name {
-          flex: 1 1 auto;
-          min-inline-size: 0;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
+          .file-name {
+            flex: 1 1 auto;
+            min-inline-size: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
 
-        .file-size {
-          font-size: var(--cffy-fs-2xs);
-          color: var(--cffy-muted-a10);
+          .file-size {
+            font-size: var(--cffy-fs-2xs);
+            color: var(--cffy-muted-a10);
+          }
         }
       }
     }
@@ -462,42 +471,42 @@
 
       .review-section {
         padding-block: var(--cffy-space-16);
-        border-block-end: 1px solid var(--cffy-outline-surface);
-      }
+        border-block-end: var(--_questionnaire-divider);
 
-      .review-head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: var(--cffy-space-12);
-      }
+        .review-head {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: var(--cffy-space-12);
 
-      .review-title {
-        margin: 0;
-        font-size: var(--cffy-fs-base);
-      }
-
-      .review-list {
-        display: grid;
-        gap: var(--cffy-space-8);
-        margin: var(--cffy-space-12) 0 0;
-      }
-
-      .review-item {
-        display: grid;
-        gap: var(--cffy-space-4) var(--cffy-space-16);
-
-        @container (width >= 40rem) {
-          grid-template-columns: 16rem minmax(0, 1fr);
+          .review-title {
+            margin: 0;
+            font-size: var(--cffy-fs-base);
+          }
         }
 
-        dt {
-          color: var(--cffy-muted-a10);
-        }
+        .review-list {
+          display: grid;
+          gap: var(--cffy-space-8);
+          margin: var(--cffy-space-12) 0 0;
 
-        dd {
-          margin: 0;
-          overflow-wrap: anywhere;
+          .review-item {
+            display: grid;
+            gap: var(--cffy-space-4) var(--cffy-space-16);
+
+            @container (width >= 40rem) {
+              grid-template-columns: 16rem minmax(0, 1fr);
+            }
+
+            dt {
+              color: var(--cffy-muted-a10);
+            }
+
+            dd {
+              margin: 0;
+              overflow-wrap: anywhere;
+            }
+          }
         }
       }
     }

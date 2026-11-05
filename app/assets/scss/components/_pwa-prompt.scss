@@ -6,8 +6,8 @@
   .pwa-alert-container {
     --_pwa-alert-position-x: var(--cffy-space-16);
     --_pwa-alert-position-y: var(--cffy-space-16);
-    --_pwa-alert-padding: .75rem;
-    --_pwa-alert-gap: .75rem;
+    --_pwa-alert-padding: var(--cffy-space-12);
+    --_pwa-alert-gap: var(--cffy-space-12);
     --_pwa-border-radius: var(--cffy-shape-container);
 
     position: fixed;
@@ -20,8 +20,7 @@
     max-width: 40%;
     margin: auto;
     z-index: v.$z-index-toast;
-    padding-block: var(--_pwa-alert-padding);
-    padding-inline: var(--_pwa-alert-padding);
+    padding: var(--_pwa-alert-padding);
     background: var(--cffy-surface-overlay);
     border: var(--cffy-border-width-sm) solid var(--cffy-outline-surface);
     box-shadow: var(--cffy-shadow-lg);
