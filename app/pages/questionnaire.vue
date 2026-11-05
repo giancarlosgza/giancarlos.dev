@@ -280,7 +280,7 @@ useSeoMeta({
             :key="project.id"
           >
             <a
-              :href="withUtm(`https://${project.domain}`, 'questionnaire')"
+              :href="withUtm(`https://${project.domain}`, 'questionnaire', locale)"
               target="_blank"
               rel="noopener noreferrer"
               class="success-project card card-pane card-selectable undecorated"

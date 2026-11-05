@@ -9,7 +9,7 @@ import {
 import { withUtm } from '~/utils/utm'
 
 /** Data */
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const activeProjectId = ref(projects[0]?.id ?? '')
 const activeExperimentId = ref(experiments[0]?.id ?? '')
 
@@ -227,7 +227,7 @@ useSeoMeta({
                 <div class="d-inline-flex">
                   <a
                     v-if="project.href"
-                    :href="withUtm(project.href, 'portfolio')"
+                    :href="withUtm(project.href, 'portfolio', locale)"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-link"
