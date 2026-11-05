@@ -3,31 +3,3 @@
     background: color-mix(in srgb, var(--cffy-secondary-base-fixed), transparent 65%);
   }
 }
-
-@layer pages {
-  .chat-layout {
-    container: ChatLayout / inline-size;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: calc(100vh - 15rem);
-    width: 100%;
-    gap: 1rem;
-  }
-
-  .chat-container {
-    display: grid;
-    place-self: center;
-    gap: 1.5rem;
-    padding: .5rem;
-    width: 100%;
-    max-width: calc(75cqw - 25%);
-    border: 2px solid var(--cffy-outline-surface);
-    background: var(--cffy-surface-body-pane);
-    border-radius: var(--cffy-radius-xl);
-
-    @container ChatLayout (width <=900px) {
-      max-width: calc(85cqw);
-    }
-  }
-}
