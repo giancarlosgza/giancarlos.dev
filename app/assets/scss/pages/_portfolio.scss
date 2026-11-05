@@ -122,12 +122,14 @@
       background-color 320ms ease,
       box-shadow var(--motion-duration-lg) ease;
 
+    // Same border and shadow as the .card override in _core.scss
     &.is-active {
       margin-block: 0.5rem;
-      border-color: transparent;
+      border-width: var(--cffy-border-width-sm);
+      border-color: var(--cffy-outline-surface);
       border-radius: var(--cffy-radius-xl);
       background: var(--cffy-surface-body-pane);
-      box-shadow: 0 20px 50px rgb(10 10 10 / 6%);
+      box-shadow: var(--cffy-shadow-sm);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -572,13 +574,14 @@
     display: flex;
     min-width: 0;
     flex: 0 1 5.5rem;
+    border: var(--cffy-border-width-sm) solid var(--cffy-outline-surface);
     border-radius: var(--cffy-radius-xl);
     background: var(--cffy-surface-body-pane);
-    transition: flex-grow var(--motion-duration-lg) var(--motion-emphasized), box-shadow var(--motion-duration-lg) ease;
+    box-shadow: var(--cffy-shadow-sm);
+    transition: flex-grow var(--motion-duration-lg) var(--motion-emphasized);
 
     &.is-active {
       flex: 1 1 5.5rem;
-      box-shadow: 0 20px 50px rgb(10 10 10 / 6%);
     }
 
     @media (prefers-reduced-motion: reduce) {
