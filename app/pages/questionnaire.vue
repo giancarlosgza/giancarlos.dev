@@ -3,6 +3,7 @@ import type { IStepItem } from '@colorffy/ui'
 import type { IInvite, TNiche, TStepId } from '~/utils/questionnaire'
 import { NuxtLink } from '#components'
 import { SUCCESS_PROJECTS } from '~/utils/questionnaire'
+import { withUtm } from '~/utils/utm'
 
 /** Meta */
 definePageMeta({
@@ -279,7 +280,7 @@ useSeoMeta({
             :key="project.id"
           >
             <a
-              :href="`https://${project.domain}`"
+              :href="withUtm(`https://${project.domain}`, 'questionnaire')"
               target="_blank"
               rel="noopener noreferrer"
               class="success-project card card-pane card-selectable undecorated"

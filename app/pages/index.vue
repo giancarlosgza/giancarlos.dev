@@ -6,6 +6,7 @@ import {
   projects,
   stackGroups
 } from '~/utils/portfolio'
+import { withUtm } from '~/utils/utm'
 
 /** Data */
 const { t } = useI18n()
@@ -226,7 +227,7 @@ useSeoMeta({
                 <div class="d-inline-flex">
                   <a
                     v-if="project.href"
-                    :href="project.href"
+                    :href="withUtm(project.href, 'portfolio')"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-link"
