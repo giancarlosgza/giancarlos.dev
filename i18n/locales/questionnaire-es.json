@@ -25,6 +25,11 @@
           "title": "Música",
           "description": "Solistas y grupos que dan clases, tocan en eventos o ambas.",
           "asks": "Repertorio · paquetes · clases · videos"
+        },
+        "other": {
+          "title": "Otro negocio",
+          "description": "Tiendas, servicios y cualquier otro giro.",
+          "asks": "Giro · clientes · ubicación · fotos"
         }
       }
     },
@@ -157,6 +162,10 @@
           "mtro": "Mtro.",
           "psic": "Psic."
         }
+      },
+      "businessType": {
+        "label": "¿Qué tipo de negocio es?",
+        "placeholder": "Ej. tienda de acuarios"
       },
       "businessName": {
         "label": "Nombre como debe aparecer",

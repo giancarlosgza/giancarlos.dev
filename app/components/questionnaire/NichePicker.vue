@@ -17,7 +17,8 @@ const showError = ref<boolean>(false)
 const nicheIcons: Record<TNiche, string> = {
   cafe: '&#xeb44;',
   health: '&#xf805;',
-  music: '&#xe405;'
+  music: '&#xe405;',
+  other: '&#xea12;'
 }
 
 /** Methods */

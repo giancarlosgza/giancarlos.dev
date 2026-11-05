@@ -25,6 +25,11 @@
           "title": "Music",
           "description": "Solo artists and groups who teach, play events, or both.",
           "asks": "Repertoire · packages · lessons · videos"
+        },
+        "other": {
+          "title": "Other business",
+          "description": "Shops, services and any other kind of business.",
+          "asks": "Business type · customers · location · photos"
         }
       }
     },
@@ -157,6 +162,10 @@
           "mtro": "Mtro.",
           "psic": "Psic."
         }
+      },
+      "businessType": {
+        "label": "What kind of business is it?",
+        "placeholder": "E.g. aquarium shop"
       },
       "businessName": {
         "label": "Name as it should appear",

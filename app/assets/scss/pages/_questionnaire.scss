@@ -69,12 +69,21 @@
 
     .niche-options {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      grid-template-columns: minmax(0, 1fr);
       gap: var(--cffy-space-20);
       inline-size: 100%;
       margin: 0;
       padding: 0;
       border: 0;
+
+      // Two by two until all four fit, so no card sits alone on a row
+      @container questionnaire (width >= 34rem) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      @container questionnaire (width >= 68rem) {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
 
       .niche-option {
         --niche-color: var(--cffy-secondary-a10);
@@ -92,6 +101,10 @@
 
         &[data-niche='music'] {
           --niche-color: var(--cffy-success-a10);
+        }
+
+        &[data-niche='other'] {
+          --niche-color: var(--cffy-warning-a10);
         }
 
         &:has(:checked) {

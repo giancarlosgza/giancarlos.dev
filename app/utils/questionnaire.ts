@@ -1,5 +1,5 @@
 /** Types */
-export type TNiche = 'cafe' | 'health' | 'music'
+export type TNiche = 'cafe' | 'health' | 'music' | 'other'
 
 export type TStepId = 'contact' | 'business' | 'audience' | 'location' | 'online' | 'brand' | 'content' | 'review'
 
@@ -71,7 +71,7 @@ export interface IUploadedFile {
 }
 
 /** Constants */
-export const NICHES: TNiche[] = ['cafe', 'health', 'music']
+export const NICHES: TNiche[] = ['cafe', 'health', 'music', 'other']
 
 const offersBooking = (answers: TAnswers): boolean => ['booking', 'both'].includes(answers.musicGoals as string)
 const offersTeaching = (answers: TAnswers): boolean => ['teaching', 'both'].includes(answers.musicGoals as string)
@@ -142,6 +142,13 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         niches: ['music'],
         wide: true,
         options: ['solo', 'duo', 'band', 'ensemble']
+      },
+      {
+        key: 'businessType',
+        type: 'text',
+        required: true,
+        niches: ['other'],
+        maxlength: 80
       },
       {
         key: 'healthTitle',
