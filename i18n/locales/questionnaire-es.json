@@ -14,22 +14,22 @@
         "cafe": {
           "title": "Cafetería",
           "description": "Cafeterías de especialidad, tostadores, panaderías y brew bars.",
-          "asks": "Menú · horario · pedidos · fotos"
+          "asks": "Menú, horario, pedidos y fotos"
         },
         "health": {
           "title": "Salud",
           "description": "Médicos, dentistas, psicólogos y otros especialistas.",
-          "asks": "Cédula · servicios · citas · credenciales"
+          "asks": "Cédula, servicios, citas y credenciales"
         },
         "music": {
           "title": "Música",
           "description": "Solistas y grupos que dan clases, tocan en eventos o ambas.",
-          "asks": "Repertorio · paquetes · clases · videos"
+          "asks": "Repertorio, paquetes, clases y videos"
         },
         "other": {
           "title": "Otro negocio",
           "description": "Tiendas, servicios y cualquier otro giro.",
-          "asks": "Giro · clientes · ubicación · fotos"
+          "asks": "Giro, clientes, ubicación y fotos"
         }
       }
     },

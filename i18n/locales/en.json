@@ -48,7 +48,7 @@
     "explore": "Explore",
     "connect": "Connect",
     "emailAria": "Send an email to Giancarlos Garza",
-    "copyright": "© {year} Giancarlos Garza · Nuevo León, México",
+    "copyright": "© {year} Giancarlos Garza, Nuevo León, México",
     "versionTitle": "Site version",
     "backToTop": "Back to top"
   },
@@ -61,7 +61,7 @@
   "seo": {
     "title": "Front-End Engineer & UI/UX Designer",
     "description": "Giancarlos Garza builds high-performance interfaces, offline-first platforms and design systems with Vue, Nuxt and TypeScript.",
-    "ogTitle": "Giancarlos Garza · Front-End Engineer & UI/UX Designer",
+    "ogTitle": "Giancarlos Garza, Front-End Engineer and UI/UX Designer",
     "ogDescription": "High-performance interfaces, offline-first platforms and design systems built with Vue, Nuxt and TypeScript."
   },
   "projects": {
@@ -126,15 +126,15 @@
   "stack": {
     "frontend": {
       "label": "Front-End & UI",
-      "items": "Vue 3 · Nuxt 4 · TypeScript · SCSS · Colorffy UI/CSS · Accessibility"
+      "items": "Vue 3, Nuxt 4, TypeScript, SCSS, Colorffy UI/CSS and accessibility"
     },
     "platform": {
       "label": "Platform & Data",
-      "items": "Node.js · PostgreSQL · REST APIs · IndexedDB · Offline-first"
+      "items": "Node.js, PostgreSQL, REST APIs, IndexedDB and offline-first"
     },
     "infrastructure": {
       "label": "Infrastructure",
-      "items": "Docker · Nginx · Linux · Firebase · CI/CD"
+      "items": "Docker, Nginx, Linux, Firebase and CI/CD"
     }
   },
   "experiments": {

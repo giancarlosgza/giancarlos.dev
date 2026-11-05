@@ -14,22 +14,22 @@
         "cafe": {
           "title": "Coffee shop",
           "description": "Specialty coffee shops, roasters, bakeries and brew bars.",
-          "asks": "Menu · hours · orders · photos"
+          "asks": "Menu, hours, orders and photos"
         },
         "health": {
           "title": "Health",
           "description": "Doctors, dentists, psychologists and other specialists.",
-          "asks": "License · services · appointments · credentials"
+          "asks": "License, services, appointments and credentials"
         },
         "music": {
           "title": "Music",
           "description": "Solo artists and groups who teach, play events, or both.",
-          "asks": "Repertoire · packages · lessons · videos"
+          "asks": "Repertoire, packages, lessons and videos"
         },
         "other": {
           "title": "Other business",
           "description": "Shops, services and any other kind of business.",
-          "asks": "Business type · customers · location · photos"
+          "asks": "Business type, customers, location and photos"
         }
       }
     },
