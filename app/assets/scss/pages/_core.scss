@@ -2,4 +2,10 @@
   ::selection {
     background: color-mix(in srgb, var(--cffy-secondary-base-fixed), transparent 65%);
   }
+
+  .card {
+    --_card-border-width: var(--cffy-border-width-sm);
+    --_card-border-color: var(--cffy-outline-surface);
+    --_card-shadow: var(--cffy-shadow-sm);
+  }
 }
