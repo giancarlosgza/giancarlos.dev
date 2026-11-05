@@ -15,15 +15,15 @@
       "overline": "Base plan",
       "lead": "Everything a local business needs to show up on Google.",
       "cta": "Choose just the base plan",
-      "otherNiche": "Your type of business isn't listed? This plan works for any local business.",
+      "otherNiche": "Don't see your business? The base plan works for any local business.",
       "includes": "Includes",
       "selected": "Base plan selected"
     },
     "pack": {
       "overline": "Business pack",
-      "lead": "Everything in Web Presence, plus features for your business.",
+      "lead": "Everything in Web Presence, plus what your type of business needs.",
       "select": "Your business",
-      "includes": "Everything in Web Presence, plus"
+      "includes": "On top of Web Presence"
     },
     "plans": {
       "base": {
@@ -44,7 +44,7 @@
     },
     "features": {
       "site": "One-page site, built for phones",
-      "domain": "Domain in your name, hosting and https",
+      "domain": "Domain in your name, hosting and the security padlock (https)",
       "maps": "Google Maps and opening hours",
       "whatsapp": "WhatsApp contact button",
       "seo": "Basic local SEO",
@@ -53,7 +53,7 @@
       "orders": "WhatsApp orders with a pre-filled message",
       "qr": "Print-ready table QR codes",
       "gallery": "Photo gallery linked to your Instagram",
-      "design": "Clean clinical design",
+      "design": "Clean, clinic-style design",
       "credentials": "Credentials, license, specialties and services",
       "appointments": "One-tap WhatsApp appointments",
       "medicalSeo": "Local medical SEO",
@@ -68,7 +68,7 @@
       "title": "Optional extras",
       "available": "{count} available",
       "selected": "{count} of {total}",
-      "closedNote": "Add more changes, an English version, a gallery and more.",
+      "closedNote": "For example: more changes a month, an English version or a photo gallery.",
       "perMonth": "{price} /mo",
       "oneTime": "{price} once",
       "items": {
@@ -90,7 +90,7 @@
         },
         "page": {
           "name": "Extra page",
-          "description": "A section of its own beyond the one-page site."
+          "description": "A second page, separate from the main one."
         },
         "gallery": {
           "name": "Image gallery",
@@ -119,14 +119,14 @@
         "startDetail": "Setup ${setup} + first month ${monthly}",
         "startDetailExtras": "Setup and extras ${setup} + first month ${monthly}",
         "after": "Every month after",
-        "afterDetail": "From the second month on"
+        "afterDetail": "Just the monthly fee"
       },
       "startNote": "Cancel anytime; your domain stays yours.",
       "subject": "My plan: {plan}",
       "send": "Send my plan by email",
       "message": "Hi Giancarlos, I'm interested in {plan}{extras}. Estimated total: ${total} MXN a month + VAT.",
       "messageExtras": ", with {list}",
-      "note": "Prices in MXN + VAT (16%). Invoiced (CFDI). Also as a one-time payment: Web Presence ${base}, Coffee ${cafe}, Music ${music} and Health ${health}.",
+      "note": "Prices in MXN plus VAT (16%), with a CFDI invoice. If you'd rather pay once instead of monthly: Web Presence ${base}, Coffee shop ${cafe}, Health ${health} or Music ${music}.",
       "planPack": "the {name} pack",
       "planBase": "the {name} plan"
     },
@@ -145,7 +145,7 @@
         "text": "In your name from day one, and still yours if you cancel."
       },
       "payment": {
-        "title": "Simple payments",
+        "title": "Ways to pay",
         "text": "Bank transfer (SPEI) or automatic charge, always with a CFDI invoice."
       }
     },
@@ -171,7 +171,7 @@
         }
       }
     },
-    "link": "Pricing",
+    "link": "Plans",
     "linkAria": "See website plans for local businesses",
     "cta": {
       "title": "Not sure which one to pick?",

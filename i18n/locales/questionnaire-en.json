@@ -5,7 +5,6 @@
       "description": "Tell me about your business so I can build your website."
     },
     "start": {
-      "badge": "Welcome. Your website is on its way.",
       "title": "What kind of business is it?",
       "lead": "I tailor the questions to your business. They take about 10 minutes, and you can pause and come back later on this device.",
       "legend": "Business type",
@@ -36,7 +35,7 @@
     "steps": {
       "contact": {
         "title": "Contact",
-        "lead": "So I can reach you while I build your site. Your WhatsApp or your email is enough; it isn't published."
+        "lead": "So I can keep you posted on your site. Your WhatsApp or your email is enough, and neither goes on the page."
       },
       "business": {
         "title": "Your business",
@@ -67,11 +66,12 @@
         "lead": "Check your answers. You can go back to any step before sending."
       }
     },
+    "loading": "Loading your questionnaire",
     "stepper": "Questionnaire steps",
     "stepCount": "Step {current} of {total}",
     "progress": "Questionnaire progress",
-    "savedNote": "Your progress is saved on this device. You can close this page and come back later.",
-    "filesNote": "Files stay selected until you close this page, and upload when you send.",
+    "savedNote": "Your progress is saved on this device. Come back whenever.",
+    "filesNote": "Files upload when you send. If you close the page before that, you'll need to pick them again.",
     "changeNiche": "Change business type",
     "actions": {
       "back": "Back",
@@ -89,27 +89,25 @@
       "email": "Enter a valid email address.",
       "url": "Enter a valid link that starts with https://",
       "tel": "Enter a 10-digit number.",
-      "step": "Some answers need your attention.",
-      "submit": "Your answers couldn't be sent. Check your connection and try again; nothing has been lost.",
+      "step": "Check the highlighted answers.",
+      "submit": "Your answers couldn't be sent. Check your connection and try again. Nothing was lost.",
       "fileType": "Only PDF files or images under 10 MB.",
-      "denied": "Your answers couldn't be saved. Reload the page and try again; if it keeps happening, message me on WhatsApp.",
+      "denied": "Your answers couldn't be saved. Reload the page and try again. If it keeps happening, message me on WhatsApp.",
       "niche": "Choose a business type to continue.",
       "max": "You can choose up to {max}.",
       "numeric": "Use numbers only.",
-      "either": "Enter your WhatsApp or your email; one is enough."
+      "either": "Enter your WhatsApp or your email. One is enough."
     },
     "review": {
       "empty": "Not answered",
-      "files": "{count} file(s)",
-      "rows": "{count} item(s)",
+      "rows": "{count} item | {count} items",
       "yes": "Yes"
     },
     "success": {
       "title": "Thank you! I have everything I need.",
-      "lead": "I'll start on your landing page and get in touch with the first preview.",
+      "lead": "I can get started on your site now. I'll message you as soon as the first version is ready for you to see.",
       "home": "Go to giancarlos.dev",
       "workTitle": "Some sites I've built",
-      "workSubtitle": "While I work on yours, see how other projects turned out.",
       "visitAria": "Visit the {name} site (opens in a new tab)",
       "projects": {
         "rebeca": "Orthodontics and TMJ care in Monterrey",
@@ -176,8 +174,8 @@
         "placeholder": "E.g. aquarium shop"
       },
       "businessName": {
-        "label": "Name as it should appear",
-        "hint": "Your business, brand or professional name."
+        "label": "Business name",
+        "hint": "Exactly as you want it on the site: your business, brand or professional name."
       },
       "healthSpecialty": {
         "label": "Specialty",
@@ -205,7 +203,7 @@
       },
       "problemsSolved": {
         "label": "What problems do you solve for your customers?",
-        "hint": "Your own words help people find you on Google and in AI search."
+        "hint": "Write it the way you'd explain it to a customer. That makes you easier to find on Google."
       },
       "healthEducation": {
         "label": "Education",
@@ -247,7 +245,7 @@
         "placeholder": "Type one and press Enter"
       },
       "primaryCta": {
-        "label": "The main actions a visitor should take",
+        "label": "What should people do when they land on your site?",
         "options": {
           "whatsapp": "Send a WhatsApp message",
           "call": "Call",
@@ -343,7 +341,7 @@
         "placeholder": "https://youtube.com/"
       },
       "googleProfile": {
-        "label": "Do you have a Google Maps / Google Business profile?",
+        "label": "Is your business on Google Maps?",
         "options": {
           "yes": "Yes",
           "no": "No",
@@ -351,11 +349,11 @@
         }
       },
       "googleProfileUrl": {
-        "label": "Google profile link",
+        "label": "Your Google Maps link",
         "placeholder": "https://"
       },
       "domain": {
-        "label": "Domain",
+        "label": "Your site's address (domain)",
         "options": {
           "have": "I have one",
           "need": "I need one",
@@ -445,7 +443,7 @@
       "cafeMenuFiles": {
         "label": "Your menu",
         "inputLabel": "Choose a PDF or photos of your menu, or drop them here",
-        "hint": "A PDF or photos of your current menu. I turn it into the web menu."
+        "hint": "I turn it into the site's menu."
       },
       "cafeSignatureItems": {
         "label": "Your 3 best sellers",
@@ -506,7 +504,7 @@
           "private": "Private parties",
           "venues": "Bars and restaurants",
           "festivals": "Festivals",
-          "quince": "XV años",
+          "quince": "Quinceañeras",
           "ceremonies": "Ceremonies"
         }
       },
@@ -595,7 +593,7 @@
         "label": "Anything else I should know?"
       },
       "contentRights": {
-        "label": "I own, or have permission to use, the files I uploaded"
+        "label": "The files I uploaded are mine, or I have permission to use them"
       },
       "privacyConsent": {
         "label": "I agree that these answers are used to build my website"

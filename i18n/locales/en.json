@@ -13,7 +13,7 @@
   "availability": "Open to new projects",
   "hero": {
     "title": "High-performance interfaces & design systems.",
-    "lead": "I'm {name}, a front-end engineer and UI/UX designer. I build refined, dependable web products with Vue, Nuxt and TypeScript. Currently, I work independently on SaaS products and client platforms.",
+    "lead": "I'm {name}, a front-end engineer and UI/UX designer. I build web products with Vue, Nuxt and TypeScript, and I work independently on SaaS products and client platforms.",
     "cta": "Get in touch",
     "secondaryCta": "See the work",
     "ctaAria": "Send an email to Giancarlos Garza",
@@ -23,31 +23,31 @@
   "work": {
     "title": "Work",
     "headline": "Products I took from idea to production.",
-    "subtitle": "Products and platforms where I led front-end development, backed by measurable production metrics.",
+    "subtitle": "Products where I led the front-end, with their numbers in production.",
     "visitAria": "Visit {name} at {label}"
   },
   "approach": {
     "title": "How I Work",
-    "headline": "Fast, consistent and built in code.",
-    "subtitle": "Operating at the intersection of front-end engineering, interface design, and scalable systems."
+    "headline": "Fast, consistent and designed in code.",
+    "subtitle": "The tools I use and three rules I follow on every project."
   },
   "experimentsSection": {
     "title": "Experiments",
     "headline": "Tools I build in the open.",
-    "subtitle": "Open-source libraries and tools I design, build, and maintain for the developer community.",
+    "subtitle": "Open-source libraries I maintain and use in my own projects, this site included.",
     "openAria": "Open {title} on {label}",
     "expandAria": "Show details for {title}"
   },
   "contact": {
     "badge": "Contact",
-    "title": "Let's build something fast & dependable.",
-    "text": "I take on a few product and front-end projects at a time: design systems, performance tuning and full web apps. The fastest way to reach me is email.",
+    "title": "Let's talk about your project.",
+    "text": "I take on a few projects at a time, usually design systems, performance work or full web apps. Email is the quickest way to reach me.",
     "emailAria": "Send an email to Giancarlos Garza",
     "githubAria": "Open Giancarlos Garza's GitHub profile",
     "linkedinAria": "Open Giancarlos Garza's LinkedIn profile"
   },
   "footer": {
-    "subtitle": "Front-End Engineer & UI/UX Designer building high-performance interfaces and design systems.",
+    "subtitle": "Front-end engineer and UI/UX designer.",
     "explore": "Explore",
     "connect": "Connect",
     "emailAria": "Send an email to Giancarlos Garza",
@@ -71,7 +71,7 @@
     "p01": {
       "tagline": "Design SaaS & universal component libraries",
       "role": "Creator & Lead Engineer",
-      "description": "A web color suite and design platform with client-side color algorithms, real-time contrast tools and its own published npm libraries for UI and CSS.",
+      "description": "Color and design tools that run in the browser, with real-time contrast checks and two npm libraries of its own for UI and CSS.",
       "m1": "unique visitors / year",
       "m2": "page views / year",
       "m3": "published npm libraries"
@@ -79,35 +79,35 @@
     "p02": {
       "tagline": "Offline-first corporate dining kiosk",
       "role": "Lead Front-End Engineer & System Architect",
-      "description": "A high-throughput kiosk platform with offline-first architecture, multi-tenant support and shift-based access, built for fast operation on touch screens.",
+      "description": "Touch-screen kiosks for corporate dining that keep working without internet, with multi-tenant support and shift-based access.",
       "m1": "monthly transactions",
       "m2": "check-in time"
     },
     "p03": {
       "tagline": "Real-time logistics & fleet tracking platform",
       "role": "Front-End Engineer",
-      "description": "A live telematics application that renders vehicle locations and operational status on maps, refreshing continuously without sacrificing browser responsiveness.",
+      "description": "A live map with each vehicle's location and status, refreshed every few seconds without the browser slowing down.",
       "m1": "simultaneous GPS points",
       "m2": "telemetry refresh"
     },
     "p04": {
       "tagline": "Smart access control & community management platform",
       "role": "Product Designer & Front-End Developer",
-      "description": "An all-in-one platform for gated communities and residential developments unifying WhatsApp QR passes, guard booth photo logs, LPR recognition and real-time dues administration.",
+      "description": "For gated communities: WhatsApp QR passes, a photo of every entry at the guard booth, plate recognition and dues collection, all in one system.",
       "m1": "apps",
       "m2": "photo evidence per entry"
     },
     "p05": {
       "tagline": "Healthcare operations & clinical ERP web app",
       "role": "Full-Stack Front-End Developer",
-      "description": "A healthcare management platform for medical clinics covering patient records, clinical scheduling, automated service-charge billing and multi-tier financial approval workflows.",
+      "description": "A clinic system: patient records, scheduling, automatic per-service billing and multi-level financial approvals.",
       "m1": "installable web app",
       "m2": "clinical & financial ops"
     },
     "p06": {
       "tagline": "Catering management SaaS",
       "role": "Product Designer & Front-End Developer",
-      "description": "An SSR platform for caterers and hospitality teams with real-time quote generation, booking workflows and responsive layouts for office and on-site work.",
+      "description": "For caterers: instant quotes, bookings and an interface that works the same at the office and on site.",
       "m1": "Status",
       "m2": "Nuxt 4 architecture"
     }
@@ -115,15 +115,15 @@
   "principles": {
     "performance": {
       "title": "Performance by design",
-      "text": "Speed is engineered from the first commit. Lean SSR, performance budgets, and Core Web Vitals drive every technical decision."
+      "text": "I measure speed from the first commit, not at the end: lean SSR, performance budgets and Core Web Vitals from day one."
     },
     "systems": {
       "title": "Systems over screens",
-      "text": "Design tokens, component libraries, and reusable patterns replace ad-hoc layouts, keeping products consistent and cost-effective to scale."
+      "text": "Design tokens, component libraries and reusable patterns instead of one-off fixes, so the product stays consistent as it grows."
     },
     "designInCode": {
       "title": "Design in code",
-      "text": "Code is the final design canvas. Semantic structure, fluid motion, and live component states evaluated where users actually interact."
+      "text": "I design in the browser: semantic HTML, motion and real states (hover, loading, error) tested where people will actually see them."
     }
   },
   "stack": {

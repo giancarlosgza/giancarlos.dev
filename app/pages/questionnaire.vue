@@ -224,6 +224,7 @@ useSeoMeta({
   <div class="questionnaire-page">
     <UiLoading
       v-if="!isReady"
+      :title="t('questionnaire.loading')"
       spinner-size="40px"
       custom-class="questionnaire-loading"
     />
@@ -262,17 +263,12 @@ useSeoMeta({
         class="success-work"
         aria-labelledby="success-work-title"
       >
-        <div>
-          <h2
-            id="success-work-title"
-            class="text-heading m-0"
-          >
-            {{ t('questionnaire.success.workTitle') }}
-          </h2>
-          <p class="mt-1 mb-0 text-muted">
-            {{ t('questionnaire.success.workSubtitle') }}
-          </p>
-        </div>
+        <h2
+          id="success-work-title"
+          class="text-heading m-0"
+        >
+          {{ t('questionnaire.success.workTitle') }}
+        </h2>
 
         <ul class="success-projects">
           <li

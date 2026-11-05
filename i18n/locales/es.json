@@ -13,7 +13,7 @@
   "availability": "Disponible para nuevos proyectos",
   "hero": {
     "title": "Interfaces de alto rendimiento y sistemas de diseño.",
-    "lead": "Soy {name}, ingeniero front-end y diseñador UI/UX. Construyo productos web refinados y confiables con Vue, Nuxt y TypeScript. Actualmente trabajo de forma independiente en productos SaaS y plataformas para clientes.",
+    "lead": "Soy {name}, ingeniero front-end y diseñador UI/UX. Hago productos web con Vue, Nuxt y TypeScript, y trabajo por mi cuenta en productos SaaS y plataformas para clientes.",
     "cta": "Contáctame",
     "secondaryCta": "Ver el trabajo",
     "ctaAria": "Enviar un correo a Giancarlos Garza",
@@ -23,31 +23,31 @@
   "work": {
     "title": "Trabajo",
     "headline": "Productos que llevé de la idea a producción.",
-    "subtitle": "Productos y plataformas donde lideré el desarrollo front-end, respaldados por métricas reales de adopción y rendimiento.",
+    "subtitle": "Productos donde lideré el front-end, con sus números en producción.",
     "visitAria": "Visitar {name} en {label}"
   },
   "approach": {
     "title": "Cómo trabajo",
-    "headline": "Rápido, consistente y pensado en código.",
-    "subtitle": "En la intersección entre ingeniería front-end, diseño de interfaces y sistemas escalables."
+    "headline": "Rápido, consistente y diseñado en código.",
+    "subtitle": "Las herramientas que uso y tres reglas que sigo en cada proyecto."
   },
   "experimentsSection": {
     "title": "Experimentos",
-    "headline": "Herramientas que construyo en abierto.",
-    "subtitle": "Librerías y herramientas open source que diseño, construyo y mantengo para la comunidad de desarrolladores.",
+    "headline": "Herramientas que publico como open source.",
+    "subtitle": "Librerías open source que mantengo y uso en mis propios proyectos, incluido este sitio.",
     "openAria": "Abrir {title} en {label}",
     "expandAria": "Mostrar detalles de {title}"
   },
   "contact": {
     "badge": "Contacto",
-    "title": "Construyamos algo sólido y veloz.",
-    "text": "Tomo pocos proyectos de producto y front-end a la vez: sistemas de diseño, optimización de rendimiento y aplicaciones web completas. La forma más rápida de contactarme es por correo.",
+    "title": "Hablemos de tu proyecto.",
+    "text": "Tomo pocos proyectos a la vez, casi siempre sistemas de diseño, rendimiento o aplicaciones web completas. Lo más rápido es escribirme por correo.",
     "emailAria": "Enviar un correo a Giancarlos Garza",
     "githubAria": "Abrir el perfil de GitHub de Giancarlos Garza",
     "linkedinAria": "Abrir el perfil de LinkedIn de Giancarlos Garza"
   },
   "footer": {
-    "subtitle": "Ingeniero Front-End y Diseñador UI/UX construyendo interfaces de alto rendimiento y sistemas de diseño.",
+    "subtitle": "Ingeniero front-end y diseñador UI/UX.",
     "explore": "Explora",
     "connect": "Conecta",
     "emailAria": "Enviar un correo a Giancarlos Garza",
@@ -71,7 +71,7 @@
     "p01": {
       "tagline": "SaaS de diseño y librerías de componentes universales",
       "role": "Creador e Ingeniero Principal",
-      "description": "Una suite de color web y plataforma de diseño con algoritmos de color del lado del cliente, herramientas de contraste en tiempo real y sus propias librerías npm publicadas para UI y CSS.",
+      "description": "Herramientas de color y diseño que corren en el navegador, con verificación de contraste en tiempo real y dos librerías npm propias para UI y CSS.",
       "m1": "visitantes únicos / año",
       "m2": "vistas de página / año",
       "m3": "librerías npm publicadas"
@@ -79,35 +79,35 @@
     "p02": {
       "tagline": "Kiosco offline-first para gestión de comedores corporativos",
       "role": "Ingeniero Front-End Principal y Arquitecto de Sistema",
-      "description": "Una plataforma de kioscos de alto volumen con arquitectura offline-first, soporte multi-tenant y acceso por turnos, diseñada para operar con rapidez en pantallas táctiles.",
+      "description": "Kioscos táctiles para comedores que siguen funcionando sin internet, con soporte multi-tenant y acceso por turnos.",
       "m1": "transacciones mensuales",
       "m2": "tiempo de check-in"
     },
     "p03": {
       "tagline": "Plataforma de logística y rastreo de flotillas en tiempo real",
       "role": "Ingeniero Front-End",
-      "description": "Una aplicación de telemetría en vivo que muestra la ubicación y el estado operativo de los vehículos en mapas, con actualización continua sin degradar la fluidez del navegador.",
+      "description": "Mapa en vivo con la ubicación y el estado de cada vehículo, actualizado cada pocos segundos sin que el navegador se trabe.",
       "m1": "puntos GPS simultáneos",
       "m2": "actualización de telemetría"
     },
     "p04": {
       "tagline": "Control de acceso inteligente y administración para fraccionamientos",
       "role": "Diseñador de Producto y Desarrollador Front-End",
-      "description": "Plataforma integral para fraccionamientos y condominios que unifica pases QR por WhatsApp, registro fotográfico en caseta, lectura LPR y administración de cuotas en tiempo real.",
+      "description": "Para fraccionamientos y condominios: pases QR por WhatsApp, foto de cada acceso en caseta, lectura de placas y cobro de cuotas, todo en un solo sistema.",
       "m1": "apps",
       "m2": "evidencia fotográfica por acceso"
     },
     "p05": {
       "tagline": "Aplicación web de operaciones de salud y ERP clínico",
       "role": "Desarrollador Front-End Full-Stack",
-      "description": "Una plataforma de gestión para clínicas médicas que cubre expedientes de pacientes, agenda clínica, facturación automatizada de cargos por servicio y flujos de aprobación financiera de varios niveles.",
+      "description": "Sistema para clínicas: expedientes, agenda, facturación automática por servicio y aprobaciones financieras en varios niveles.",
       "m1": "aplicación web instalable",
       "m2": "operación clínica y financiera"
     },
     "p06": {
       "tagline": "SaaS de gestión de catering",
       "role": "Diseñador de Producto y Desarrollador Front-End",
-      "description": "Una plataforma SSR para servicios de catering y equipos de hospitalidad con generación de cotizaciones en tiempo real, flujos de reservación y diseños responsivos para operar tanto en oficina como en sitio.",
+      "description": "Para empresas de catering: cotizaciones al instante, reservaciones y una interfaz que funciona igual en la oficina que en el evento.",
       "m1": "Estado",
       "m2": "arquitectura Nuxt 4"
     }
@@ -115,15 +115,15 @@
   "principles": {
     "performance": {
       "title": "Rendimiento desde la base",
-      "text": "La velocidad se diseña desde el primer commit. SSR ligero, presupuestos de rendimiento y Core Web Vitals guían cada decisión técnica."
+      "text": "Mido la velocidad desde el primer commit, no al final: SSR ligero, presupuestos de rendimiento y Core Web Vitals desde el inicio."
     },
     "systems": {
       "title": "Sistemas antes que pantallas",
-      "text": "Design tokens, librerías y patrones reutilizables sustituyen soluciones improvisadas, garantizando consistencia y escalabilidad a largo plazo."
+      "text": "Design tokens, librerías y patrones reutilizables en lugar de parches, para que el producto siga consistente cuando crece."
     },
     "designInCode": {
       "title": "Diseño en código",
-      "text": "El código es el lienzo final. Estructura semántica, movimiento fluido y estados reales evaluados donde el usuario realmente interactúa."
+      "text": "Diseño directo en el navegador: HTML semántico, animación y estados reales (hover, carga, error) probados donde la gente los va a ver."
     }
   },
   "stack": {

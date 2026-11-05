@@ -5,7 +5,6 @@
       "description": "Cuéntame sobre tu negocio para construir tu sitio web."
     },
     "start": {
-      "badge": "Bienvenido. Ya estamos trabajando en tu sitio.",
       "title": "¿Qué tipo de negocio es?",
       "lead": "Ajusto las preguntas a tu giro. Toman unos 10 minutos y puedes pausar y seguir después en este dispositivo.",
       "legend": "Tipo de negocio",
@@ -36,7 +35,7 @@
     "steps": {
       "contact": {
         "title": "Contacto",
-        "lead": "Para comunicarme contigo mientras construyo tu sitio. Con tu WhatsApp o tu correo es suficiente; no se publica."
+        "lead": "Para avisarte cómo va tu sitio. Basta con tu WhatsApp o tu correo, y ninguno se publica en la página."
       },
       "business": {
         "title": "Tu negocio",
@@ -67,11 +66,12 @@
         "lead": "Revisa tus respuestas. Puedes volver a cualquier paso antes de enviar."
       }
     },
+    "loading": "Cargando tu cuestionario",
     "stepper": "Pasos del cuestionario",
     "stepCount": "Paso {current} de {total}",
     "progress": "Avance del cuestionario",
-    "savedNote": "Tu avance se guarda en este dispositivo. Puedes cerrar la página y volver después.",
-    "filesNote": "Los archivos quedan seleccionados hasta que cierres la página y se suben al enviar.",
+    "savedNote": "Tu avance se guarda en este dispositivo. Puedes volver después.",
+    "filesNote": "Los archivos se suben cuando envías. Si cierras la página antes, tendrás que elegirlos otra vez.",
     "changeNiche": "Cambiar tipo de negocio",
     "actions": {
       "back": "Atrás",
@@ -89,27 +89,25 @@
       "email": "Escribe un correo válido.",
       "url": "Escribe un enlace válido que empiece con https://",
       "tel": "Escribe un número de 10 dígitos.",
-      "step": "Algunas respuestas necesitan tu atención.",
-      "submit": "No se pudieron enviar tus respuestas. Revisa tu conexión e inténtalo de nuevo; no se perdió nada.",
+      "step": "Revisa las respuestas marcadas.",
+      "submit": "No se pudieron enviar tus respuestas. Revisa tu conexión e inténtalo de nuevo. No se perdió nada.",
       "fileType": "Solo archivos PDF o imágenes de menos de 10 MB.",
-      "denied": "No se pudo guardar el envío. Recarga la página e inténtalo de nuevo; si sigue pasando, escríbeme por WhatsApp.",
+      "denied": "No se pudo guardar el envío. Recarga la página e inténtalo de nuevo. Si sigue pasando, escríbeme por WhatsApp.",
       "niche": "Elige un tipo de negocio para continuar.",
       "max": "Puedes elegir hasta {max}.",
       "numeric": "Escribe solo números.",
-      "either": "Escribe tu WhatsApp o tu correo; con uno es suficiente."
+      "either": "Escribe tu WhatsApp o tu correo. Con uno basta."
     },
     "review": {
       "empty": "Sin respuesta",
-      "files": "{count} archivo(s)",
-      "rows": "{count} elemento(s)",
+      "rows": "{count} elemento | {count} elementos",
       "yes": "Sí"
     },
     "success": {
       "title": "¡Gracias! Ya tengo todo lo que necesito.",
-      "lead": "Empiezo con tu landing page y te contacto con la primera vista previa.",
+      "lead": "Ya puedo empezar con tu página. Te escribo en cuanto tenga la primera versión para que la veas.",
       "home": "Ir a giancarlos.dev",
       "workTitle": "Conoce algunos sitios que he hecho",
-      "workSubtitle": "Mientras preparo el tuyo, mira cómo quedaron otros proyectos.",
       "visitAria": "Visitar el sitio de {name} (se abre en otra pestaña)",
       "projects": {
         "rebeca": "Ortodoncia y ATM en Monterrey",
@@ -176,8 +174,8 @@
         "placeholder": "Ej. tienda de acuarios"
       },
       "businessName": {
-        "label": "Nombre como debe aparecer",
-        "hint": "Tu negocio, marca o nombre profesional."
+        "label": "Nombre del negocio",
+        "hint": "Tal como quieres que se vea en el sitio: tu negocio, tu marca o tu nombre profesional."
       },
       "healthSpecialty": {
         "label": "Especialidad",
@@ -205,11 +203,11 @@
       },
       "problemsSolved": {
         "label": "¿Qué problemas les resuelves a tus clientes?",
-        "hint": "Tus propias palabras ayudan a que te encuentren en Google y en búsquedas con IA."
+        "hint": "Escríbelo como se lo explicarías a un cliente. Así es más fácil que te encuentren en Google."
       },
       "healthEducation": {
-        "label": "Formación",
-        "add": "Agregar formación",
+        "label": "Estudios",
+        "add": "Agregar estudios",
         "fields": {
           "degree": {
             "label": "Grado"
@@ -247,7 +245,7 @@
         "placeholder": "Escribe uno y presiona Enter"
       },
       "primaryCta": {
-        "label": "Las acciones principales del visitante",
+        "label": "¿Qué quieres que hagan al entrar a tu sitio?",
         "options": {
           "whatsapp": "Enviar un WhatsApp",
           "call": "Llamar",
@@ -343,23 +341,23 @@
         "placeholder": "https://youtube.com/"
       },
       "googleProfile": {
-        "label": "¿Tienes perfil de Google Maps / Google Business?",
+        "label": "¿Tu negocio aparece en Google Maps?",
         "options": {
           "yes": "Sí",
           "no": "No",
-          "unsure": "No estoy seguro"
+          "unsure": "No sé"
         }
       },
       "googleProfileUrl": {
-        "label": "Enlace de tu perfil de Google",
+        "label": "Enlace de tu negocio en Google Maps",
         "placeholder": "https://"
       },
       "domain": {
-        "label": "Dominio",
+        "label": "Dirección de tu sitio (dominio)",
         "options": {
           "have": "Ya tengo uno",
           "need": "Necesito uno",
-          "unsure": "No estoy seguro"
+          "unsure": "No sé"
         }
       },
       "domainName": {
@@ -445,7 +443,7 @@
       "cafeMenuFiles": {
         "label": "Tu menú",
         "inputLabel": "Elige un PDF o fotos de tu menú, o suéltalos aquí",
-        "hint": "Un PDF o fotos de tu menú actual. Yo lo convierto en el menú web."
+        "hint": "Yo lo convierto en el menú del sitio."
       },
       "cafeSignatureItems": {
         "label": "Tus 3 productos estrella",
@@ -522,7 +520,7 @@
             "label": "Duración"
           },
           "lineup": {
-            "label": "Formación"
+            "label": "Quiénes tocan"
           },
           "price": {
             "label": "Precio desde (opcional)"
@@ -595,7 +593,7 @@
         "label": "¿Algo más que deba saber?"
       },
       "contentRights": {
-        "label": "Soy dueño o tengo permiso para usar los archivos que subí"
+        "label": "Los archivos que subí son míos o tengo permiso para usarlos"
       },
       "privacyConsent": {
         "label": "Acepto que estas respuestas se usen para construir mi sitio web"

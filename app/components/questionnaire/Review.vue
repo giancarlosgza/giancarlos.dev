@@ -70,7 +70,7 @@ function formatValue(field: IQuestionField): string {
   if (field.type === 'repeater' && Array.isArray(value) && value.length) {
     const firstColumn = field.fields?.find(column => column.required)?.key ?? field.fields?.[0]?.key ?? ''
     const names = (value as TRepeaterRow[]).map(row => row[firstColumn]).filter(Boolean)
-    return `${t('questionnaire.review.rows', { count: value.length })}: ${names.join(', ')}`
+    return `${t('questionnaire.review.rows', { count: value.length }, value.length)}: ${names.join(', ')}`
   }
 
   if (Array.isArray(value) && value.length)

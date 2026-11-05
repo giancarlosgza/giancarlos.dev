@@ -97,7 +97,6 @@ useSeoMeta({
             variant="text"
             size="lg"
             :text="t('hero.secondaryCta')"
-            :aria-label="t('hero.ctaAria')"
           />
         </UiButtonGroup>
 

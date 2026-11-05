@@ -15,15 +15,15 @@
       "overline": "Plan base",
       "lead": "Todo lo que un negocio local necesita para aparecer en Google.",
       "cta": "Elegir solo el plan base",
-      "otherNiche": "¿Tu giro no está en la lista? Este plan funciona para cualquier negocio local.",
+      "otherNiche": "¿No ves tu giro? El plan base funciona para cualquier negocio local.",
       "includes": "Incluye",
       "selected": "Plan base elegido"
     },
     "pack": {
       "overline": "Paquete por giro",
-      "lead": "Todo Presencia Web, más funciones para tu negocio.",
+      "lead": "Lo mismo que Presencia Web, más lo que tu giro necesita.",
       "select": "Tu giro",
-      "includes": "Todo Presencia Web, más"
+      "includes": "Además de Presencia Web"
     },
     "plans": {
       "base": {
@@ -44,7 +44,7 @@
     },
     "features": {
       "site": "Sitio de una página, hecho para celular",
-      "domain": "Dominio a tu nombre, hospedaje y https",
+      "domain": "Dominio a tu nombre, hospedaje y candado de seguridad (https)",
       "maps": "Google Maps y horarios",
       "whatsapp": "Botón de contacto por WhatsApp",
       "seo": "SEO local básico",
@@ -53,7 +53,7 @@
       "orders": "Pedidos por WhatsApp con mensaje prellenado",
       "qr": "QR listo para imprimir en mesas",
       "gallery": "Galería de fotos con enlace a tu Instagram",
-      "design": "Diseño clínico limpio",
+      "design": "Diseño limpio, de consultorio",
       "credentials": "Credenciales, cédula, especialidades y servicios",
       "appointments": "Agenda de citas por WhatsApp en 1 clic",
       "medicalSeo": "SEO local médico",
@@ -68,9 +68,9 @@
       "title": "Extras opcionales",
       "available": "{count} disponibles",
       "selected": "{count} de {total}",
-      "closedNote": "Agrega más cambios, versión en inglés, galería y más.",
+      "closedNote": "Por ejemplo: más cambios al mes, versión en inglés o galería de fotos.",
       "perMonth": "{price} /mes",
-      "oneTime": "{price} único",
+      "oneTime": "{price} una vez",
       "items": {
         "changes": {
           "name": "+5 cambios al mes",
@@ -90,7 +90,7 @@
         },
         "page": {
           "name": "Página adicional",
-          "description": "Una sección propia más allá del sitio de una página."
+          "description": "Una segunda página, aparte de la principal."
         },
         "gallery": {
           "name": "Galería de imágenes",
@@ -111,22 +111,22 @@
       "monthly": "Cada mes",
       "oneTime": "Una sola vez",
       "monthlyTotal": "Total mensual",
-      "setup": "Configuración inicial",
-      "upfrontTotal": "Total de una sola vez",
+      "setup": "Puesta en marcha",
+      "upfrontTotal": "Total por única vez",
       "start": "Cómo pagas",
       "schedule": {
         "start": "Al empezar",
-        "startDetail": "Configuración ${setup} + primer mes ${monthly}",
-        "startDetailExtras": "Configuración y extras ${setup} + primer mes ${monthly}",
+        "startDetail": "Puesta en marcha ${setup} + primer mes ${monthly}",
+        "startDetailExtras": "Puesta en marcha y extras ${setup} + primer mes ${monthly}",
         "after": "Cada mes después",
-        "afterDetail": "A partir del segundo mes"
+        "afterDetail": "Solo la mensualidad"
       },
       "startNote": "Cancela cuando quieras; tu dominio sigue siendo tuyo.",
       "subject": "Mi plan: {plan}",
       "send": "Enviar mi plan por correo",
       "message": "Hola Giancarlos, me interesa {plan}{extras}. Total estimado: ${total} MXN al mes + IVA.",
       "messageExtras": ", con {list}",
-      "note": "Precios en MXN + IVA (16%). Se emite factura (CFDI). También en un solo pago: Presencia Web ${base}, Café ${cafe}, Música ${music} y Salud ${health}.",
+      "note": "Precios en MXN más IVA (16%), con factura (CFDI). Si prefieres pagar una sola vez en lugar de mensualidad: Presencia Web ${base}, Cafetería ${cafe}, Salud ${health} o Música ${music}.",
       "planPack": "el paquete {name}",
       "planBase": "el plan {name}"
     },
@@ -145,7 +145,7 @@
         "text": "Queda a tu nombre desde el inicio, y sigue siendo tuyo si cancelas."
       },
       "payment": {
-        "title": "Pago sin complicaciones",
+        "title": "Formas de pago",
         "text": "Por SPEI o cargo automático, siempre con factura CFDI."
       }
     },
