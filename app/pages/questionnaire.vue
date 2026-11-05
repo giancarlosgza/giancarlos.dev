@@ -2,6 +2,7 @@
 import type { IStepItem } from '@colorffy/ui'
 import type { IInvite, TNiche, TStepId } from '~/utils/questionnaire'
 import { NuxtLink } from '#components'
+import { SUCCESS_PROJECTS } from '~/utils/questionnaire'
 
 /** Meta */
 definePageMeta({
@@ -228,31 +229,83 @@ useSeoMeta({
 
     <section
       v-else-if="isSubmitted"
-      class="questionnaire-done container"
+      class="questionnaire-success container"
       aria-labelledby="questionnaire-done-title"
     >
-      <UiIconMaterial
-        icon-code="&#xea65;"
-        size="xl"
-        class="text-secondary"
-      />
-      <h1
-        id="questionnaire-done-title"
-        class="questionnaire-start-title"
+      <div class="success-intro">
+        <UiIconMaterial
+          icon-code="&#xea65;"
+          size="xl"
+          class="text-secondary"
+        />
+        <h1
+          id="questionnaire-done-title"
+          class="questionnaire-start-title"
+        >
+          {{ t('questionnaire.success.title') }}
+        </h1>
+        <p class="questionnaire-lead">
+          {{ t('questionnaire.success.lead') }}
+        </p>
+        <UiButton
+          variant="filled"
+          color="primary"
+          size="lg"
+          :text="t('questionnaire.success.home')"
+          :as="NuxtLink"
+          :to="localePath('index')"
+        />
+      </div>
+
+      <section
+        class="success-work"
+        aria-labelledby="success-work-title"
       >
-        {{ t('questionnaire.success.title') }}
-      </h1>
-      <p class="questionnaire-lead">
-        {{ t('questionnaire.success.lead') }}
-      </p>
-      <UiButton
-        variant="filled"
-        color="primary"
-        size="lg"
-        :text="t('questionnaire.success.home')"
-        :as="NuxtLink"
-        :to="localePath('index')"
-      />
+        <div>
+          <h2
+            id="success-work-title"
+            class="text-heading m-0"
+          >
+            {{ t('questionnaire.success.workTitle') }}
+          </h2>
+          <p class="mt-1 mb-0 text-muted">
+            {{ t('questionnaire.success.workSubtitle') }}
+          </p>
+        </div>
+
+        <ul class="success-projects">
+          <li
+            v-for="project in SUCCESS_PROJECTS"
+            :key="project.id"
+          >
+            <a
+              :href="`https://${project.domain}`"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="success-project card card-pane card-selectable undecorated"
+              :aria-label="t('questionnaire.success.visitAria', { name: project.name })"
+            >
+              <img
+                :src="project.image"
+                alt=""
+                width="800"
+                height="500"
+                loading="lazy"
+                decoding="async"
+              >
+              <span class="success-project-body">
+                <span class="fw-700">{{ project.name }}</span>
+                <span class="fs-2xs text-muted">{{ t(`questionnaire.success.projects.${project.id}`) }}</span>
+                <span class="text-truncate font-code fs-3xs text-secondary">{{ project.domain }}</span>
+              </span>
+              <UiIconMaterial
+                icon-code="&#xf1e1;"
+                class="flex-shrink-0 text-muted"
+              />
+            </a>
+          </li>
+        </ul>
+      </section>
     </section>
 
     <section

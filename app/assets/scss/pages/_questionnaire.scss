@@ -49,6 +49,70 @@
       text-align: center;
     }
 
+    .questionnaire-success {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      align-items: center;
+      gap: var(--cffy-space-48);
+      padding-block: var(--cffy-space-48);
+
+      @container questionnaire (width >= 60rem) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--cffy-space-72);
+      }
+
+      .success-intro {
+        display: grid;
+        justify-items: start;
+        gap: var(--cffy-space-20);
+      }
+
+      .success-work {
+        display: grid;
+        gap: var(--cffy-space-24);
+      }
+
+      .success-projects {
+        display: grid;
+        gap: var(--cffy-space-12);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .success-project {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--cffy-space-16);
+        padding: var(--cffy-space-12);
+        color: inherit;
+        text-decoration: none;
+
+        img {
+          flex: none;
+          inline-size: 6.5rem;
+          block-size: auto;
+          aspect-ratio: 16 / 10;
+          object-fit: cover;
+          object-position: top;
+          border-radius: var(--cffy-radius-md);
+          border: var(--cffy-border-width-sm) solid var(--cffy-outline-surface);
+
+          @container questionnaire (width >= 34rem) {
+            inline-size: 9.5rem;
+          }
+        }
+
+        .success-project-body {
+          flex: 1;
+          min-inline-size: 0;
+          display: grid;
+          gap: var(--cffy-space-4);
+        }
+      }
+    }
+
     .questionnaire-start-title {
       max-inline-size: 24ch;
       margin: 0;

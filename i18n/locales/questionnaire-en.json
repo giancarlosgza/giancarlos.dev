@@ -107,7 +107,15 @@
     "success": {
       "title": "Thank you! I have everything I need.",
       "lead": "I'll start on your landing page and get in touch with the first preview.",
-      "home": "Go to giancarlos.dev"
+      "home": "Go to giancarlos.dev",
+      "workTitle": "Some sites I've built",
+      "workSubtitle": "While I work on yours, see how other projects turned out.",
+      "visitAria": "Visit the {name} site (opens in a new tab)",
+      "projects": {
+        "rebeca": "Orthodontics and TMJ care in Monterrey",
+        "lkq": "Remanufactured engines and auto parts",
+        "prochef": "Industrial dining and corporate catering"
+      }
     },
     "fields": {
       "contactName": {

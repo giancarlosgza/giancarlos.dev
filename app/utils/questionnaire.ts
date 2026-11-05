@@ -70,8 +70,37 @@ export interface IUploadedFile {
   type: string
 }
 
+export interface ISuccessProject {
+  /** Summary lives at `questionnaire.success.projects.<id>` */
+  id: string
+  name: string
+  domain: string
+  image: string
+}
+
 /** Constants */
 export const NICHES: TNiche[] = ['cafe', 'health', 'music', 'other']
+
+export const SUCCESS_PROJECTS: ISuccessProject[] = [
+  {
+    id: 'rebeca',
+    name: 'Dra. Rebeca Flores Rodríguez',
+    domain: 'dra-rebecafloresrdz.com.mx',
+    image: '/images/projects/rebeca.webp'
+  },
+  {
+    id: 'lkq',
+    name: 'LKQ VEGE México',
+    domain: 'lkq.com.mx',
+    image: '/images/projects/lkq.webp'
+  },
+  {
+    id: 'prochef',
+    name: 'ProChef Express',
+    domain: 'prochefexpress.com',
+    image: '/images/projects/prochef.webp'
+  }
+]
 
 const offersBooking = (answers: TAnswers): boolean => ['booking', 'both'].includes(answers.musicGoals as string)
 const offersTeaching = (answers: TAnswers): boolean => ['teaching', 'both'].includes(answers.musicGoals as string)
