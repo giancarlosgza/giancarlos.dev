@@ -128,16 +128,31 @@
   },
   "stack": {
     "frontend": {
-      "label": "Front-End y UI",
-      "items": "Vue 3, Nuxt 4, TypeScript, SCSS, Colorffy UI/CSS y accesibilidad"
+      "label": "Front-End y UI"
     },
     "platform": {
-      "label": "Plataforma y Datos",
-      "items": "Node.js, PostgreSQL, REST APIs, IndexedDB y offline-first"
+      "label": "Plataforma y Datos"
     },
     "infrastructure": {
-      "label": "Infraestructura",
-      "items": "Docker, Nginx, Linux, Firebase y CI/CD"
+      "label": "Infraestructura"
+    },
+    "tools": {
+      "vue": "Vue 3",
+      "nuxt": "Nuxt 4",
+      "typescript": "TypeScript",
+      "scss": "SCSS",
+      "colorffy": "Colorffy",
+      "accessibility": "Accesibilidad",
+      "nodejs": "Node.js",
+      "postgresql": "PostgreSQL",
+      "rest": "REST APIs",
+      "indexeddb": "IndexedDB",
+      "offline": "Offline-first",
+      "docker": "Docker",
+      "nginx": "Nginx",
+      "linux": "Linux",
+      "firebase": "Firebase",
+      "cicd": "CI/CD"
     }
   },
   "experiments": {

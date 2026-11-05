@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { brandIcons } from '~/utils/brand-icons'
 import {
-  brandIcons,
   experiments,
   principles,
   projects,
@@ -94,7 +94,7 @@ useSeoMeta({
           </UiButton>
           <UiButton
             href="#work"
-            variant="text"
+            variant="outline"
             size="lg"
             :text="t('hero.secondaryCta')"
           />
@@ -276,9 +276,39 @@ useSeoMeta({
               :key="group.id"
             >
               <span class="stack-group-label">{{ t(group.label) }}</span>
-              <p class="stack-group-items">
-                {{ t(group.items) }}
-              </p>
+              <ul class="stack-tools">
+                <li
+                  v-for="tool in group.tools"
+                  :key="tool.id"
+                  class="stack-tool"
+                >
+                  <span
+                    class="stack-tool-icon"
+                    aria-hidden="true"
+                  >
+                    <UiIconSvg
+                      v-if="tool.brand"
+                      :content="brandIcons[tool.brand]"
+                      :size="28"
+                    />
+                    <img
+                      v-else-if="tool.image"
+                      :src="tool.image"
+                      alt=""
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                    <UiIconMaterial
+                      v-else-if="tool.icon"
+                      :icon-code="tool.icon"
+                      :size="28"
+                    />
+                  </span>
+                  <span class="fs-4xs text-muted text-center">{{ t(`stack.tools.${tool.id}`) }}</span>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -441,7 +471,10 @@ useSeoMeta({
                 :aria-label="t('contact.githubAria')"
               >
                 <template #icon>
-                  <UiIconSvg :content="brandIcons.github" :size="20" />
+                  <UiIconSvg
+                    :content="brandIcons.github"
+                    :size="20"
+                  />
                 </template>
               </UiButton>
               <UiButton
@@ -452,7 +485,10 @@ useSeoMeta({
                 :aria-label="t('contact.linkedinAria')"
               >
                 <template #icon>
-                  <UiIconSvg :content="brandIcons.linkedin" :size="20" />
+                  <UiIconSvg
+                    :content="brandIcons.linkedin"
+                    :size="20"
+                  />
                 </template>
               </UiButton>
             </UiButtonGroup>
