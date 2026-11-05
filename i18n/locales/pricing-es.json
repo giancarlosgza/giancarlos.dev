@@ -108,7 +108,6 @@
     },
     "summary": {
       "title": "Resumen de tu plan",
-      "pricesNote": "Precios en MXN + IVA (16%)",
       "monthly": "Cada mes",
       "oneTime": "Una sola vez",
       "monthlyTotal": "Total mensual",
@@ -132,21 +131,22 @@
       "planBase": "el plan {name}"
     },
     "terms": {
+      "title": "Sin letras chiquitas",
       "delivery": {
-        "label": "Entrega",
-        "text": "10 días hábiles desde que recibo tu contenido"
+        "title": "Lista en 10 días hábiles",
+        "text": "Contados desde que recibo tu logo, fotos e información. Yo redacto y pulo los textos."
       },
       "changes": {
-        "label": "Cambios",
-        "text": "2 al mes por WhatsApp, listos en máximo 5 días hábiles"
+        "title": "2 cambios al mes",
+        "text": "Me los pides por WhatsApp y quedan listos en máximo 5 días hábiles."
       },
       "domain": {
-        "label": "Tu dominio",
-        "text": "A tu nombre desde el inicio, y sigue siendo tuyo si cancelas"
+        "title": "Tu dominio es tuyo",
+        "text": "Queda a tu nombre desde el inicio, y sigue siendo tuyo si cancelas."
       },
       "payment": {
-        "label": "Pago",
-        "text": "SPEI o cargo automático, con factura CFDI"
+        "title": "Pago sin complicaciones",
+        "text": "Por SPEI o cargo automático, siempre con factura CFDI."
       }
     },
     "faq": {

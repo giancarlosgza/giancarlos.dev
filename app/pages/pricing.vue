@@ -24,11 +24,11 @@ const faqIds = [
   'change',
   'google'
 ]
-const termIds = [
-  'delivery',
-  'changes',
-  'domain',
-  'payment'
+const terms = [
+  { id: 'delivery', icon: '&#xe8b5;' },
+  { id: 'changes', icon: '&#xe745;' },
+  { id: 'domain', icon: '&#xe894;' },
+  { id: 'payment', icon: '&#xef6e;' }
 ]
 
 /** Computed */
@@ -135,7 +135,7 @@ useSeoMeta({
       <div class="container text-center">
         <h1
           id="pricing-title"
-          class="hero-title mx-auto"
+          class="hero-title display-1 mx-auto"
         >
           {{ t('pricing.hero.title') }}
         </h1>
@@ -156,7 +156,7 @@ useSeoMeta({
     </section>
 
     <section
-      class="container mt-5"
+      class="container mt-section mt-section-lg"
       :aria-label="t('pricing.link')"
     >
       <!-- Plans -->
@@ -278,6 +278,7 @@ useSeoMeta({
             <div
               v-show="isExtrasOpen"
               id="pricing-extras"
+              class="pricing-extras"
             >
               <div
                 v-for="extra in extras"
@@ -291,11 +292,7 @@ useSeoMeta({
                     :label="t(`pricing.extras.items.${extra.id}.name`)"
                     @update:model-value="picked[extra.id] = !!$event"
                   />
-                  <UiBadge
-                    :text="extraPriceLabel(extra)"
-                    variant="outline"
-                    custom-class="font-code flex-shrink-0"
-                  />
+                  <span class="font-code fs-3xs text-muted flex-shrink-0">{{ extraPriceLabel(extra) }}</span>
                 </div>
                 <p class="pricing-extra-description">
                   {{ t(`pricing.extras.items.${extra.id}.description`) }}
@@ -311,14 +308,19 @@ useSeoMeta({
           </div>
         </template>
       </UiCard>
+    </section>
 
-      <!-- Summary -->
-      <div class="d-flex flex-wrap align-items-baseline justify-content-between gap-2 mt-5 mb-3">
-        <h2 class="text-heading m-0">
-          {{ t('pricing.summary.title') }}
-        </h2>
-        <span class="font-code fs-3xs text-muted">{{ t('pricing.summary.pricesNote') }}</span>
-      </div>
+    <!-- Summary -->
+    <section
+      class="page-section container"
+      aria-labelledby="pricing-summary-title"
+    >
+      <h2
+        id="pricing-summary-title"
+        class="display-3 text-center mb-5"
+      >
+        {{ t('pricing.summary.title') }}
+      </h2>
 
       <UiCard
         variant="pane"
@@ -435,52 +437,57 @@ useSeoMeta({
         </template>
       </UiCard>
 
-      <p class="mt-3 mb-0 fs-4xs text-muted text-center">
+      <p class="caption text-muted text-center mt-3 mb-0">
         {{ oneTimeNote }}
       </p>
     </section>
 
     <!-- Terms -->
-    <section class="portfolio-section">
+    <section
+      class="page-section bg-surface-pane"
+      aria-labelledby="pricing-terms-title"
+    >
       <div class="container">
-        <div class="stack-strip pricing-terms">
-          <div
-            v-for="term in termIds"
-            :key="term"
-            class="stack-col"
+        <h2
+          id="pricing-terms-title"
+          class="display-3 text-center mb-5"
+        >
+          {{ t('pricing.terms.title') }}
+        </h2>
+        <ul class="pricing-terms">
+          <li
+            v-for="term in terms"
+            :key="term.id"
           >
-            <span class="stack-col-label">{{ t(`pricing.terms.${term}.label`) }}</span>
-            <p class="stack-col-items">
-              {{ t(`pricing.terms.${term}.text`) }}
+            <UiIconMaterial
+              :icon-code="term.icon"
+              :size="30"
+              class="text-primary"
+            />
+            <h3 class="pricing-term-title">
+              {{ t(`pricing.terms.${term.id}.title`) }}
+            </h3>
+            <p class="m-0 text-muted">
+              {{ t(`pricing.terms.${term.id}.text`) }}
             </p>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </section>
 
     <!-- FAQ -->
     <section
-      class="container"
+      class="page-section container"
       aria-labelledby="pricing-faq-title"
     >
-      <div class="row">
-        <div class="col-lg-4">
-          <header class="section-head">
-            <span class="section-index">?</span>
-            <div>
-              <h2
-                id="pricing-faq-title"
-                class="text-heading"
-              >
-                {{ t('pricing.faq.title') }}
-              </h2>
-              <p class="section-sub">
-                {{ t('pricing.faq.subtitle', { email: CONTACT_EMAIL }) }}
-              </p>
-            </div>
-          </header>
-        </div>
+      <div class="row justify-content-center">
         <div class="col-lg-8">
+          <h2
+            id="pricing-faq-title"
+            class="display-3 text-center mb-5"
+          >
+            {{ t('pricing.faq.title') }}
+          </h2>
           <UiAccordionGroup
             variant="borderless"
             shape="rounded"
@@ -494,13 +501,16 @@ useSeoMeta({
               :text="t(`pricing.faq.items.${item}.a`)"
             />
           </UiAccordionGroup>
+          <p class="text-muted text-center mt-4 mb-0">
+            {{ t('pricing.faq.subtitle', { email: CONTACT_EMAIL }) }}
+          </p>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
     <section
-      class="portfolio-section"
+      class="page-section"
       aria-labelledby="pricing-cta-title"
     >
       <div class="container">
@@ -511,7 +521,7 @@ useSeoMeta({
           <div class="contact-content">
             <h2
               id="pricing-cta-title"
-              class="contact-title"
+              class="contact-title display-2"
             >
               {{ t('pricing.cta.title') }}
             </h2>

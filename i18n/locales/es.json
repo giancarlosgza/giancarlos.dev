@@ -22,15 +22,18 @@
   },
   "work": {
     "title": "Trabajo",
+    "headline": "Productos que llevé de la idea a producción.",
     "subtitle": "Productos y plataformas donde lideré el desarrollo front-end, respaldados por métricas reales de adopción y rendimiento.",
     "visitAria": "Visitar {name} en {label}"
   },
   "approach": {
     "title": "Cómo trabajo",
+    "headline": "Rápido, consistente y pensado en código.",
     "subtitle": "En la intersección entre ingeniería front-end, diseño de interfaces y sistemas escalables."
   },
   "experimentsSection": {
     "title": "Experimentos",
+    "headline": "Herramientas que construyo en abierto.",
     "subtitle": "Librerías y herramientas open source que diseño, construyo y mantengo para la comunidad de desarrolladores.",
     "openAria": "Abrir {title} en {label}",
     "expandAria": "Mostrar detalles de {title}"

@@ -53,14 +53,14 @@ useSeoMeta({
         </div>
       </ClientOnly>
 
-      <div class="container">
+      <div class="container text-center">
         <div class="hero-eyebrow">
           <IncludeStatusLabel :text="t('availability')" />
         </div>
 
         <h1
           id="hero-title"
-          class="hero-title"
+          class="hero-title display-1 mx-auto"
         >
           {{ t('hero.title') }}
         </h1>
@@ -68,7 +68,7 @@ useSeoMeta({
         <i18n-t
           keypath="hero.lead"
           tag="p"
-          class="hero-lead"
+          class="hero-lead mx-auto"
           scope="global"
         >
           <template #name>
@@ -78,7 +78,7 @@ useSeoMeta({
 
         <UiButtonGroup
           variant="connected"
-          class="mb-5"
+          class="mb-5 justify-content-center"
         >
           <UiButton
             variant="filled"
@@ -101,7 +101,7 @@ useSeoMeta({
           />
         </UiButtonGroup>
 
-        <div class="hero-meta">
+        <div class="hero-meta justify-content-center">
           <span class="hero-meta-item">
             <UiIconMaterial icon-code="&#xf1db;" :size="18" />
             {{ t('hero.metaLocation') }}
@@ -117,24 +117,26 @@ useSeoMeta({
     <!-- Selected Work -->
     <section
       id="work"
-      class="portfolio-section"
+      class="page-section"
       aria-labelledby="work-title"
     >
       <div class="container">
-        <header class="section-head">
-          <span class="section-index">01</span>
-          <div>
+        <div class="row justify-content-center">
+          <header class="col-xl-6 text-center section-header">
+            <p class="section-eyebrow">
+              {{ t('work.title') }}
+            </p>
             <h2
               id="work-title"
-              class="text-heading"
+              class="display-2"
             >
-              {{ t('work.title') }}
+              {{ t('work.headline') }}
             </h2>
-            <p class="section-sub">
+            <p class="display-copy">
               {{ t('work.subtitle') }}
             </p>
-          </div>
-        </header>
+          </header>
+        </div>
 
         <div class="project-ledger">
           <article
@@ -247,56 +249,60 @@ useSeoMeta({
     <!-- Approach -->
     <section
       id="approach"
-      class="portfolio-section"
+      class="page-section bg-surface-pane"
       aria-labelledby="approach-title"
     >
       <div class="container">
-        <header class="section-head">
-          <span class="section-index">02</span>
-          <div>
+        <div class="row justify-content-center">
+          <header class="col-xl-6 text-center section-header">
+            <p class="section-eyebrow">
+              {{ t('approach.title') }}
+            </p>
             <h2
               id="approach-title"
-              class="text-heading"
+              class="display-2"
             >
-              {{ t('approach.title') }}
+              {{ t('approach.headline') }}
             </h2>
-            <p class="section-sub">
+            <p class="display-copy">
               {{ t('approach.subtitle') }}
             </p>
-          </div>
-        </header>
-
-        <div class="principles-grid">
-          <div
-            v-for="(principle, index) in principles"
-            :key="principle.id"
-            class="principle-item"
-          >
-            <span class="principle-numeral" aria-hidden="true">
-              {{ String(index + 1).padStart(2, '0') }}
-            </span>
-            <h3 class="principle-title">
-              {{ t(principle.title) }}
-            </h3>
-            <p class="principle-text">
-              {{ t(principle.text) }}
-            </p>
-          </div>
+          </header>
         </div>
 
-        <div class="stack-strip">
-          <div
-            v-for="group in stackGroups"
-            :key="group.id"
-            class="stack-col"
-          >
-            <span class="stack-col-label">
-              {{ t(group.label) }}
-            </span>
-            <p class="stack-col-items">
-              {{ t(group.items) }}
-            </p>
+        <div class="approach-layout">
+          <div class="stack-groups">
+            <div
+              v-for="group in stackGroups"
+              :key="group.id"
+            >
+              <span class="stack-group-label">{{ t(group.label) }}</span>
+              <p class="stack-group-items">
+                {{ t(group.items) }}
+              </p>
+            </div>
           </div>
+
+          <ol class="principles-list">
+            <li
+              v-for="(principle, index) in principles"
+              :key="principle.id"
+              class="principle-row"
+            >
+              <span
+                class="principle-index"
+                aria-hidden="true"
+              >{{ String(index + 1).padStart(2, '0') }}</span>
+              <div>
+                <h3 class="principle-title">
+                  {{ t(principle.title) }}
+                </h3>
+                <p class="principle-text">
+                  {{ t(principle.text) }}
+                </p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
@@ -304,24 +310,26 @@ useSeoMeta({
     <!-- Experiments -->
     <section
       id="writing"
-      class="portfolio-section"
+      class="page-section"
       aria-labelledby="writing-title"
     >
       <div class="container">
-        <header class="section-head">
-          <span class="section-index">03</span>
-          <div>
+        <div class="row justify-content-center">
+          <header class="col-xl-6 text-center section-header">
+            <p class="section-eyebrow">
+              {{ t('experimentsSection.title') }}
+            </p>
             <h2
               id="writing-title"
-              class="text-heading"
+              class="display-2"
             >
-              {{ t('experimentsSection.title') }}
+              {{ t('experimentsSection.headline') }}
             </h2>
-            <p class="section-sub">
+            <p class="display-copy">
               {{ t('experimentsSection.subtitle') }}
             </p>
-          </div>
-        </header>
+          </header>
+        </div>
 
         <div class="experiment-carousel">
           <article
@@ -390,7 +398,7 @@ useSeoMeta({
     <!-- Contact -->
     <section
       id="contact"
-      class="portfolio-section"
+      class="page-section"
       aria-labelledby="contact-title"
     >
       <div class="container">
@@ -406,7 +414,7 @@ useSeoMeta({
             />
             <h2
               id="contact-title"
-              class="contact-title"
+              class="contact-title display-2"
             >
               {{ t('contact.title') }}
             </h2>

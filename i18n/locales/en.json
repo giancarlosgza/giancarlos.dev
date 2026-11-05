@@ -22,15 +22,18 @@
   },
   "work": {
     "title": "Work",
+    "headline": "Products I took from idea to production.",
     "subtitle": "Products and platforms where I led front-end development, backed by measurable production metrics.",
     "visitAria": "Visit {name} at {label}"
   },
   "approach": {
     "title": "How I Work",
+    "headline": "Fast, consistent and built in code.",
     "subtitle": "Operating at the intersection of front-end engineering, interface design, and scalable systems."
   },
   "experimentsSection": {
     "title": "Experiments",
+    "headline": "Tools I build in the open.",
     "subtitle": "Open-source libraries and tools I design, build, and maintain for the developer community.",
     "openAria": "Open {title} on {label}",
     "expandAria": "Show details for {title}"
