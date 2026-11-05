@@ -41,7 +41,7 @@ export default defineNuxtConfig({
         {
           name: 'title',
           key: 'title',
-          content: 'Giancarlos Garza · Front-End Engineer & UI/UX Designer'
+          content: 'Giancarlos Garza, Front-End Engineer and UI/UX Designer'
         },
         {
           name: 'description',
@@ -119,13 +119,13 @@ export default defineNuxtConfig({
         code: 'en',
         language: 'en-US',
         name: 'English',
-        files: ['en.json', 'questionnaire-en.json']
+        files: ['en.json', 'questionnaire-en.json', 'pricing-en.json']
       },
       {
         code: 'es',
         language: 'es-MX',
         name: 'Español',
-        files: ['es.json', 'questionnaire-es.json']
+        files: ['es.json', 'questionnaire-es.json', 'pricing-es.json']
       }
     ],
     customRoutes: 'config',
@@ -133,6 +133,10 @@ export default defineNuxtConfig({
       questionnaire: {
         en: '/questionnaire',
         es: '/cuestionario'
+      },
+      pricing: {
+        en: '/pricing',
+        es: '/planes'
       }
     },
     detectBrowserLanguage: {
@@ -202,7 +206,7 @@ export default defineNuxtConfig({
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
-      name: 'Giancarlos Garza · Front-End Engineer',
+      name: 'Giancarlos Garza, Front-End Engineer',
       short_name: 'Giancarlos',
       description: 'Front-end engineer and UI/UX designer building high-performance interfaces and design systems.',
       display: 'standalone',

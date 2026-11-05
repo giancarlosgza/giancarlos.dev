@@ -1,8 +1,10 @@
 <script setup lang="ts">
 /** Data */
 const { t } = useI18n()
+const localePath = useLocalePath()
 
 /** Computed */
+const homePath = computed<string>(() => localePath('index'))
 const appVersion = useAppVersion()
 const currentYear = computed<number>(() => new Date().getFullYear())
 
@@ -30,18 +32,23 @@ function scrollToTop(): void {
           <p class="footer-group-title-overline">
             {{ t('footer.explore') }}
           </p>
-          <a
-            href="#work"
+          <NuxtLink
+            :to="`${homePath}#work`"
             class="footer-item"
-          >{{ t('nav.work') }}</a>
-          <a
-            href="#approach"
+          >{{ t('nav.work') }}</NuxtLink>
+          <NuxtLink
+            :to="`${homePath}#approach`"
             class="footer-item"
-          >{{ t('nav.approach') }}</a>
-          <a
-            href="#writing"
+          >{{ t('nav.approach') }}</NuxtLink>
+          <NuxtLink
+            :to="`${homePath}#writing`"
             class="footer-item"
-          >{{ t('nav.experiments') }}</a>
+          >{{ t('nav.experiments') }}</NuxtLink>
+          <NuxtLink
+            :to="localePath('pricing')"
+            class="footer-item"
+            :aria-label="t('pricing.linkAria')"
+          >{{ t('pricing.link') }}</NuxtLink>
         </nav>
 
         <nav

@@ -1,0 +1,182 @@
+{
+  "pricing": {
+    "seo": {
+      "title": "Planes de sitio web para negocios locales",
+      "description": "Sitio web todo incluido para cafeterías, consultorios y músicos en Monterrey: dominio, hospedaje, cambios y soporte desde $499 MXN + IVA al mes."
+    },
+    "hero": {
+      "title": "Un precio claro para tu sitio web",
+      "lead": "Empieza con el plan base, súmale el paquete de tu giro y agrega solo los extras que necesites.",
+      "metaDelivery": "Lista en 10 días hábiles",
+      "metaInvoice": "Precios + IVA, con factura (CFDI)"
+    },
+    "perMonth": "MXN / mes",
+    "base": {
+      "overline": "Plan base",
+      "lead": "Todo lo que un negocio local necesita para aparecer en Google.",
+      "cta": "Elegir solo el plan base",
+      "otherNiche": "¿Tu giro no está en la lista? Este plan funciona para cualquier negocio local.",
+      "includes": "Incluye",
+      "selected": "Plan base elegido"
+    },
+    "pack": {
+      "overline": "Paquete por giro",
+      "lead": "Todo Presencia Web, más funciones para tu negocio.",
+      "select": "Tu giro",
+      "includes": "Todo Presencia Web, más"
+    },
+    "plans": {
+      "base": {
+        "name": "Presencia Web"
+      },
+      "cafe": {
+        "name": "Barista Experience",
+        "label": "Cafetería"
+      },
+      "health": {
+        "name": "Consultorio Digital",
+        "label": "Salud"
+      },
+      "music": {
+        "name": "Escenario Digital",
+        "label": "Música"
+      }
+    },
+    "features": {
+      "site": "Sitio de una página, hecho para celular",
+      "domain": "Dominio a tu nombre, hospedaje y https",
+      "maps": "Google Maps y horarios",
+      "whatsapp": "Botón de contacto por WhatsApp",
+      "seo": "SEO local básico",
+      "changes": "2 cambios de contenido al mes",
+      "menu": "Menú interactivo",
+      "orders": "Pedidos por WhatsApp con mensaje prellenado",
+      "qr": "QR listo para imprimir en mesas",
+      "gallery": "Galería de fotos con enlace a tu Instagram",
+      "design": "Diseño clínico limpio",
+      "credentials": "Credenciales, cédula, especialidades y servicios",
+      "appointments": "Agenda de citas por WhatsApp en 1 clic",
+      "medicalSeo": "SEO local médico",
+      "reviews": "Reseñas de Google: calificación y botón para dejar reseña",
+      "repertoire": "Repertorio y géneros",
+      "packages": "Paquetes para eventos y/o planes de clases",
+      "videos": "Videos de YouTube y enlaces a Spotify",
+      "inquiries": "Consulta por WhatsApp para eventos o clases",
+      "members": "Sección de integrantes para grupos"
+    },
+    "extras": {
+      "title": "Extras opcionales",
+      "available": "{count} disponibles",
+      "selected": "{count} de {total}",
+      "closedNote": "Agrega más cambios, versión en inglés, galería y más.",
+      "perMonth": "{price} /mes",
+      "oneTime": "{price} único",
+      "items": {
+        "changes": {
+          "name": "+5 cambios al mes",
+          "description": "Para negocios que actualizan seguido."
+        },
+        "english": {
+          "name": "Versión en inglés",
+          "description": "Tu sitio completo también en inglés."
+        },
+        "reviews": {
+          "name": "Reseñas de Google destacadas",
+          "description": "Tus mejores reseñas, actualizadas cada mes."
+        },
+        "galleryUpdates": {
+          "name": "Actualización de galería",
+          "description": "Renuevo tus fotos cada mes."
+        },
+        "page": {
+          "name": "Página adicional",
+          "description": "Una sección propia más allá del sitio de una página."
+        },
+        "gallery": {
+          "name": "Galería de imágenes",
+          "description": "Tus fotos con enlace a tu Instagram."
+        },
+        "print": {
+          "name": "Diseño de QR o impresos",
+          "description": "Con el diseño de tu sitio."
+        },
+        "migration": {
+          "name": "Migración de contenido",
+          "description": "Paso el contenido de tu sitio anterior."
+        }
+      }
+    },
+    "summary": {
+      "title": "Resumen de tu plan",
+      "pricesNote": "Precios en MXN + IVA (16%)",
+      "monthly": "Cada mes",
+      "oneTime": "Una sola vez",
+      "monthlyTotal": "Total mensual",
+      "setup": "Configuración inicial",
+      "upfrontTotal": "Total de una sola vez",
+      "start": "Cómo pagas",
+      "schedule": {
+        "start": "Al empezar",
+        "startDetail": "Configuración ${setup} + primer mes ${monthly}",
+        "startDetailExtras": "Configuración y extras ${setup} + primer mes ${monthly}",
+        "after": "Cada mes después",
+        "afterDetail": "A partir del segundo mes"
+      },
+      "startNote": "Cancela cuando quieras; tu dominio sigue siendo tuyo.",
+      "subject": "Mi plan: {plan}",
+      "send": "Enviar mi plan por correo",
+      "message": "Hola Giancarlos, me interesa {plan}{extras}. Total estimado: ${total} MXN al mes + IVA.",
+      "messageExtras": ", con {list}",
+      "note": "Precios en MXN + IVA (16%). Se emite factura (CFDI). También en un solo pago: Presencia Web ${base}, Café ${cafe}, Música ${music} y Salud ${health}.",
+      "planPack": "el paquete {name}",
+      "planBase": "el plan {name}"
+    },
+    "terms": {
+      "delivery": {
+        "label": "Entrega",
+        "text": "10 días hábiles desde que recibo tu contenido"
+      },
+      "changes": {
+        "label": "Cambios",
+        "text": "2 al mes por WhatsApp, listos en máximo 5 días hábiles"
+      },
+      "domain": {
+        "label": "Tu dominio",
+        "text": "A tu nombre desde el inicio, y sigue siendo tuyo si cancelas"
+      },
+      "payment": {
+        "label": "Pago",
+        "text": "SPEI o cargo automático, con factura CFDI"
+      }
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "subtitle": "¿Tienes otra duda? Escríbeme a {email}.",
+      "items": {
+        "delivery": {
+          "q": "¿Cuánto tarda en estar lista mi página?",
+          "a": "Máximo 10 días hábiles, contados desde que recibo tu contenido completo."
+        },
+        "content": {
+          "q": "¿Qué necesito enviarte?",
+          "a": "Tu logo, fotos e información básica: servicios, precios, horarios y ubicación. Con eso redacto y pulo los textos."
+        },
+        "change": {
+          "q": "¿Qué cuenta como un cambio?",
+          "a": "Una solicitud puntual, como actualizar precios, cambiar las fotos de una sección o ajustar horarios. Una sección nueva se cotiza como página adicional."
+        },
+        "google": {
+          "q": "¿Voy a salir primero en Google?",
+          "a": "Preparo tu página para que Google la encuentre y la conecto con tu Perfil de Google, pero nadie puede garantizar un lugar específico en los resultados."
+        }
+      }
+    },
+    "link": "Planes",
+    "linkAria": "Ver los planes de sitio web para negocios locales",
+    "cta": {
+      "title": "¿No sabes cuál elegir?",
+      "text": "Escríbeme y te recomiendo el plan según tu negocio.",
+      "emailAria": "Enviar un correo a Giancarlos Garza"
+    }
+  }
+}

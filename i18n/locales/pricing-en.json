@@ -1,0 +1,182 @@
+{
+  "pricing": {
+    "seo": {
+      "title": "Website plans for local businesses",
+      "description": "All-inclusive websites for coffee shops, clinics and musicians in Monterrey: domain, hosting, changes and support from $499 MXN + VAT a month."
+    },
+    "hero": {
+      "title": "One clear price for your website",
+      "lead": "Start with the base plan, add the pack for your type of business, and pick only the extras you need.",
+      "metaDelivery": "Ready in 10 business days",
+      "metaInvoice": "Prices + VAT, invoiced (CFDI)"
+    },
+    "perMonth": "MXN / month",
+    "base": {
+      "overline": "Base plan",
+      "lead": "Everything a local business needs to show up on Google.",
+      "cta": "Choose just the base plan",
+      "otherNiche": "Your type of business isn't listed? This plan works for any local business.",
+      "includes": "Includes",
+      "selected": "Base plan selected"
+    },
+    "pack": {
+      "overline": "Business pack",
+      "lead": "Everything in Web Presence, plus features for your business.",
+      "select": "Your business",
+      "includes": "Everything in Web Presence, plus"
+    },
+    "plans": {
+      "base": {
+        "name": "Web Presence"
+      },
+      "cafe": {
+        "name": "Barista Experience",
+        "label": "Coffee shop"
+      },
+      "health": {
+        "name": "Digital Practice",
+        "label": "Health"
+      },
+      "music": {
+        "name": "Digital Stage",
+        "label": "Music"
+      }
+    },
+    "features": {
+      "site": "One-page site, built for phones",
+      "domain": "Domain in your name, hosting and https",
+      "maps": "Google Maps and opening hours",
+      "whatsapp": "WhatsApp contact button",
+      "seo": "Basic local SEO",
+      "changes": "2 content changes a month",
+      "menu": "Interactive menu",
+      "orders": "WhatsApp orders with a pre-filled message",
+      "qr": "Print-ready table QR codes",
+      "gallery": "Photo gallery linked to your Instagram",
+      "design": "Clean clinical design",
+      "credentials": "Credentials, license, specialties and services",
+      "appointments": "One-tap WhatsApp appointments",
+      "medicalSeo": "Local medical SEO",
+      "reviews": "Google reviews: rating and a leave-a-review button",
+      "repertoire": "Repertoire and genres",
+      "packages": "Event packages and/or lesson plans",
+      "videos": "YouTube videos and Spotify links",
+      "inquiries": "WhatsApp inquiries for events or lessons",
+      "members": "Members section for groups"
+    },
+    "extras": {
+      "title": "Optional extras",
+      "available": "{count} available",
+      "selected": "{count} of {total}",
+      "closedNote": "Add more changes, an English version, a gallery and more.",
+      "perMonth": "{price} /mo",
+      "oneTime": "{price} once",
+      "items": {
+        "changes": {
+          "name": "+5 changes a month",
+          "description": "For businesses that update often."
+        },
+        "english": {
+          "name": "English version",
+          "description": "Your whole site in English too."
+        },
+        "reviews": {
+          "name": "Featured Google reviews",
+          "description": "Your best reviews, updated every month."
+        },
+        "galleryUpdates": {
+          "name": "Gallery updates",
+          "description": "I refresh your photos every month."
+        },
+        "page": {
+          "name": "Extra page",
+          "description": "A section of its own beyond the one-page site."
+        },
+        "gallery": {
+          "name": "Image gallery",
+          "description": "Your photos, linked to your Instagram."
+        },
+        "print": {
+          "name": "QR or print design",
+          "description": "Matching your site's design."
+        },
+        "migration": {
+          "name": "Content migration",
+          "description": "I move the content from your old site."
+        }
+      }
+    },
+    "summary": {
+      "title": "Your plan summary",
+      "pricesNote": "Prices in MXN + VAT (16%)",
+      "monthly": "Every month",
+      "oneTime": "One time",
+      "monthlyTotal": "Monthly total",
+      "setup": "Setup",
+      "upfrontTotal": "One-time total",
+      "start": "How you pay",
+      "schedule": {
+        "start": "To start",
+        "startDetail": "Setup ${setup} + first month ${monthly}",
+        "startDetailExtras": "Setup and extras ${setup} + first month ${monthly}",
+        "after": "Every month after",
+        "afterDetail": "From the second month on"
+      },
+      "startNote": "Cancel anytime; your domain stays yours.",
+      "subject": "My plan: {plan}",
+      "send": "Send my plan by email",
+      "message": "Hi Giancarlos, I'm interested in {plan}{extras}. Estimated total: ${total} MXN a month + VAT.",
+      "messageExtras": ", with {list}",
+      "note": "Prices in MXN + VAT (16%). Invoiced (CFDI). Also as a one-time payment: Web Presence ${base}, Coffee ${cafe}, Music ${music} and Health ${health}.",
+      "planPack": "the {name} pack",
+      "planBase": "the {name} plan"
+    },
+    "terms": {
+      "delivery": {
+        "label": "Delivery",
+        "text": "10 business days after I get your content"
+      },
+      "changes": {
+        "label": "Changes",
+        "text": "2 a month over WhatsApp, done within 5 business days"
+      },
+      "domain": {
+        "label": "Your domain",
+        "text": "In your name from day one, and yours if you cancel"
+      },
+      "payment": {
+        "label": "Payment",
+        "text": "Bank transfer (SPEI) or automatic charge, with a CFDI invoice"
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "subtitle": "Another question? Email me at {email}.",
+      "items": {
+        "delivery": {
+          "q": "How long until my site is ready?",
+          "a": "Up to 10 business days, counted from when I have all your content."
+        },
+        "content": {
+          "q": "What do I need to send you?",
+          "a": "Your logo, photos and basic details: services, prices, hours and location. I write and polish the copy from there."
+        },
+        "change": {
+          "q": "What counts as a change?",
+          "a": "A single request, like updating prices, swapping a section's photos or adjusting hours. A new section is quoted as an extra page."
+        },
+        "google": {
+          "q": "Will I rank first on Google?",
+          "a": "I set your site up so Google can find it and connect it to your Google Business Profile, but nobody can guarantee a specific spot in the results."
+        }
+      }
+    },
+    "link": "Pricing",
+    "linkAria": "See website plans for local businesses",
+    "cta": {
+      "title": "Not sure which one to pick?",
+      "text": "Email me and I'll recommend the plan that fits your business.",
+      "emailAria": "Send an email to Giancarlos Garza"
+    }
+  }
+}

@@ -5,8 +5,9 @@ import { NuxtLink } from '#components'
 interface INavLink {
   id: string
   label: string
-  href: string
+  to: string
   ariaLabel: string
+  isSection?: boolean
 }
 
 /** Props */
@@ -17,34 +18,52 @@ const props = defineProps<{
 /** Data */
 const { locale, setLocale, t } = useI18n()
 const localePath = useLocalePath()
+// The router ignores the hash, so every home section link would match the home route as exact-active
+const SectionLink = defineNuxtLink({
+  componentName: 'SectionLink',
+  activeClass: 'section-link-active',
+  exactActiveClass: 'section-link-active'
+})
 
 /** Computed */
+// Home section links carry the home path so they also work from other pages
+const homePath = computed<string>(() => localePath('index'))
 const navLinks = computed<INavLink[]>(() => props.minimal
   ? []
   : [
       {
         id: 'work',
         label: t('nav.work'),
-        href: '#work',
-        ariaLabel: t('nav.workAria')
+        to: `${homePath.value}#work`,
+        ariaLabel: t('nav.workAria'),
+        isSection: true
       },
       {
         id: 'approach',
         label: t('nav.approach'),
-        href: '#approach',
-        ariaLabel: t('nav.approachAria')
+        to: `${homePath.value}#approach`,
+        ariaLabel: t('nav.approachAria'),
+        isSection: true
       },
       {
         id: 'writing',
         label: t('nav.experiments'),
-        href: '#writing',
-        ariaLabel: t('nav.experimentsAria')
+        to: `${homePath.value}#writing`,
+        ariaLabel: t('nav.experimentsAria'),
+        isSection: true
+      },
+      {
+        id: 'pricing',
+        label: t('pricing.link'),
+        to: localePath('pricing'),
+        ariaLabel: t('pricing.linkAria')
       },
       {
         id: 'contact',
         label: t('nav.contact'),
-        href: '#contact',
-        ariaLabel: t('nav.contactAria')
+        to: `${homePath.value}#contact`,
+        ariaLabel: t('nav.contactAria'),
+        isSection: true
       }
     ])
 const targetLocale = computed<'en' | 'es'>(() => (locale.value === 'en'
@@ -92,7 +111,8 @@ async function switchLocale(): Promise<void> {
         <UiNavbarLink
           v-for="link in navLinks"
           :key="link.id"
-          :href="link.href"
+          :as="link.isSection ? SectionLink : NuxtLink"
+          :to="link.to"
           :text="link.label"
           :aria-label="link.ariaLabel"
         />
