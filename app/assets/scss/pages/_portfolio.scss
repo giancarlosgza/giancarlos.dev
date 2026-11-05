@@ -1,3 +1,25 @@
+// Hides the top border and draws it from the left as the element scrolls in
+@mixin divider-draw {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports ((animation-timeline: view()) and (animation-range: entry)) {
+      position: relative;
+      border-top-color: transparent;
+      view-timeline: --divider-draw;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: calc(var(--cffy-border-width-sm) * -1) 0 auto;
+        border-top: var(--_divider);
+        transform-origin: left;
+        animation: divider-draw auto linear backwards;
+        animation-timeline: --divider-draw;
+        animation-range: cover 0% cover 30%;
+      }
+    }
+  }
+}
+
 @layer pages {
   .portfolio-layout {
     min-height: 100vh;
@@ -57,6 +79,19 @@
     }
   }
 
+  @keyframes hero-recede {
+    to {
+      opacity: 0.3;
+      scale: 1.08;
+    }
+  }
+
+  @keyframes divider-draw {
+    from {
+      scale: 0 1;
+    }
+  }
+
   .portfolio-page {
     --_divider: var(--cffy-border-width-sm) solid var(--cffy-outline-surface);
     --_focus-ring: var(--cffy-border-width-md) solid var(--cffy-secondary-a10);
@@ -95,6 +130,17 @@
 
         @media (prefers-reduced-motion: reduce) {
           animation: none;
+        }
+
+        // Fades and grows as the hero scrolls away
+        @media (prefers-reduced-motion: no-preference) {
+          @supports ((animation-timeline: scroll()) and (animation-range: 0% 100%)) {
+            > * {
+              animation: hero-recede auto linear both;
+              animation-timeline: scroll(root);
+              animation-range: 0 100vh;
+            }
+          }
         }
       }
 
@@ -460,6 +506,8 @@
           font-size: var(--cffy-fs-4xs);
           text-transform: uppercase;
           letter-spacing: var(--_eyebrow-tracking);
+
+          @include divider-draw;
         }
 
         .stack-tools {
@@ -513,6 +561,8 @@
           gap: var(--cffy-space-16);
           padding-block: var(--cffy-space-36);
           border-top: var(--_divider);
+
+          @include divider-draw;
 
           @media (width <= 900px) {
             grid-template-columns: 2.5rem minmax(0, 1fr);

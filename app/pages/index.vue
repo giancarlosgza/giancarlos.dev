@@ -122,16 +122,20 @@ useSeoMeta({
       <div class="container">
         <div class="row justify-content-center">
           <header class="col-xl-6 text-center section-header">
-            <p class="section-eyebrow">
+            <p class="section-eyebrow reveal">
               {{ t('work.title') }}
             </p>
             <h2
               id="work-title"
-              class="display-2"
+              class="display-2 reveal-wipe"
+              style="--reveal-index: 1"
             >
               {{ t('work.headline') }}
             </h2>
-            <p class="display-copy">
+            <p
+              class="display-copy reveal"
+              style="--reveal-index: 2"
+            >
               {{ t('work.subtitle') }}
             </p>
           </header>
@@ -141,7 +145,7 @@ useSeoMeta({
           <article
             v-for="project in projects"
             :key="project.id"
-            class="project-row"
+            class="project-row reveal"
             :class="{ 'is-active': project.id === activeProjectId }"
             @mouseenter="activeProjectId = project.id"
           >
@@ -254,16 +258,20 @@ useSeoMeta({
       <div class="container">
         <div class="row justify-content-center">
           <header class="col-xl-6 text-center section-header">
-            <p class="section-eyebrow">
+            <p class="section-eyebrow reveal">
               {{ t('approach.title') }}
             </p>
             <h2
               id="approach-title"
-              class="display-2"
+              class="display-2 reveal-wipe"
+              style="--reveal-index: 1"
             >
               {{ t('approach.headline') }}
             </h2>
-            <p class="display-copy">
+            <p
+              class="display-copy reveal"
+              style="--reveal-index: 2"
+            >
               {{ t('approach.subtitle') }}
             </p>
           </header>
@@ -278,9 +286,10 @@ useSeoMeta({
               <span class="stack-group-label">{{ t(group.label) }}</span>
               <ul class="stack-tools">
                 <li
-                  v-for="tool in group.tools"
+                  v-for="(tool, index) in group.tools"
                   :key="tool.id"
-                  class="stack-tool"
+                  class="stack-tool reveal-pop"
+                  :style="{ '--reveal-index': index }"
                 >
                   <span
                     class="stack-tool-icon"
@@ -319,10 +328,10 @@ useSeoMeta({
               class="principle-row"
             >
               <span
-                class="principle-index"
+                class="principle-index reveal"
                 aria-hidden="true"
               >{{ String(index + 1).padStart(2, '0') }}</span>
-              <div>
+              <div class="reveal">
                 <h3 class="principle-title">
                   {{ t(principle.title) }}
                 </h3>
@@ -345,22 +354,26 @@ useSeoMeta({
       <div class="container">
         <div class="row justify-content-center">
           <header class="col-xl-6 text-center section-header">
-            <p class="section-eyebrow">
+            <p class="section-eyebrow reveal">
               {{ t('experimentsSection.title') }}
             </p>
             <h2
               id="writing-title"
-              class="display-2"
+              class="display-2 reveal-wipe"
+              style="--reveal-index: 1"
             >
               {{ t('experimentsSection.headline') }}
             </h2>
-            <p class="display-copy">
+            <p
+              class="display-copy reveal"
+              style="--reveal-index: 2"
+            >
               {{ t('experimentsSection.subtitle') }}
             </p>
           </header>
         </div>
 
-        <div class="experiment-carousel">
+        <div class="experiment-carousel reveal">
           <article
             v-for="experiment in experiments"
             :key="experiment.id"
@@ -431,7 +444,7 @@ useSeoMeta({
       aria-labelledby="contact-title"
     >
       <div class="container">
-        <div class="contact-panel">
+        <div class="contact-panel reveal-expand">
           <ClientOnly>
             <AppStaticMeshGradient />
           </ClientOnly>

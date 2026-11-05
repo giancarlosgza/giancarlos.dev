@@ -1,0 +1,75 @@
+// Scroll-driven entrances. Browsers without support, or with reduced motion, show the content as is.
+// Set --reveal-index on siblings to stagger them.
+@layer utilities {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports ((animation-timeline: view()) and (animation-range: entry)) {
+      .reveal,
+      .reveal-wipe,
+      .reveal-pop,
+      .reveal-expand {
+        --_reveal-start: calc(5% + var(--reveal-index, 0) * 4%);
+        --_reveal-distance: 4rem;
+
+        animation-duration: auto;
+        animation-fill-mode: backwards;
+        animation-timing-function: ease-out;
+        animation-timeline: view();
+        animation-range: cover var(--_reveal-start) cover calc(var(--_reveal-start) + 30%);
+      }
+
+      .reveal {
+        animation-name: reveal-rise;
+      }
+
+      // Rises out of its own bottom edge
+      .reveal-wipe {
+        animation-name: reveal-wipe;
+      }
+
+      .reveal-pop {
+        animation-name: reveal-pop;
+        animation-timing-function: linear(0, 0.29 7.6%, 0.82 18%, 1.07 27.6%, 1.12 33%, 1.08 40%, 1 52%, 0.98 62%, 1);
+      }
+
+      .reveal-expand {
+        animation-name: reveal-expand;
+        animation-range: cover 0% cover 45%;
+      }
+    }
+  }
+
+  @keyframes reveal-rise {
+    from {
+      opacity: 0;
+      translate: 0 var(--_reveal-distance);
+      scale: 0.96;
+      filter: blur(8px);
+    }
+  }
+
+  @keyframes reveal-wipe {
+    from {
+      clip-path: inset(0 0 100% 0);
+      translate: 0 100%;
+    }
+
+    // clip-path can't interpolate to none
+    to {
+      clip-path: inset(0);
+    }
+  }
+
+  @keyframes reveal-pop {
+    from {
+      opacity: 0;
+      scale: 0.6;
+    }
+  }
+
+  @keyframes reveal-expand {
+    from {
+      opacity: 0.4;
+      scale: 0.88;
+    }
+  }
+}

@@ -317,14 +317,14 @@ useSeoMeta({
     >
       <h2
         id="pricing-summary-title"
-        class="display-3 text-center mb-5"
+        class="display-3 text-center mb-5 reveal-wipe"
       >
         {{ t('pricing.summary.title') }}
       </h2>
 
       <UiCard
         variant="pane"
-        custom-class="pricing-summary"
+        custom-class="pricing-summary reveal"
       >
         <template #body>
           <div class="pricing-summary-col">
@@ -450,14 +450,16 @@ useSeoMeta({
       <div class="container">
         <h2
           id="pricing-terms-title"
-          class="display-3 text-center mb-5"
+          class="display-3 text-center mb-5 reveal-wipe"
         >
           {{ t('pricing.terms.title') }}
         </h2>
         <ul class="pricing-terms">
           <li
-            v-for="term in terms"
+            v-for="(term, index) in terms"
             :key="term.id"
+            class="reveal"
+            :style="{ '--reveal-index': index }"
           >
             <UiIconMaterial
               :icon-code="term.icon"
@@ -484,7 +486,7 @@ useSeoMeta({
         <div class="col-lg-8">
           <h2
             id="pricing-faq-title"
-            class="display-3 text-center mb-5"
+            class="display-3 text-center mb-5 reveal-wipe"
           >
             {{ t('pricing.faq.title') }}
           </h2>
@@ -496,7 +498,7 @@ useSeoMeta({
               v-for="item in faqIds"
               :key="item"
               name="pricing-faq"
-              custom-class="bg-surface-pane border shadow-sm"
+              custom-class="bg-surface-pane border shadow-sm reveal"
               :title="t(`pricing.faq.items.${item}.q`)"
               :text="t(`pricing.faq.items.${item}.a`)"
             />
@@ -514,7 +516,7 @@ useSeoMeta({
       aria-labelledby="pricing-cta-title"
     >
       <div class="container">
-        <div class="contact-panel">
+        <div class="contact-panel reveal-expand">
           <ClientOnly>
             <AppStaticMeshGradient />
           </ClientOnly>
