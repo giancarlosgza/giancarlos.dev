@@ -18,7 +18,6 @@ const props = defineProps<{
 /** Data */
 const { locale, setLocale, t } = useI18n()
 const localePath = useLocalePath()
-// The router ignores the hash, so every home section link would match the home route as exact-active
 const SectionLink = defineNuxtLink({
   componentName: 'SectionLink',
   activeClass: 'section-link-active',
@@ -26,7 +25,6 @@ const SectionLink = defineNuxtLink({
 })
 
 /** Computed */
-// Home section links carry the home path so they also work from other pages
 const homePath = computed<string>(() => localePath('index'))
 const navLinks = computed<INavLink[]>(() => props.minimal
   ? []
@@ -119,26 +117,16 @@ async function switchLocale(): Promise<void> {
         <UiNavbarItem>
           <UiButtonTooltip
             id="locale-switcher"
+            variant="tonal"
+            :color="targetLocale === 'es' ? 'secondary' : 'accent'"
             icon
+            :text="targetLocale.toUpperCase()"
             :tooltip-text="localeSwitchLabel"
             :aria-label="localeSwitchLabel"
             @click="switchLocale"
-          >
-            <template #icon>
-              <span class="locale-switcher-code">{{ targetLocale.toUpperCase() }}</span>
-            </template>
-          </UiButtonTooltip>
+          />
         </UiNavbarItem>
       </UiNavbarNav>
     </UiNavbarCollapse>
   </UiNavbar>
 </template>
-
-<style scoped lang="scss">
-.locale-switcher-code {
-  font-size: var(--cffy-fs-3xs);
-  font-weight: var(--cffy-fw-700);
-  letter-spacing: 0.04em;
-  line-height: 1;
-}
-</style>
