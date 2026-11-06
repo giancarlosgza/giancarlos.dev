@@ -1,3 +1,21 @@
+@mixin pricing-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cffy-space-12);
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: var(--cffy-border-width-md) solid var(--cffy-secondary-a10);
+    outline-offset: calc(var(--cffy-border-width-md) * -1);
+  }
+}
+
 @layer pages {
   .pricing-page {
     --_pricing-col-padding: clamp(1.5rem, 3.5vw, 2.75rem);
@@ -96,22 +114,13 @@
       }
 
       .pricing-extras-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: var(--cffy-space-12);
+        @include pricing-toggle;
+
         min-block-size: 2.75rem;
         margin-block: -0.625rem calc(var(--cffy-space-8) * -1);
         padding: 0;
-        border: 0;
-        background: none;
-        color: inherit;
-        font: inherit;
-        text-align: start;
-        cursor: pointer;
 
         &:focus-visible {
-          outline: var(--cffy-border-width-md) solid var(--cffy-secondary-a10);
           outline-offset: var(--cffy-border-width-md);
         }
       }
@@ -142,16 +151,17 @@
 
       overflow: hidden;
 
-      @media (width <= 480px) {
-        --_pricing-col-padding: var(--cffy-space-16);
-      }
-
       > .card-body {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        display: flex;
+        flex-direction: column;
 
-        @media (width <= 900px) {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+        @media (width > 900px) {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          grid-template-rows: auto 1fr;
+          grid-template-areas:
+            'monthly once pay'
+            'monthly once cta';
         }
       }
 
@@ -161,23 +171,81 @@
         gap: 1.125rem;
         padding: var(--_pricing-col-padding);
 
-        & + .pricing-summary-col {
-          border-left: var(--_pricing-divider);
+        .pricing-overline {
+          margin: 0;
         }
+      }
 
-        &.pricing-summary-start {
+      .pricing-summary-pay,
+      .pricing-summary-cta {
+        @media (width > 900px) {
+          border-left: var(--_pricing-divider);
           background: var(--cffy-secondary-container);
           color: var(--cffy-on-secondary-container);
+        }
+      }
 
-          @media (width <= 900px) {
-            grid-column: 1 / -1;
-            border-left: 0;
-            border-top: var(--_pricing-divider);
+      .pricing-summary-pay {
+        @media (width > 900px) {
+          grid-area: pay;
+          padding-bottom: 0;
+        }
+      }
+
+      .pricing-summary-cta {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 1.125rem;
+        padding: var(--_pricing-col-padding);
+        border-top: var(--_pricing-divider);
+
+        @media (width > 900px) {
+          grid-area: cta;
+          padding-top: var(--cffy-space-8);
+          border-top: 0;
+        }
+      }
+
+      .pricing-summary-toggle {
+        @include pricing-toggle;
+
+        min-block-size: 3.25rem;
+        padding: 0 var(--_pricing-col-padding);
+        border-top: var(--_pricing-divider);
+        font-weight: var(--cffy-fw-600);
+
+        @media (width > 900px) {
+          display: none;
+        }
+      }
+
+      .pricing-summary-breakdown {
+        display: contents;
+
+        @media (width <= 900px) {
+          display: none;
+          border-top: var(--_pricing-divider);
+          background: var(--cffy-surface-container-low);
+
+          &.is-open {
+            display: grid;
+          }
+
+          .pricing-summary-once {
+            padding-top: 0;
           }
         }
 
-        .pricing-overline {
-          margin: 0;
+        @media (width > 900px) {
+          .pricing-summary-monthly {
+            grid-area: monthly;
+          }
+
+          .pricing-summary-once {
+            grid-area: once;
+            border-left: var(--_pricing-divider);
+          }
         }
       }
 
@@ -186,11 +254,6 @@
         align-items: baseline;
         justify-content: space-between;
         gap: var(--cffy-space-12);
-
-        @media (width <= 900px) {
-          flex-wrap: wrap;
-          row-gap: var(--cffy-space-4);
-        }
 
         &.pricing-line-total {
           margin-top: auto;
@@ -219,7 +282,6 @@
         }
       }
 
-      // Vertical timeline: a dot per step, joined by a line
       .pricing-schedule {
         --_schedule-dot-size: 0.625rem;
         --_schedule-dot-offset: 0.35rem;
@@ -231,12 +293,21 @@
         padding: 0;
         list-style: none;
 
+        @media (width <= 900px) {
+          --_schedule-step-gap: var(--cffy-space-16);
+
+          margin: 0;
+        }
+
         .pricing-schedule-step {
           position: relative;
-          display: flex;
-          align-items: flex-start;
-          justify-content: space-between;
-          gap: var(--cffy-space-12);
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) auto;
+          grid-template-areas:
+            'label amount'
+            'detail amount';
+          gap: var(--cffy-space-4) var(--cffy-space-12);
+          align-items: start;
           padding-left: var(--cffy-space-24);
 
           &::before {
@@ -261,12 +332,55 @@
             opacity: 0.3;
           }
 
+          .pricing-schedule-label {
+            grid-area: label;
+            font-weight: var(--cffy-fw-700);
+          }
+
+          .pricing-schedule-detail {
+            grid-area: detail;
+            font-size: var(--cffy-fs-3xs);
+          }
+
           strong {
-            flex: none;
+            grid-area: amount;
             font-size: var(--cffy-fs-2xl);
             line-height: 1;
             font-weight: var(--cffy-fw-800);
             letter-spacing: var(--_pricing-tracking-tight);
+          }
+
+          @media (width <= 900px) {
+            padding-left: 0;
+
+            &::before,
+            &:not(:last-child)::after {
+              content: none;
+            }
+
+            .pricing-schedule-detail {
+              color: var(--cffy-muted-a10);
+            }
+
+            &:first-child {
+              grid-template-columns: minmax(0, 1fr);
+              grid-template-areas:
+                'label'
+                'amount'
+                'detail';
+              row-gap: var(--cffy-space-8);
+
+              strong {
+                font-size: clamp(2.75rem, 12vw, 3.25rem);
+                letter-spacing: -0.03em;
+              }
+            }
+
+            & + .pricing-schedule-step {
+              align-items: center;
+              padding-top: var(--cffy-space-16);
+              border-top: var(--_pricing-divider);
+            }
           }
         }
       }

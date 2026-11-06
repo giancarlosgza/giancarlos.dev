@@ -31,7 +31,7 @@
       flex: 1 1 auto;
     }
 
-    // Clears the bottom navigation bar; Colorffy pads main, but the footer sits after it here
+    // Colorffy pads main for the navigation bar, but the footer sits outside it
     &:has(> .navigation-bar) {
       @media (width <= 1024px) {
         padding-bottom: calc(5rem + var(--cffy-space-16));
@@ -495,7 +495,7 @@
       }
     }
 
-    // How I Work: stack on the left, numbered principles on the right
+    // How I Work, stack on the left and numbered principles on the right
     .approach-layout {
       display: grid;
       grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);

@@ -21,6 +21,7 @@ const packId = ref<TPricingPack>('cafe')
 const isBase = ref<boolean>(false)
 const picked = ref<Record<string, boolean>>({})
 const isExtrasOpen = ref<boolean>(true)
+const isBreakdownOpen = ref<boolean>(false)
 const faqIds = [
   'delivery',
   'content',
@@ -387,105 +388,136 @@ useHead(() => {
         custom-class="pricing-summary reveal"
       >
         <template #body>
-          <div class="pricing-summary-col">
-            <p class="pricing-overline d-flex align-items-center gap-2">
-              <UiIconMaterial icon-code="&#xe863;" size="xs" />
-              {{ t('pricing.summary.monthly') }}
-            </p>
-            <div class="pricing-line">
-              <span class="d-grid">
-                <span class="fw-500">{{ planName }}</span>
-                <span class="fs-3xs text-muted">{{ planLabel }}</span>
-              </span>
-              <span class="font-code">${{ formatMxn(plan.monthly) }}</span>
-            </div>
-            <ul
-              v-if="monthlyExtras.length"
-              class="pricing-summary-extras"
-            >
-              <li
-                v-for="extra in monthlyExtras"
-                :key="extra.id"
-                class="pricing-line"
-              >
-                <span class="d-flex gap-2">
-                  <UiIconMaterial
-                    icon-code="&#xe5ca;"
-                    class="fs-base lh-sm text-muted"
-                  />
-                  {{ t(`pricing.extras.items.${extra.id}.name`) }}
-                </span>
-                <span class="font-code">${{ formatMxn(extra.price) }}</span>
-              </li>
-            </ul>
-            <div class="pricing-line pricing-line-total">
-              <span class="text-muted">{{ t('pricing.summary.monthlyTotal') }}</span>
-              <strong>${{ formatMxn(monthlyTotal) }}</strong>
-            </div>
-          </div>
-
-          <div class="pricing-summary-col">
-            <p class="pricing-overline d-flex align-items-center gap-2">
-              <UiIconMaterial icon-code="&#xe153;" size="xs" />
-              {{ t('pricing.summary.oneTime') }}
-            </p>
-            <div class="pricing-line">
-              <span class="fw-500">{{ t('pricing.summary.setup') }}</span>
-              <span class="font-code">${{ formatMxn(plan.setup) }}</span>
-            </div>
-            <ul
-              v-if="oneTimeExtras.length"
-              class="pricing-summary-extras"
-            >
-              <li
-                v-for="extra in oneTimeExtras"
-                :key="extra.id"
-                class="pricing-line"
-              >
-                <span class="d-flex gap-2">
-                  <UiIconMaterial
-                    icon-code="&#xe5ca;"
-                    class="fs-base lh-sm text-muted"
-                  />
-                  {{ t(`pricing.extras.items.${extra.id}.name`) }}
-                </span>
-                <span class="font-code">${{ formatMxn(extra.price) }}</span>
-              </li>
-            </ul>
-            <div class="pricing-line pricing-line-total">
-              <span class="text-muted">{{ t('pricing.summary.upfrontTotal') }}</span>
-              <strong>${{ formatMxn(upfrontTotal) }}</strong>
-            </div>
-          </div>
-
-          <div class="pricing-summary-col pricing-summary-start">
+          <!-- How You Pay -->
+          <div class="pricing-summary-col pricing-summary-pay">
             <p class="pricing-overline d-flex align-items-center gap-2 text-reset">
-              <UiIconMaterial icon-code="&#xebcc;" size="xs" />
+              <UiIconMaterial
+                icon-code="&#xebcc;"
+                class="fs-lg lh-1"
+              />
               {{ t('pricing.summary.start') }}
             </p>
             <ol class="pricing-schedule">
               <li class="pricing-schedule-step">
-                <span class="d-grid gap-1">
-                  <span class="fw-700">{{ t('pricing.summary.schedule.start') }}</span>
-                  <span class="fs-3xs">{{ startDetail }}</span>
-                </span>
-                <strong class="text-success">${{ formatMxn(monthlyTotal + upfrontTotal) }}</strong>
+                <span class="pricing-schedule-label">{{ t('pricing.summary.schedule.start') }}</span>
+                <strong>${{ formatMxn(monthlyTotal + upfrontTotal) }}</strong>
+                <span class="pricing-schedule-detail">{{ startDetail }}</span>
               </li>
               <li class="pricing-schedule-step">
-                <span class="d-grid gap-1">
-                  <span class="fw-700">{{ t('pricing.summary.schedule.after') }}</span>
-                  <span class="fs-3xs">{{ t('pricing.summary.schedule.afterDetail') }}</span>
-                </span>
-                <strong>${{ formatMxn(monthlyTotal) }}</strong>
+                <span class="pricing-schedule-label">{{ t('pricing.summary.schedule.after') }}</span>
+                <strong class="text-secondary">${{ formatMxn(monthlyTotal) }}</strong>
+                <span class="pricing-schedule-detail">{{ t('pricing.summary.schedule.afterDetail') }}</span>
               </li>
             </ol>
+          </div>
+
+          <button
+            type="button"
+            class="pricing-summary-toggle"
+            :aria-expanded="isBreakdownOpen"
+            aria-controls="pricing-summary-breakdown"
+            @click="isBreakdownOpen = !isBreakdownOpen"
+          >
+            {{ t(isBreakdownOpen ? 'pricing.summary.breakdownHide' : 'pricing.summary.breakdownShow') }}
+            <UiIconMaterial
+              :icon-code="isBreakdownOpen ? '&#xe5ce;' : '&#xe5cf;'"
+              class="text-muted"
+            />
+          </button>
+
+          <div
+            id="pricing-summary-breakdown"
+            class="pricing-summary-breakdown"
+            :class="{ 'is-open': isBreakdownOpen }"
+          >
+            <!-- Monthly -->
+            <div class="pricing-summary-col pricing-summary-monthly">
+              <p class="pricing-overline d-flex align-items-center gap-2">
+                <UiIconMaterial
+                  icon-code="&#xe863;"
+                  class="fs-lg lh-1 text-secondary"
+                />
+                {{ t('pricing.summary.monthly') }}
+              </p>
+              <div class="pricing-line">
+                <span class="d-grid">
+                  <span class="fw-500">{{ planName }}</span>
+                  <span class="fs-3xs text-muted">{{ planLabel }}</span>
+                </span>
+                <span class="font-code">${{ formatMxn(plan.monthly) }}</span>
+              </div>
+              <ul
+                v-if="monthlyExtras.length"
+                class="pricing-summary-extras"
+              >
+                <li
+                  v-for="extra in monthlyExtras"
+                  :key="extra.id"
+                  class="pricing-line"
+                >
+                  <span class="d-flex gap-2">
+                    <UiIconMaterial
+                      icon-code="&#xe5ca;"
+                      class="fs-base lh-sm text-muted"
+                    />
+                    {{ t(`pricing.extras.items.${extra.id}.name`) }}
+                  </span>
+                  <span class="font-code">${{ formatMxn(extra.price) }}</span>
+                </li>
+              </ul>
+              <div class="pricing-line pricing-line-total">
+                <span class="text-muted">{{ t('pricing.summary.monthlyTotal') }}</span>
+                <strong>${{ formatMxn(monthlyTotal) }}</strong>
+              </div>
+            </div>
+
+            <!-- One Time -->
+            <div class="pricing-summary-col pricing-summary-once">
+              <p class="pricing-overline d-flex align-items-center gap-2">
+                <UiIconMaterial
+                  icon-code="&#xe153;"
+                  class="fs-lg lh-1 text-accent"
+                />
+                {{ t('pricing.summary.oneTime') }}
+              </p>
+              <div class="pricing-line">
+                <span class="fw-500">{{ t('pricing.summary.setup') }}</span>
+                <span class="font-code">${{ formatMxn(plan.setup) }}</span>
+              </div>
+              <ul
+                v-if="oneTimeExtras.length"
+                class="pricing-summary-extras"
+              >
+                <li
+                  v-for="extra in oneTimeExtras"
+                  :key="extra.id"
+                  class="pricing-line"
+                >
+                  <span class="d-flex gap-2">
+                    <UiIconMaterial
+                      icon-code="&#xe5ca;"
+                      class="fs-base lh-sm text-muted"
+                    />
+                    {{ t(`pricing.extras.items.${extra.id}.name`) }}
+                  </span>
+                  <span class="font-code">${{ formatMxn(extra.price) }}</span>
+                </li>
+              </ul>
+              <div class="pricing-line pricing-line-total">
+                <span class="text-muted">{{ t('pricing.summary.upfrontTotal') }}</span>
+                <strong>${{ formatMxn(upfrontTotal) }}</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Send -->
+          <div class="pricing-summary-cta">
             <UiButton
               variant="filled"
               color="primary"
               size="lg"
               :text="t('pricing.summary.send')"
               :href="mailtoHref(planName, planMessage)"
-              custom-class="mt-auto"
               fluid
             >
               <template #icon>

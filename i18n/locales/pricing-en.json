@@ -124,6 +124,8 @@
         "afterDetail": "Just the monthly fee"
       },
       "startNote": "Cancel anytime; your domain stays yours.",
+      "breakdownShow": "See breakdown",
+      "breakdownHide": "Hide breakdown",
       "subject": "My plan: {plan}",
       "send": "Send my plan by email",
       "message": "Hi Giancarlos, I'm interested in {plan}{extras}. Estimated total: ${total} MXN a month + VAT.",

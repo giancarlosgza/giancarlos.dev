@@ -114,7 +114,7 @@
       "oneTime": "Una sola vez",
       "monthlyTotal": "Total mensual",
       "setup": "Configuración inicial",
-      "upfrontTotal": "Total por configuración",
+      "upfrontTotal": "Total configuración",
       "start": "Cómo pagas",
       "schedule": {
         "start": "Al empezar",
@@ -124,6 +124,8 @@
         "afterDetail": "Solo la mensualidad"
       },
       "startNote": "Cancela cuando quieras; tu dominio sigue siendo tuyo.",
+      "breakdownShow": "Ver desglose",
+      "breakdownHide": "Ocultar desglose",
       "subject": "Mi plan: {plan}",
       "send": "Enviar mi plan por correo",
       "message": "Hola Giancarlos, me interesa {plan}{extras}. Total estimado: ${total} MXN al mes + IVA.",
