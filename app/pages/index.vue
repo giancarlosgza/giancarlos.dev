@@ -6,10 +6,13 @@ import {
   projects,
   stackGroups
 } from '~/utils/portfolio'
+import { CONTACT_EMAIL } from '~/utils/pricing'
+import { jsonLdScript, PROFILE_LINKS } from '~/utils/seo'
 import { withUtm } from '~/utils/utm'
 
 /** Data */
 const { t, locale } = useI18n()
+const siteUrl = useRuntimeConfig().public.siteUrl
 const activeProjectId = ref(projects[0]?.id ?? '')
 const activeExperimentId = ref(experiments[0]?.id ?? '')
 
@@ -29,9 +32,48 @@ useSeoMeta({
   ogTitle: () => t('seo.ogTitle'),
   ogDescription: () => t('seo.ogDescription'),
   twitterTitle: () => t('seo.ogTitle'),
-  twitterDescription: () => t('seo.ogDescription'),
-  twitterCard: 'summary'
+  twitterDescription: () => t('seo.ogDescription')
 })
+useShareImage('home', () => t('seo.ogTitle'))
+useHead(() => ({
+  script: [
+    jsonLdScript({
+      '@graph': [
+        {
+          '@type': 'Person',
+          '@id': `${siteUrl}/#person`,
+          'name': 'Giancarlos Garza',
+          'url': `${siteUrl}/`,
+          'jobTitle': t('seo.title'),
+          'description': t('seo.description'),
+          'email': `mailto:${CONTACT_EMAIL}`,
+          'address': {
+            '@type': 'PostalAddress',
+            'addressRegion': 'Nuevo León',
+            'addressCountry': 'MX'
+          },
+          'knowsAbout': [
+            'Vue',
+            'Nuxt',
+            'TypeScript',
+            'Design systems',
+            'Web performance',
+            'UI/UX design'
+          ],
+          'sameAs': [PROFILE_LINKS.github, PROFILE_LINKS.linkedin]
+        },
+        {
+          '@type': 'WebSite',
+          '@id': `${siteUrl}/#website`,
+          'url': `${siteUrl}/`,
+          'name': 'Giancarlos Garza',
+          'inLanguage': ['en-US', 'es-MX'],
+          'publisher': { '@id': `${siteUrl}/#person` }
+        }
+      ]
+    })
+  ]
+}))
 </script>
 
 <template>

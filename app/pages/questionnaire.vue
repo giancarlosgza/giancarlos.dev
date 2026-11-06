@@ -216,8 +216,14 @@ onMounted(async () => {
 /** SEO */
 useSeoMeta({
   title: () => t('questionnaire.seo.title'),
-  description: () => t('questionnaire.seo.description')
+  description: () => t('questionnaire.seo.description'),
+  ogTitle: () => t('questionnaire.seo.title'),
+  ogDescription: () => t('questionnaire.seo.description'),
+  twitterTitle: () => t('questionnaire.seo.title'),
+  twitterDescription: () => t('questionnaire.seo.description')
 })
+// Invite links get shared over WhatsApp, so they still need a preview despite noindex
+useShareImage('questionnaire', () => t('questionnaire.seo.title'))
 </script>
 
 <template>

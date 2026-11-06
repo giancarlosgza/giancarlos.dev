@@ -10,9 +10,12 @@ import {
   PRICING_PACKS,
   PRICING_PLANS
 } from '~/utils/pricing'
+import { jsonLdScript } from '~/utils/seo'
 
 /** Data */
 const { t, locale } = useI18n()
+const route = useRoute()
+const siteUrl = useRuntimeConfig().public.siteUrl
 const { colorMode, meshBase } = useMeshGradient()
 const packId = ref<TPricingPack>('cafe')
 const isBase = ref<boolean>(false)
@@ -109,7 +112,50 @@ useSeoMeta({
   title: () => t('pricing.seo.title'),
   description: () => t('pricing.seo.description'),
   ogTitle: () => t('pricing.seo.title'),
-  ogDescription: () => t('pricing.seo.description')
+  ogDescription: () => t('pricing.seo.description'),
+  twitterTitle: () => t('pricing.seo.title'),
+  twitterDescription: () => t('pricing.seo.description')
+})
+useShareImage('plans', () => t('pricing.seo.title'))
+useHead(() => {
+  const monthlyPrices = Object.values(PRICING_PLANS).map(item => item.monthly)
+  return {
+    script: [
+      jsonLdScript({
+        '@type': 'ProfessionalService',
+        '@id': `${siteUrl}/#service`,
+        'name': 'Giancarlos Garza',
+        'url': `${siteUrl}${route.path}`,
+        'description': t('pricing.seo.description'),
+        'image': `${siteUrl}/images/og/plans-${locale.value}.jpg`,
+        'email': CONTACT_EMAIL,
+        'founder': { '@id': `${siteUrl}/#person` },
+        'areaServed': { '@type': 'City', 'name': 'Monterrey' },
+        'address': {
+          '@type': 'PostalAddress',
+          'addressLocality': 'Monterrey',
+          'addressRegion': 'Nuevo León',
+          'addressCountry': 'MX'
+        },
+        'priceRange': `$${formatMxn(Math.min(...monthlyPrices))}–$${formatMxn(Math.max(...monthlyPrices))} MXN`,
+        'hasOfferCatalog': {
+          '@type': 'OfferCatalog',
+          'name': t('pricing.seo.title'),
+          'itemListElement': Object.values(PRICING_PLANS).map(item => ({
+            '@type': 'Offer',
+            'name': t(`pricing.plans.${item.id}.name`),
+            'priceSpecification': {
+              '@type': 'UnitPriceSpecification',
+              'price': item.monthly,
+              'priceCurrency': 'MXN',
+              'unitCode': 'MON',
+              'valueAddedTaxIncluded': false
+            }
+          }))
+        }
+      })
+    ]
+  }
 })
 </script>
 

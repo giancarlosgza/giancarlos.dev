@@ -94,7 +94,9 @@ export default defineNuxtConfig({
     url: process.env.NUXT_PUBLIC_SITE_URL || 'https://giancarlos.dev',
     name: 'Giancarlos Garza',
     description: 'Front-end engineer and UI/UX designer building high-performance interfaces and design systems.',
-    defaultLocale: 'en'
+    defaultLocale: 'en',
+    // Firebase Hosting serves prerendered pages at /path/, so canonicals and the sitemap match it
+    trailingSlash: true
   },
   robots: {
     sitemap: '/sitemap.xml'
@@ -114,6 +116,7 @@ export default defineNuxtConfig({
     baseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://giancarlos.dev',
     defaultLocale: 'en',
     strategy: 'prefix_except_default',
+    trailingSlash: true,
     locales: [
       {
         code: 'en',
