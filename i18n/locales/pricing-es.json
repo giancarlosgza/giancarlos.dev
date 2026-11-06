@@ -23,7 +23,8 @@
       "overline": "Paquete por giro",
       "lead": "Lo mismo que Presencia Web, más lo que tu giro necesita.",
       "select": "Tu giro",
-      "includes": "Además de Presencia Web"
+      "includes": "Además de Presencia Web",
+      "toSummary": "Ver el resumen de mi plan"
     },
     "plans": {
       "base": {

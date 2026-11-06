@@ -300,6 +300,16 @@ useHead(() => {
                 {{ t(`pricing.features.${feature}`) }}
               </li>
             </ul>
+            <div class="d-flex">
+              <UiButton
+                href="#pricing-summary"
+                variant="link"
+                :text="t('pricing.pack.toSummary')"
+                size="sm"
+                class="text-secondary"
+                icon-trailing
+              />
+            </div>
           </div>
 
           <!-- Extras -->
@@ -358,6 +368,7 @@ useHead(() => {
 
     <!-- Summary -->
     <section
+      id="pricing-summary"
       class="page-section container"
       aria-labelledby="pricing-summary-title"
     >

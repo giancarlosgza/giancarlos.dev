@@ -23,7 +23,8 @@
       "overline": "Business pack",
       "lead": "Everything in Web Presence, plus what your type of business needs.",
       "select": "Your business",
-      "includes": "On top of Web Presence"
+      "includes": "On top of Web Presence",
+      "toSummary": "See my plan summary"
     },
     "plans": {
       "base": {
