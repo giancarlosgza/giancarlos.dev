@@ -45,7 +45,7 @@
       }
     },
     "features": {
-      "site": "Sitio de una página, hecho para celular",
+      "site": "Sitio de una página: inicio, sobre ti, servicios, ubicación y contacto",
       "domain": "Dominio a tu nombre, hospedaje y candado de seguridad (https)",
       "maps": "Google Maps y horarios",
       "whatsapp": "Botón de contacto por WhatsApp",
@@ -53,18 +53,16 @@
       "changes": "2 cambios de contenido al mes",
       "menu": "Menú interactivo",
       "orders": "Pedidos por WhatsApp con mensaje prellenado",
+      "delivery": "Enlaces a Rappi, Uber Eats y DiDi Food",
       "qr": "QR listo para imprimir en mesas",
-      "gallery": "Galería de fotos con enlace a tu Instagram",
-      "design": "Diseño limpio, de consultorio",
-      "credentials": "Credenciales, cédula, especialidades y servicios",
+      "credentials": "Credenciales y cédula profesional",
+      "services": "Lista de especialidades",
       "appointments": "Agenda de citas por WhatsApp en 1 clic",
       "medicalSeo": "SEO local médico",
-      "reviews": "Reseñas de Google: calificación y botón para dejar reseña",
       "repertoire": "Repertorio y géneros",
       "packages": "Paquetes para eventos y/o planes de clases",
       "videos": "Videos de YouTube y enlaces a Spotify",
-      "inquiries": "Consulta por WhatsApp para eventos o clases",
-      "members": "Sección de integrantes para grupos"
+      "inquiries": "Consulta por WhatsApp para eventos o clases"
     },
     "extras": {
       "title": "Extras opcionales",
@@ -84,19 +82,19 @@
         },
         "reviews": {
           "name": "Reseñas de Google destacadas",
-          "description": "Tus mejores reseñas, actualizadas cada mes."
+          "description": "Hasta 6 reseñas, actualizadas cada mes."
         },
         "galleryUpdates": {
           "name": "Actualización de galería",
-          "description": "Renuevo tus fotos cada mes."
+          "description": "Hasta 6 fotos nuevas al mes."
         },
         "page": {
           "name": "Página adicional",
-          "description": "Una segunda página, aparte de la principal."
+          "description": "Una página más, con hasta 4 secciones."
         },
         "gallery": {
           "name": "Galería de imágenes",
-          "description": "Tus fotos con enlace a tu Instagram."
+          "description": "Hasta 12 fotos, con enlace a tu Instagram."
         },
         "print": {
           "name": "Diseño de QR o impresos",
@@ -104,7 +102,7 @@
         },
         "migration": {
           "name": "Migración de contenido",
-          "description": "Paso el contenido de tu sitio anterior."
+          "description": "Textos e imágenes de hasta 5 páginas de tu sitio anterior."
         }
       }
     },
@@ -130,7 +128,7 @@
       "send": "Enviar mi plan por correo",
       "message": "Hola Giancarlos, me interesa {plan}{extras}. Total estimado: ${total} MXN al mes + IVA.",
       "messageExtras": ", con {list}",
-      "note": "Precios en MXN más IVA (16%), con factura (CFDI). Si prefieres pagar una sola vez en lugar de mensualidad: Presencia Web ${base}, Cafetería ${cafe}, Salud ${health} o Música ${music}.",
+      "note": "Precios en MXN más IVA (16%), con factura (CFDI). Si prefieres pagar una sola vez en lugar de mensualidad: Presencia Web ${base} o cualquier paquete de giro ${pack}.",
       "planPack": "el paquete {name}",
       "planBase": "el plan {name}"
     },

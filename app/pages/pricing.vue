@@ -91,9 +91,7 @@ const planMessage = computed<string>(() => {
 })
 const oneTimeNote = computed<string>(() => t('pricing.summary.note', {
   base: formatMxn(BASE_PLAN.oneTime),
-  cafe: formatMxn(PACK_PLANS.cafe.oneTime),
-  music: formatMxn(PACK_PLANS.music.oneTime),
-  health: formatMxn(PACK_PLANS.health.oneTime)
+  pack: formatMxn(PACK_PLANS.cafe.oneTime)
 }))
 
 /** Methods */

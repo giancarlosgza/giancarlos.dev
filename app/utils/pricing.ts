@@ -30,7 +30,7 @@ export const PRICING_PACKS: TPricingPack[] = ['cafe', 'health', 'music']
 export const BASE_PLAN: IPricingPlan = {
   id: 'base',
   monthly: 499,
-  setup: 999,
+  setup: 1000,
   oneTime: 4500,
   features: [
     'site',
@@ -46,84 +46,82 @@ export const PACK_PLANS: Record<TPricingPack, IPricingPlan> = {
   cafe: {
     id: 'cafe',
     monthly: 699,
-    setup: 999,
+    setup: 1000,
     oneTime: 6500,
-    features: ['menu', 'orders', 'qr', 'gallery']
+    features: ['menu', 'orders', 'delivery', 'qr']
   },
   health: {
     id: 'health',
-    monthly: 1299,
-    setup: 1499,
-    oneTime: 12500,
+    monthly: 699,
+    setup: 1000,
+    oneTime: 6500,
     features: [
-      'design',
       'credentials',
+      'services',
       'appointments',
-      'medicalSeo',
-      'reviews'
+      'medicalSeo'
     ]
   },
   music: {
     id: 'music',
     monthly: 699,
-    setup: 999,
+    setup: 1000,
     oneTime: 6500,
     features: [
       'repertoire',
       'packages',
       'videos',
-      'inquiries',
-      'members'
+      'inquiries'
     ]
   }
 }
 
 export const PRICING_EXTRAS: IPricingExtra[] = [
   {
+    id: 'reviews',
+    price: 100,
+    recurring: true,
+    plans: ['cafe', 'health', 'music']
+  },
+  {
+    id: 'galleryUpdates',
+    price: 100,
+    recurring: true,
+    plans: ['cafe', 'health', 'music']
+  },
+  {
     id: 'changes',
-    price: 199,
+    price: 200,
     recurring: true,
     plans: ['base', 'cafe', 'health', 'music']
   },
   {
     id: 'english',
-    price: 249,
+    price: 300,
     recurring: true,
-    plans: ['base', 'cafe', 'health', 'music']
-  },
-  {
-    id: 'reviews',
-    price: 149,
-    recurring: true,
-    plans: ['cafe', 'music']
-  },
-  {
-    id: 'galleryUpdates',
-    price: 149,
-    recurring: true,
-    plans: ['cafe', 'health', 'music']
-  },
-  {
-    id: 'page',
-    price: 1200,
-    recurring: false,
     plans: ['base', 'cafe', 'health', 'music']
   },
   {
     id: 'gallery',
-    price: 499,
+    price: 500,
     recurring: false,
-    plans: ['health', 'music']
+    plans: ['cafe', 'health', 'music']
   },
   {
     id: 'print',
-    price: 499,
+    price: 500,
     recurring: false,
-    plans: ['health', 'music']
+    plans: ['music']
   },
   {
     id: 'migration',
     price: 800,
+    recurring: false,
+    plans: ['base', 'cafe', 'health', 'music']
+  },
+  {
+    id: 'page',
+    price: 1200,
     recurring: false,
     plans: ['base', 'cafe', 'health', 'music']
   }
