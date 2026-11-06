@@ -24,7 +24,8 @@
       "lead": "Everything in Web Presence, plus what your type of business needs.",
       "select": "Your business",
       "includes": "On top of Web Presence",
-      "toSummary": "See my plan summary"
+      "toSummary": "See my plan summary",
+      "toSummaryExtras": "See my plan summary and extras ({count})"
     },
     "plans": {
       "base": {
@@ -113,7 +114,7 @@
       "oneTime": "One time",
       "monthlyTotal": "Monthly total",
       "setup": "Setup",
-      "upfrontTotal": "One-time total",
+      "upfrontTotal": "Setup total",
       "start": "How you pay",
       "schedule": {
         "start": "To start",
