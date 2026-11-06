@@ -63,13 +63,21 @@ export default defineNuxtConfig({
         lang: 'en'
       },
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        {
+          rel: 'preload',
+          as: 'font',
+          type: 'font/woff2',
+          href: '/icon-fonts/material-symbols-rounded-subset.woff2',
+          crossorigin: 'anonymous'
+        }
       ]
     }
   },
 
   css: [
     '@/assets/scss/integrations.scss',
+    '@/assets/css/material-symbols.generated.css',
     '@/assets/scss/main.scss'
   ],
 
@@ -220,6 +228,7 @@ export default defineNuxtConfig({
       navigateFallback: '/',
       cleanupOutdatedCaches: true,
       globPatterns: ['**/*.{js,css,html,png,svg,ico,woff2}'],
+      globIgnores: ['**/material-symbols-rounded-full.woff2'],
       runtimeCaching: [
         {
           urlPattern: 'https://fonts.googleapis.com/*',

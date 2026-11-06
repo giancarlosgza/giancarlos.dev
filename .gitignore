@@ -27,5 +27,10 @@ logs
 css
 docs
 
+# Except the generated icon font faces, which nuxt dev needs at startup
+!app/assets/css/
+app/assets/css/*
+!app/assets/css/material-symbols.generated.css
+
 # Firebase hosting deploy cache
 .firebase
