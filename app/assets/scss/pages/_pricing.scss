@@ -142,12 +142,16 @@
 
       overflow: hidden;
 
+      @media (width <= 480px) {
+        --_pricing-col-padding: var(--cffy-space-16);
+      }
+
       > .card-body {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
 
         @media (width <= 900px) {
-          grid-template-columns: minmax(0, 1fr);
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
 
@@ -159,16 +163,17 @@
 
         & + .pricing-summary-col {
           border-left: var(--_pricing-divider);
-
-          @media (width <= 900px) {
-            border-left: 0;
-            border-top: var(--_pricing-divider);
-          }
         }
 
         &.pricing-summary-start {
           background: var(--cffy-secondary-container);
           color: var(--cffy-on-secondary-container);
+
+          @media (width <= 900px) {
+            grid-column: 1 / -1;
+            border-left: 0;
+            border-top: var(--_pricing-divider);
+          }
         }
 
         .pricing-overline {
@@ -182,15 +187,21 @@
         justify-content: space-between;
         gap: var(--cffy-space-12);
 
+        @media (width <= 900px) {
+          flex-wrap: wrap;
+          row-gap: var(--cffy-space-4);
+        }
+
         &.pricing-line-total {
           margin-top: auto;
           padding-top: var(--cffy-space-14);
           border-top: var(--_pricing-divider);
-          font-weight: var(--cffy-fw-800);
+          font-weight: var(--cffy-fw-500);
 
           strong {
-            font-size: var(--cffy-fs-2xl);
-            line-height: 1;
+            font-size: var(--cffy-fs-lg);
+            font-family: var(--cffy-font-code);
+            line-height: var(--cffy-fs-lg--line-height);
             letter-spacing: var(--_pricing-tracking-tight);
           }
         }

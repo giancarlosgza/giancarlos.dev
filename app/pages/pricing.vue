@@ -66,6 +66,9 @@ const upfrontTotal = computed<number>(() => oneTimeExtras.value.reduce((sum, ext
 const extrasCountLabel = computed<string>(() => chosenExtras.value.length
   ? t('pricing.extras.selected', { count: chosenExtras.value.length, total: extras.value.length })
   : t('pricing.extras.available', { count: extras.value.length }))
+const toSummaryLabel = computed<string>(() => chosenExtras.value.length
+  ? t('pricing.pack.toSummaryExtras', { count: chosenExtras.value.length })
+  : t('pricing.pack.toSummary'))
 const startDetail = computed<string>(() => t(
   oneTimeExtras.value.length ? 'pricing.summary.schedule.startDetailExtras' : 'pricing.summary.schedule.startDetail',
   {
@@ -245,7 +248,7 @@ useHead(() => {
               </p>
             </div>
             <ul class="pricing-features">
-              <li class="fw-700">
+              <li class="fw-500 text-muted">
                 {{ t('pricing.base.includes') }}
               </li>
               <li
@@ -286,7 +289,7 @@ useHead(() => {
               color="secondary"
             />
             <ul class="pricing-features">
-              <li class="fw-700">
+              <li class="fw-500 text-muted">
                 {{ t('pricing.pack.includes') }}
               </li>
               <li
@@ -304,7 +307,7 @@ useHead(() => {
               <UiButton
                 href="#pricing-summary"
                 variant="link"
-                :text="t('pricing.pack.toSummary')"
+                :text="toSummaryLabel"
                 size="sm"
                 class="text-secondary"
                 icon-trailing
@@ -391,7 +394,7 @@ useHead(() => {
             </p>
             <div class="pricing-line">
               <span class="d-grid">
-                <span class="fw-700">{{ planName }}</span>
+                <span class="fw-500">{{ planName }}</span>
                 <span class="fs-3xs text-muted">{{ planLabel }}</span>
               </span>
               <span class="font-code">${{ formatMxn(plan.monthly) }}</span>
@@ -416,7 +419,7 @@ useHead(() => {
               </li>
             </ul>
             <div class="pricing-line pricing-line-total">
-              <span>{{ t('pricing.summary.monthlyTotal') }}</span>
+              <span class="text-muted">{{ t('pricing.summary.monthlyTotal') }}</span>
               <strong>${{ formatMxn(monthlyTotal) }}</strong>
             </div>
           </div>
@@ -427,7 +430,7 @@ useHead(() => {
               {{ t('pricing.summary.oneTime') }}
             </p>
             <div class="pricing-line">
-              <span class="fw-700">{{ t('pricing.summary.setup') }}</span>
+              <span class="fw-500">{{ t('pricing.summary.setup') }}</span>
               <span class="font-code">${{ formatMxn(plan.setup) }}</span>
             </div>
             <ul
@@ -450,7 +453,7 @@ useHead(() => {
               </li>
             </ul>
             <div class="pricing-line pricing-line-total">
-              <span>{{ t('pricing.summary.upfrontTotal') }}</span>
+              <span class="text-muted">{{ t('pricing.summary.upfrontTotal') }}</span>
               <strong>${{ formatMxn(upfrontTotal) }}</strong>
             </div>
           </div>
@@ -466,7 +469,7 @@ useHead(() => {
                   <span class="fw-700">{{ t('pricing.summary.schedule.start') }}</span>
                   <span class="fs-3xs">{{ startDetail }}</span>
                 </span>
-                <strong>${{ formatMxn(monthlyTotal + upfrontTotal) }}</strong>
+                <strong class="text-success">${{ formatMxn(monthlyTotal + upfrontTotal) }}</strong>
               </li>
               <li class="pricing-schedule-step">
                 <span class="d-grid gap-1">
