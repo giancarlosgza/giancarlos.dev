@@ -1,5 +1,7 @@
 {
   "nav": {
+    "home": "Inicio",
+    "homeAria": "Ir al inicio",
     "work": "Trabajo",
     "workAria": "Ir a la sección de trabajo seleccionado",
     "approach": "Enfoque",

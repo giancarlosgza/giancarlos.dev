@@ -10,13 +10,11 @@ export default defineNuxtConfig({
     preset: 'node-server',
     compressPublicAssets: true,
     prerender: {
-      // The questionnaire is unlinked, so crawlLinks never finds it
       routes: ['/', '/questionnaire', '/es/cuestionario'],
       crawlLinks: true
     }
   },
 
-  // Private client questionnaire, kept out of search
   routeRules: {
     '/questionnaire': { robots: false, sitemap: false },
     '/es/cuestionario': { robots: false, sitemap: false }
@@ -95,7 +93,6 @@ export default defineNuxtConfig({
     name: 'Giancarlos Garza',
     description: 'Front-end engineer and UI/UX designer building high-performance interfaces and design systems.',
     defaultLocale: 'en',
-    // Firebase Hosting serves prerendered pages at /path/, so canonicals and the sitemap match it
     trailingSlash: true
   },
   robots: {
@@ -157,11 +154,9 @@ export default defineNuxtConfig({
 
   // Firebase
   vuefire: {
-    // With SSR, detected emulators make VueFire load firebase-admin
     emulators: {
       enabled: false
     },
-    // Auth off for the same reason; the questionnaire signs in on the client
     appCheck: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY
       ? {
           provider: 'ReCaptchaV3',

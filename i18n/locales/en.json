@@ -1,5 +1,7 @@
 {
   "nav": {
+    "home": "Home",
+    "homeAria": "Go to the home page",
     "work": "Work",
     "workAria": "Jump to selected work section",
     "approach": "Approach",

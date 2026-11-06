@@ -30,6 +30,17 @@
     > main {
       flex: 1 1 auto;
     }
+
+    // Clears the bottom navigation bar; Colorffy pads main, but the footer sits after it here
+    &:has(> .navigation-bar) {
+      @media (width <= 1024px) {
+        padding-bottom: calc(5rem + var(--cffy-space-16));
+
+        > main {
+          padding-bottom: 0;
+        }
+      }
+    }
   }
 
   // Availability label, used in the hero and the footer
