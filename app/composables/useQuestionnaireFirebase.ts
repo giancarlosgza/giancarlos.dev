@@ -3,6 +3,7 @@ import { connectAuthEmulator, getAuth, signInAnonymously } from 'firebase/auth'
 import { connectFirestoreEmulator, doc, getDoc, serverTimestamp, writeBatch } from 'firebase/firestore'
 import { connectStorageEmulator, ref as storageRef, uploadBytes } from 'firebase/storage'
 import { useFirebaseApp, useFirebaseStorage, useFirestore } from 'vuefire'
+import { parseExtras, parsePlan } from '~/utils/questionnaire'
 
 /** Types */
 export type TSubmitError = 'network' | 'denied'
@@ -63,7 +64,21 @@ export function useQuestionnaireFirebase() {
       if (data.used || (expiresAt && expiresAt <= new Date()))
         return null
 
-      return { code, clientName: data.clientName ?? null, niche: data.niche ?? null }
+      const plan = parsePlan(data.plan)
+      // A pack plan decides the niche
+      const niche = plan && plan !== 'base'
+        ? plan
+        : data.niche ?? null
+
+      return {
+        code,
+        clientName: data.clientName ?? null,
+        niche,
+        plan,
+        extras: plan
+          ? parseExtras(data.extras, plan)
+          : []
+      }
     } catch (error) {
       console.log('[questionnaire] invite check failed', error)
       return null

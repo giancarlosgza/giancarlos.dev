@@ -34,6 +34,8 @@ const {
   goToStep,
   nextStep,
   previousStep,
+  applyInvite,
+  scope,
   selectNiche,
   resetNiche,
   clearDraft,
@@ -203,6 +205,8 @@ onMounted(async () => {
   invite.value = code
     ? await loadInvite(code)
     : null
+  if (invite.value)
+    applyInvite(invite.value)
   if (invite.value?.niche && draft.value.niche !== invite.value.niche)
     selectNiche(invite.value.niche)
   if (invite.value?.clientName && !draft.value.answers.contactName)
@@ -417,9 +421,9 @@ useShareImage('questionnaire', () => t('questionnaire.seo.title'))
         />
 
         <QuestionnaireReview
-          v-if="isLastStep"
+          v-if="isLastStep && scope"
           :steps="steps"
-          :niche="niche"
+          :scope="scope"
           :answers="draft.answers"
           :files="files"
           @edit="goToStep"

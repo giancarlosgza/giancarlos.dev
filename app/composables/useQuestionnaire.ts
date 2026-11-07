@@ -1,5 +1,8 @@
+import type { TPricingExtraId, TPricingPlanId } from '~/utils/pricing'
 import type {
+  IInvite,
   IQuestionField,
+  IQuestionScope,
   IQuestionStep,
   TAnswers,
   TAnswerValue,
@@ -10,6 +13,7 @@ import type {
   TStepId
 } from '~/utils/questionnaire'
 import {
+  defaultPlan,
   getVisibleFields,
   isBlankRow,
   isEmptyAnswer,
@@ -24,6 +28,8 @@ interface IQuestionnaireDraft {
   invite: string | null
   niche: TNiche | null
   lastNiche: TNiche | null
+  plan: TPricingPlanId | null
+  extras: TPricingExtraId[]
   stepId: TStepId
   furthestStepId: TStepId
   answers: TAnswers
@@ -45,6 +51,8 @@ function emptyDraft(invite: string | null = null): IQuestionnaireDraft {
     invite,
     niche: null,
     lastNiche: null,
+    plan: null,
+    extras: [],
     stepId: 'contact',
     furthestStepId: 'contact',
     answers: {}
@@ -70,8 +78,11 @@ export function useQuestionnaire() {
   const isFirstStep = computed<boolean>(() => stepIndex.value === 0)
   const isLastStep = computed<boolean>(() => stepIndex.value === steps.length - 1)
   const furthestIndex = computed<number>(() => Math.max(stepIndex.value, steps.findIndex(item => item.id === draft.value.furthestStepId)))
-  const visibleFields = computed<IQuestionField[]>(() => draft.value.niche
-    ? getVisibleFields(step.value, draft.value.niche, draft.value.answers)
+  const scope = computed<IQuestionScope | null>(() => draft.value.niche
+    ? { niche: draft.value.niche, plan: draft.value.plan ?? defaultPlan(draft.value.niche), extras: draft.value.extras }
+    : null)
+  const visibleFields = computed<IQuestionField[]>(() => scope.value
+    ? getVisibleFields(step.value, scope.value, draft.value.answers)
     : [])
   const hasErrors = computed<boolean>(() => Object.keys(errors.value).length > 0
     || Object.keys(rowErrors.value).length > 0)
@@ -101,10 +112,10 @@ export function useQuestionnaire() {
 
   function stepErrors(target: IQuestionStep): IStepErrors {
     const result: IStepErrors = { errors: {}, rowErrors: {} }
-    if (!draft.value.niche)
+    if (!scope.value)
       return result
 
-    for (const field of getVisibleFields(target, draft.value.niche, draft.value.answers)) {
+    for (const field of getVisibleFields(target, scope.value, draft.value.answers)) {
       const value = draft.value.answers[field.key]
       const missingBoth = !!field.requiredWithout
         && isEmptyAnswer(value)
@@ -179,6 +190,11 @@ export function useQuestionnaire() {
       goToStep(previous.id)
   }
 
+  function applyInvite(invite: IInvite): void {
+    draft.value.plan = invite.plan
+    draft.value.extras = invite.extras
+  }
+
   function selectNiche(niche: TNiche): void {
     draft.value.niche = niche
     goToStep('contact')
@@ -195,14 +211,14 @@ export function useQuestionnaire() {
   }
 
   function collectAnswers(): TAnswers {
-    const niche = draft.value.niche
-    if (!niche)
+    const current = scope.value
+    if (!current)
       return {}
 
     const answers: TAnswers = {}
     for (const field of steps.flatMap(item => item.fields)) {
       const value = draft.value.answers[field.key]
-      if (value !== undefined && field.type !== 'file' && field.type !== 'files' && isFieldVisible(field, niche, draft.value.answers)) {
+      if (value !== undefined && field.type !== 'file' && field.type !== 'files' && isFieldVisible(field, current, draft.value.answers)) {
         answers[field.key] = field.type === 'repeater' && Array.isArray(value)
           ? (value as TRepeaterRow[]).filter(row => !isBlankRow(row))
           : value
@@ -213,13 +229,13 @@ export function useQuestionnaire() {
   }
 
   function collectFiles(): TFieldFiles {
-    const niche = draft.value.niche
-    if (!niche)
+    const current = scope.value
+    if (!current)
       return {}
 
     return Object.fromEntries(steps
       .flatMap(item => item.fields)
-      .filter(field => (field.type === 'file' || field.type === 'files') && isFieldVisible(field, niche, draft.value.answers))
+      .filter(field => (field.type === 'file' || field.type === 'files') && isFieldVisible(field, current, draft.value.answers))
       .map(field => [field.key, files.value[field.key] ?? []])
       .filter(([, list]) => list!.length > 0))
   }
@@ -236,6 +252,7 @@ export function useQuestionnaire() {
     isFirstStep,
     isLastStep,
     furthestIndex,
+    scope,
     visibleFields,
     setAnswer,
     setFiles,
@@ -244,6 +261,7 @@ export function useQuestionnaire() {
     goToStep,
     nextStep,
     previousStep,
+    applyInvite,
     selectNiche,
     resetNiche,
     clearDraft,

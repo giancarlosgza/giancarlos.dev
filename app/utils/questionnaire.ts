@@ -1,3 +1,6 @@
+import type { TPricingExtraId, TPricingPlanId } from './pricing'
+import { PRICING_EXTRAS, PRICING_PACKS, PRICING_PLANS } from './pricing'
+
 /** Types */
 export type TNiche = 'cafe' | 'health' | 'music' | 'other'
 
@@ -37,6 +40,10 @@ export interface IQuestionField {
   type: TFieldType
   required?: boolean
   niches?: TNiche[]
+  /** Shown only for these plans */
+  plans?: TPricingPlanId[]
+  /** Shown only when the invite includes one of these extras */
+  extras?: TPricingExtraId[]
   showIf?: (answers: TAnswers) => boolean
   /** Option ids; labels live at `questionnaire.fields.<key>.options.<id>` */
   options?: string[]
@@ -60,6 +67,15 @@ export interface IInvite {
   code: string
   clientName: string | null
   niche: TNiche | null
+  plan: TPricingPlanId | null
+  extras: TPricingExtraId[]
+}
+
+/** What decides which questions a client sees */
+export interface IQuestionScope {
+  niche: TNiche
+  plan: TPricingPlanId
+  extras: TPricingExtraId[]
 }
 
 export interface IUploadedFile {
@@ -204,7 +220,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         key: 'healthSpecialties',
         type: 'tags',
         required: true,
-        niches: ['health'],
+        plans: ['health'],
         wide: true,
         max: 6,
         maxlength: 80
@@ -250,7 +266,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         key: 'healthEducation',
         type: 'repeater',
         required: true,
-        niches: ['health'],
+        plans: ['health'],
         wide: true,
         max: 8,
         fields: [
@@ -286,7 +302,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         key: 'musicGenres',
         type: 'tags',
         required: true,
-        niches: ['music'],
+        plans: ['music'],
         wide: true,
         max: 6,
         maxlength: 40
@@ -294,7 +310,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
       {
         key: 'musicRepertoire',
         type: 'textarea',
-        niches: ['music'],
+        plans: ['music'],
         wide: true,
         maxlength: 3000
       }
@@ -394,7 +410,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         key: 'healthBooking',
         type: 'radio',
         required: true,
-        niches: ['health'],
+        plans: ['health'],
         wide: true,
         options: ['whatsapp', 'phone', 'platform']
       },
@@ -402,7 +418,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         key: 'healthBookingUrl',
         type: 'url',
         required: true,
-        niches: ['health'],
+        plans: ['health'],
         maxlength: 500,
         showIf: answers => answers.healthBooking === 'platform'
       },
@@ -424,6 +440,23 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         type: 'url',
         wide: true,
         maxlength: 300
+      },
+      {
+        key: 'migrationPages',
+        type: 'repeater',
+        required: true,
+        extras: ['migration'],
+        wide: true,
+        max: 5,
+        fields: [
+          {
+            key: 'url',
+            type: 'url',
+            required: true,
+            maxlength: 500
+          },
+          { key: 'note', type: 'text', maxlength: 200 }
+        ]
       },
       { key: 'socialInstagram', type: 'url', maxlength: 300 },
       { key: 'socialFacebook', type: 'url', maxlength: 300 },
@@ -473,7 +506,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
       {
         key: 'musicLinks',
         type: 'repeater',
-        niches: ['music'],
+        plans: ['music'],
         wide: true,
         max: 6,
         fields: [
@@ -501,7 +534,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
       {
         key: 'musicVideos',
         type: 'tags',
-        niches: ['music'],
+        plans: ['music'],
         wide: true,
         format: 'url',
         max: 3,
@@ -569,7 +602,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         key: 'cafeMenuFiles',
         type: 'files',
         required: true,
-        niches: ['cafe'],
+        plans: ['cafe'],
         wide: true,
         max: 10
       },
@@ -577,7 +610,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         key: 'cafeSignatureItems',
         type: 'tags',
         required: true,
-        niches: ['cafe'],
+        plans: ['cafe'],
         wide: true,
         max: 3,
         maxlength: 60
@@ -586,7 +619,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         key: 'cafeOrdering',
         type: 'chips',
         required: true,
-        niches: ['cafe'],
+        plans: ['cafe'],
         wide: true,
         options: [
           'whatsapp',
@@ -599,7 +632,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         key: 'cafeDeliveryLinks',
         type: 'repeater',
         required: true,
-        niches: ['cafe'],
+        plans: ['cafe'],
         wide: true,
         max: 4,
         showIf: answers => Array.isArray(answers.cafeOrdering) && (answers.cafeOrdering as string[]).includes('delivery'),
@@ -627,7 +660,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         key: 'services',
         type: 'repeater',
         required: true,
-        niches: ['other'],
+        plans: ['base'],
         wide: true,
         max: 20,
         fields: [
@@ -645,7 +678,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         key: 'healthServices',
         type: 'repeater',
         required: true,
-        niches: ['health'],
+        plans: ['health'],
         wide: true,
         max: 40,
         fields: [
@@ -664,7 +697,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         key: 'healthApproaches',
         type: 'tags',
         required: true,
-        niches: ['health'],
+        plans: ['health'],
         wide: true,
         max: 6,
         maxlength: 60,
@@ -674,7 +707,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         key: 'healthPopulations',
         type: 'chips',
         required: true,
-        niches: ['health'],
+        plans: ['health'],
         wide: true,
         options: [
           'children',
@@ -688,7 +721,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
       {
         key: 'healthCases',
         type: 'files',
-        niches: ['health'],
+        plans: ['health'],
         wide: true,
         max: 12,
         showIf: answers => !!answers.healthProfession && !isPsychologist(answers)
@@ -713,7 +746,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
       {
         key: 'musicPackages',
         type: 'repeater',
-        niches: ['music'],
+        plans: ['music'],
         wide: true,
         max: 10,
         showIf: offersBooking,
@@ -761,7 +794,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         key: 'musicLessonFormats',
         type: 'repeater',
         required: true,
-        niches: ['music'],
+        plans: ['music'],
         wide: true,
         max: 10,
         showIf: offersTeaching,
@@ -781,14 +814,45 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         key: 'photos',
         type: 'files',
         wide: true,
+        max: 6
+      },
+      {
+        key: 'galleryPhotos',
+        type: 'files',
+        extras: ['gallery'],
+        wide: true,
         max: 12
       },
       {
         key: 'useGoogleReviews',
         type: 'check',
-        niches: ['cafe', 'health', 'music'],
+        extras: ['reviews'],
         wide: true,
         showIf: answers => !!answers.googleProfile && answers.googleProfile !== 'no'
+      },
+      {
+        key: 'extraPage',
+        type: 'textarea',
+        required: true,
+        extras: ['page'],
+        wide: true,
+        maxlength: 800
+      },
+      {
+        key: 'englishContent',
+        type: 'radio',
+        required: true,
+        extras: ['english'],
+        wide: true,
+        options: ['translate', 'provide']
+      },
+      {
+        key: 'printPieces',
+        type: 'textarea',
+        required: true,
+        extras: ['print'],
+        wide: true,
+        maxlength: 500
       },
       {
         key: 'faq',
@@ -839,8 +903,37 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
 ]
 
 /** Methods */
-export function isFieldVisible(field: IQuestionField, niche: TNiche, answers: TAnswers): boolean {
-  if (field.niches && !field.niches.includes(niche))
+/** Invites sent before plans existed get the pack that matches their niche */
+export function defaultPlan(niche: TNiche): TPricingPlanId {
+  return (PRICING_PACKS as string[]).includes(niche)
+    ? niche as TPricingPlanId
+    : 'base'
+}
+
+export function parsePlan(value: unknown): TPricingPlanId | null {
+  return typeof value === 'string' && value in PRICING_PLANS
+    ? value as TPricingPlanId
+    : null
+}
+
+/** Keeps only known extras that the plan can have */
+export function parseExtras(value: unknown, plan: TPricingPlanId): TPricingExtraId[] {
+  if (!Array.isArray(value))
+    return []
+
+  return PRICING_EXTRAS
+    .filter(extra => value.includes(extra.id) && extra.plans.includes(plan))
+    .map(extra => extra.id)
+}
+
+export function isFieldVisible(field: IQuestionField, scope: IQuestionScope, answers: TAnswers): boolean {
+  if (field.niches && !field.niches.includes(scope.niche))
+    return false
+
+  if (field.plans && !field.plans.includes(scope.plan))
+    return false
+
+  if (field.extras && !field.extras.some(extra => scope.extras.includes(extra)))
     return false
 
   return field.showIf
@@ -848,9 +941,9 @@ export function isFieldVisible(field: IQuestionField, niche: TNiche, answers: TA
     : true
 }
 
-export function getVisibleFields(step: IQuestionStep, niche: TNiche, answers: TAnswers): IQuestionField[] {
+export function getVisibleFields(step: IQuestionStep, scope: IQuestionScope, answers: TAnswers): IQuestionField[] {
   return step.fields
-    .filter(field => isFieldVisible(field, niche, answers))
+    .filter(field => isFieldVisible(field, scope, answers))
 }
 
 export function isEmptyAnswer(value: TAnswerValue | undefined): boolean {

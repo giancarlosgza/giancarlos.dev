@@ -323,6 +323,19 @@
         "placeholder": "https://",
         "hint": "If you already have one. I use it as a reference or to move your content over."
       },
+      "migrationPages": {
+        "label": "Pages to move from your current site",
+        "hint": "Up to 5. I move their text and images to the new site.",
+        "add": "Add page",
+        "fields": {
+          "url": {
+            "label": "Link"
+          },
+          "note": {
+            "label": "What to keep (optional)"
+          }
+        }
+      },
       "socialInstagram": {
         "label": "Instagram",
         "placeholder": "https://instagram.com/"
@@ -603,11 +616,31 @@
       "photos": {
         "label": "Photos of your place, products or work",
         "inputLabel": "Choose photos or drop them here",
-        "hint": "Up to 12. I use them on the home page and sections, and in the gallery if you added it as an extra."
+        "hint": "Up to 6. I use them on your home page and site sections."
+      },
+      "galleryPhotos": {
+        "label": "Photos for your gallery",
+        "inputLabel": "Choose photos or drop them here",
+        "hint": "Up to 12. Your gallery includes a link to your Instagram."
       },
       "useGoogleReviews": {
-        "label": "Show my Google reviews on the site",
-        "hint": "Only if you added featured reviews as an extra to your plan."
+        "label": "Show my Google reviews on the site"
+      },
+      "extraPage": {
+        "label": "What is your extra page about?",
+        "placeholder": "e.g. a private events page",
+        "hint": "Up to 4 sections. Tell me what it should include."
+      },
+      "englishContent": {
+        "label": "English text",
+        "options": {
+          "translate": "Translate it from the Spanish",
+          "provide": "I will send you the English text"
+        }
+      },
+      "printPieces": {
+        "label": "What should I design for print?",
+        "placeholder": "e.g. a stage QR code or business cards"
       },
       "faq": {
         "label": "Questions customers always ask",

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { IQuestionField, IQuestionStep, TAnswers, TFieldFiles, TNiche, TRepeaterRow, TStepId } from '~/utils/questionnaire'
+import type { IQuestionField, IQuestionScope, IQuestionStep, TAnswers, TFieldFiles, TRepeaterRow, TStepId } from '~/utils/questionnaire'
 import { getVisibleFields } from '~/utils/questionnaire'
 
 /** Props & emits */
 const props = defineProps<{
   steps: IQuestionStep[]
-  niche: TNiche
+  scope: IQuestionScope
   answers: TAnswers
   files: TFieldFiles
 }>()
@@ -35,7 +35,7 @@ const sections = computed<IReviewSection[]>(() => props.steps
   .map(step => ({
     id: step.id,
     title: t(`questionnaire.steps.${step.id}.title`),
-    items: getVisibleFields(step, props.niche, props.answers)
+    items: getVisibleFields(step, props.scope, props.answers)
       .filter(field => field.type !== 'check' || props.answers[field.key] === true)
       .map(field => ({
         key: field.key,

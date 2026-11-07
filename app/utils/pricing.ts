@@ -6,6 +6,15 @@
  */
 export type TPricingPack = 'cafe' | 'health' | 'music'
 export type TPricingPlanId = 'base' | TPricingPack
+export type TPricingExtraId
+  = | 'reviews'
+    | 'galleryUpdates'
+    | 'changes'
+    | 'english'
+    | 'gallery'
+    | 'print'
+    | 'migration'
+    | 'page'
 
 export interface IPricingPlan {
   id: TPricingPlanId
@@ -16,7 +25,7 @@ export interface IPricingPlan {
 }
 
 export interface IPricingExtra {
-  id: string
+  id: TPricingExtraId
   price: number
   recurring: boolean
   plans: TPricingPlanId[]

@@ -323,6 +323,19 @@
         "placeholder": "https://",
         "hint": "Si ya tienes uno. Lo uso como referencia o para pasar tu contenido."
       },
+      "migrationPages": {
+        "label": "Páginas que paso de tu sitio actual",
+        "hint": "Hasta 5. Paso sus textos e imágenes al nuevo sitio.",
+        "add": "Agregar página",
+        "fields": {
+          "url": {
+            "label": "Enlace"
+          },
+          "note": {
+            "label": "Qué conservar (opcional)"
+          }
+        }
+      },
       "socialInstagram": {
         "label": "Instagram",
         "placeholder": "https://instagram.com/"
@@ -603,11 +616,31 @@
       "photos": {
         "label": "Fotos de tu lugar, productos o trabajo",
         "inputLabel": "Elige fotos o suéltalas aquí",
-        "hint": "Hasta 12. Las uso en la portada y las secciones, y en la galería si la agregaste como extra."
+        "hint": "Hasta 6. Las uso en la portada y las secciones de tu sitio."
+      },
+      "galleryPhotos": {
+        "label": "Fotos para tu galería",
+        "inputLabel": "Elige fotos o suéltalas aquí",
+        "hint": "Hasta 12. Tu galería incluye un enlace a tu Instagram."
       },
       "useGoogleReviews": {
-        "label": "Mostrar mis reseñas de Google en el sitio",
-        "hint": "Solo si agregaste las reseñas destacadas como extra a tu plan."
+        "label": "Mostrar mis reseñas de Google en el sitio"
+      },
+      "extraPage": {
+        "label": "¿De qué trata tu página adicional?",
+        "placeholder": "Ej. una página de eventos privados",
+        "hint": "Hasta 4 secciones. Cuéntame qué debe incluir."
+      },
+      "englishContent": {
+        "label": "Textos en inglés",
+        "options": {
+          "translate": "Tradúcelos tú a partir del español",
+          "provide": "Yo te paso los textos en inglés"
+        }
+      },
+      "printPieces": {
+        "label": "¿Qué quieres que diseñe para imprimir?",
+        "placeholder": "Ej. QR para el escenario o tarjetas de presentación"
       },
       "faq": {
         "label": "Preguntas que siempre te hacen",
