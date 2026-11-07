@@ -201,11 +201,13 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         autocomplete: 'organization'
       },
       {
-        key: 'healthSpecialty',
-        type: 'text',
+        key: 'healthSpecialties',
+        type: 'tags',
         required: true,
         niches: ['health'],
-        maxlength: 100
+        wide: true,
+        max: 6,
+        maxlength: 80
       },
       {
         key: 'healthCedula',
@@ -273,23 +275,6 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         ]
       },
       {
-        key: 'musicMembers',
-        type: 'repeater',
-        niches: ['music'],
-        wide: true,
-        max: 12,
-        showIf: answers => !!answers.musicActType && answers.musicActType !== 'solo',
-        fields: [
-          {
-            key: 'name',
-            type: 'text',
-            required: true,
-            maxlength: 80
-          },
-          { key: 'role', type: 'text', maxlength: 80 }
-        ]
-      },
-      {
         key: 'musicGoals',
         type: 'radio',
         required: true,
@@ -305,6 +290,13 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         wide: true,
         max: 6,
         maxlength: 40
+      },
+      {
+        key: 'musicRepertoire',
+        type: 'textarea',
+        niches: ['music'],
+        wide: true,
+        maxlength: 3000
       }
     ]
   },
@@ -427,6 +419,12 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
   {
     id: 'online',
     fields: [
+      {
+        key: 'currentSite',
+        type: 'url',
+        wide: true,
+        maxlength: 300
+      },
       { key: 'socialInstagram', type: 'url', maxlength: 300 },
       { key: 'socialFacebook', type: 'url', maxlength: 300 },
       { key: 'socialTiktok', type: 'url', maxlength: 300 },
@@ -598,6 +596,52 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
         ]
       },
       {
+        key: 'cafeDeliveryLinks',
+        type: 'repeater',
+        required: true,
+        niches: ['cafe'],
+        wide: true,
+        max: 4,
+        showIf: answers => Array.isArray(answers.cafeOrdering) && (answers.cafeOrdering as string[]).includes('delivery'),
+        fields: [
+          {
+            key: 'platform',
+            type: 'select',
+            required: true,
+            options: [
+              'rappi',
+              'uberEats',
+              'didiFood',
+              'other'
+            ]
+          },
+          {
+            key: 'url',
+            type: 'url',
+            required: true,
+            maxlength: 500
+          }
+        ]
+      },
+      {
+        key: 'services',
+        type: 'repeater',
+        required: true,
+        niches: ['other'],
+        wide: true,
+        max: 20,
+        fields: [
+          {
+            key: 'name',
+            type: 'text',
+            required: true,
+            maxlength: 100
+          },
+          { key: 'description', type: 'text', maxlength: 300 },
+          { key: 'price', type: 'text', maxlength: 30 }
+        ]
+      },
+      {
         key: 'healthServices',
         type: 'repeater',
         required: true,
@@ -742,6 +786,7 @@ export const QUESTIONNAIRE_STEPS: IQuestionStep[] = [
       {
         key: 'useGoogleReviews',
         type: 'check',
+        niches: ['cafe', 'health', 'music'],
         wide: true,
         showIf: answers => !!answers.googleProfile && answers.googleProfile !== 'no'
       },

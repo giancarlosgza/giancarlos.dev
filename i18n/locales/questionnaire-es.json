@@ -18,7 +18,7 @@
         "health": {
           "title": "Salud",
           "description": "Médicos, dentistas, psicólogos y otros especialistas.",
-          "asks": "Cédula, servicios, citas y credenciales"
+          "asks": "Cédula, especialidades, citas y credenciales"
         },
         "music": {
           "title": "Música",
@@ -59,7 +59,7 @@
       },
       "content": {
         "title": "Servicios y contenido",
-        "lead": "Lo que ofreces, tus fotos y tus reseñas."
+        "lead": "Lo que ofreces y tus fotos."
       },
       "review": {
         "title": "Revisión y envío",
@@ -177,9 +177,10 @@
         "label": "Nombre del negocio",
         "hint": "Tal como quieres que se vea en el sitio: tu negocio, tu marca o tu nombre profesional."
       },
-      "healthSpecialty": {
-        "label": "Especialidad",
-        "placeholder": "Ej. Ortodoncia"
+      "healthSpecialties": {
+        "label": "Especialidades",
+        "placeholder": "Ej. Ortodoncia",
+        "hint": "Hasta 6. Presiona Enter después de cada una."
       },
       "healthCedula": {
         "label": "Cédula profesional",
@@ -220,18 +221,6 @@
           }
         }
       },
-      "musicMembers": {
-        "label": "Integrantes",
-        "add": "Agregar integrante",
-        "fields": {
-          "name": {
-            "label": "Nombre"
-          },
-          "role": {
-            "label": "Instrumento o rol"
-          }
-        }
-      },
       "musicGoals": {
         "label": "¿Para qué es el sitio?",
         "options": {
@@ -243,6 +232,11 @@
       "musicGenres": {
         "label": "Géneros",
         "placeholder": "Escribe uno y presiona Enter"
+      },
+      "musicRepertoire": {
+        "label": "Repertorio",
+        "placeholder": "Una canción o artista por línea",
+        "hint": "Opcional. Si tienes tu lista en PDF, súbela en el paso de fotos."
       },
       "primaryCta": {
         "label": "¿Qué quieres que hagan al entrar a tu sitio?",
@@ -323,6 +317,11 @@
       "musicCoverage": {
         "label": "¿Hasta dónde te mueves para tocar?",
         "placeholder": "Ej. Monterrey y área metropolitana"
+      },
+      "currentSite": {
+        "label": "Tu sitio actual",
+        "placeholder": "https://",
+        "hint": "Si ya tienes uno. Lo uso como referencia o para pasar tu contenido."
       },
       "socialInstagram": {
         "label": "Instagram",
@@ -458,6 +457,40 @@
           "dineIn": "Solo en el lugar"
         }
       },
+      "cafeDeliveryLinks": {
+        "label": "Tus apps de entrega",
+        "add": "Agregar app",
+        "fields": {
+          "platform": {
+            "label": "App",
+            "placeholder": "Elige",
+            "options": {
+              "rappi": "Rappi",
+              "uberEats": "Uber Eats",
+              "didiFood": "DiDi Food",
+              "other": "Otra"
+            }
+          },
+          "url": {
+            "label": "Enlace a tu tienda"
+          }
+        }
+      },
+      "services": {
+        "label": "Tus servicios o productos",
+        "add": "Agregar servicio",
+        "fields": {
+          "name": {
+            "label": "Servicio o producto"
+          },
+          "description": {
+            "label": "Descripción corta"
+          },
+          "price": {
+            "label": "Precio (opcional)"
+          }
+        }
+      },
       "healthServices": {
         "label": "Servicios o tratamientos",
         "add": "Agregar servicio",
@@ -492,7 +525,7 @@
         }
       },
       "healthCases": {
-        "label": "Casos de éxito o antes/después",
+        "label": "Casos clínicos",
         "inputLabel": "Elige fotos o suéltalas aquí",
         "hint": "Solo con el consentimiento de tus pacientes."
       },
@@ -569,10 +602,12 @@
       },
       "photos": {
         "label": "Fotos de tu lugar, productos o trabajo",
-        "inputLabel": "Elige fotos o suéltalas aquí"
+        "inputLabel": "Elige fotos o suéltalas aquí",
+        "hint": "Hasta 12. Las uso en la portada y las secciones, y en la galería si la agregaste como extra."
       },
       "useGoogleReviews": {
-        "label": "Mostrar mis reseñas de Google en el sitio"
+        "label": "Mostrar mis reseñas de Google en el sitio",
+        "hint": "Solo si agregaste las reseñas destacadas como extra a tu plan."
       },
       "faq": {
         "label": "Preguntas que siempre te hacen",
