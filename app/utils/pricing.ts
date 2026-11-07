@@ -58,6 +58,7 @@ export const PACK_PLANS: Record<TPricingPack, IPricingPlan> = {
     features: [
       'credentials',
       'services',
+      'cases',
       'appointments',
       'medicalSeo'
     ]
