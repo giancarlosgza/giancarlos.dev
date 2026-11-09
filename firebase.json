@@ -2,6 +2,7 @@
   "hosting": {
     "site": "giancarlosdev-portfolio",
     "public": ".output/public",
+    "trailingSlash": false,
     "ignore": [
       "firebase.json",
       "**/.*",

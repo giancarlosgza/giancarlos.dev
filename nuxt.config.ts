@@ -101,7 +101,7 @@ export default defineNuxtConfig({
     name: 'Giancarlos Garza',
     description: 'Front-end engineer and UI/UX designer building high-performance interfaces and design systems.',
     defaultLocale: 'en',
-    trailingSlash: true
+    trailingSlash: false
   },
   robots: {
     sitemap: '/sitemap.xml'
@@ -121,7 +121,7 @@ export default defineNuxtConfig({
     baseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://giancarlos.dev',
     defaultLocale: 'en',
     strategy: 'prefix_except_default',
-    trailingSlash: true,
+    trailingSlash: false,
     locales: [
       {
         code: 'en',
