@@ -522,7 +522,7 @@ useHead(() => ({
                 variant="frosted"
                 size="lg"
                 text="GitHub"
-                href="https://github.com/giancarlosgza"
+                :href="PROFILE_LINKS.github"
                 :aria-label="t('contact.githubAria')"
               >
                 <template #icon>
@@ -536,7 +536,7 @@ useHead(() => ({
                 variant="frosted"
                 size="lg"
                 text="LinkedIn"
-                href="https://www.linkedin.com/in/giancarlos-garza-b37897139"
+                :href="PROFILE_LINKS.linkedin"
                 :aria-label="t('contact.linkedinAria')"
               >
                 <template #icon>

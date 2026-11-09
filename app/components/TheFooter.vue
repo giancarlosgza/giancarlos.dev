@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { PROFILE_LINKS } from '~/utils/seo'
+
 /** Data */
 const { t } = useI18n()
 const localePath = useLocalePath()
@@ -64,13 +66,13 @@ function scrollToTop(): void {
             :aria-label="t('footer.emailAria')"
           >hello@giancarlos.dev</a>
           <a
-            href="https://github.com/giancarlosgza"
+            :href="PROFILE_LINKS.github"
             class="footer-item"
             target="_blank"
             rel="noopener noreferrer"
           >GitHub</a>
           <a
-            href="https://www.linkedin.com/in/giancarlos-garza-b37897139"
+            :href="PROFILE_LINKS.linkedin"
             class="footer-item"
             target="_blank"
             rel="noopener noreferrer"
